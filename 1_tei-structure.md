@@ -2,9 +2,9 @@
 |Elements name|Attributes|Description|
 |:-----:|:-----:|:-----:|
 |body||The main body of the text. This element is required in any TEI conformant document.|
-|TEI|||The element `<TEI>` must wrap all TEI-compliant content as a root tag. The `<TEI>` element must contain two sub-elements, `<teiHeader>` and `<text>`.|
+|TEI||The element `<TEI>` must wrap all TEI-compliant content as a root tag. The `<TEI>` element must contain two sub-elements, `<teiHeader>` and `<text>`.|
 |teiHeader||The TEI-based header contains additional descriptive information (metadata) about the digital document and is a mandatory component of every TEI document.|
-|text|-@xml:space(Default value must be ‘preserve’) -@xml:lang|Contains a single text of any kind.|
+|text||Contains a single text of any kind.|
 
 ```
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
