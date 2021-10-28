@@ -1,5 +1,5 @@
-var xml = "malatimadhava.xml";
-var xslt = "common-test.xsl";
+var xml = "examples/fable.xml";
+var xslt = "xslt/affichage.xsl";
 
 function outline() {
   var ver = localStorage.getItem("version");
