@@ -3,6 +3,14 @@ Action Nationale de Formation "Digital Areal" 7-10 novembre 2021, Fréjus
 
 Présentation by Emmanuel Francis & Axelle Janiak
 
+## Avant de commencer
+### Editeurs de texte
+Il est nécessaire de se munir d'un éditeur de texte:
+- soit Oxygen version d’essai (1 mois). https://www.oxygenxml.com/xml_editor/download_oxygenxml_editor.html
+- soit Atom (éditeur de texte open-source) https://atom.io/ et installation du module de validation (https://atom.io/packages/linter-autocomplete-jing)
+- soit votre éditeur habituel/préféré, si vous en avez un
+- NB: Notepad ++ ou textEdit fonctionnent, mais vous n’aurez aucune aide pour la saisie et pour valider les encodages.
+
 ## Bibliographie:
 ### Tutoriels et introductions
 “v. A Gentle Introduction to XML”, *TEI Guidelines*, Version 4.3.0: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SG.html
