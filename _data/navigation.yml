@@ -2,8 +2,17 @@
 - title: Home
   url: /
 
-- title: Chapitre 1
-  url: /1_tei-structure
+- title: Introduction
+  url: /introduction
 
-- title: Chapitre 2
-  url:
+- title: Starting with XML
+  url: /1_starting_xml
+
+- title: Starting with TEI
+  url: /2_starting_TEI
+
+- title: Encoding with Manu
+  url: /3_encoding
+
+- title: Generating a display
+  url: /4_transformation 

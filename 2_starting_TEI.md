@@ -1,5 +1,6 @@
-# TEI file structure
+# Starting with TEI
 
+## TEI file structure
 | Elements name | Attributes | Description|
 |:-----:|:-----:|:-----:|
 | body || The main body of the text. This element is required in any TEI conformant document.|
