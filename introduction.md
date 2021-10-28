@@ -1,4 +1,4 @@
-# A brief introduction
+# Rapide introduction de la TEI
 
 - 1987, naissance de la *Text Encoding Initiative* par trois sociétés savantes :
 **Association for Computers and the Humanities**, **Association for Literary and
@@ -43,4 +43,32 @@ Le Consortium est une fondation à but non lucratif, dont le financement se fait
 Son rôle principal est de maintenir les guidelines et de les faire évoluer selon les besoins des communautés d'utilisateur.
 
 ## Le modèle TEI
-Il s'agit d'un modèle abstrait de données, soit un ensemble de concepts ainsi que les différentes relations entre eux. 
+Il s'agit d'un modèle abstrait de données, soit un ensemble de concepts ainsi que les différentes relations entre eux. Il faut donc distinguer ce modèle des implémentations techniques, quelles soient générales par l'importation de modules entiers comme celui du théâtre ou de la transcription, ou particulières avec une sélection d'éléments pour correspondre aux besoins d'un projet.
+Les modules correspondent aux chapitres des Guidelines. Ils définissent des composantes du modèle (éléments, classes, macros), les spécifications techniques et peuvent se concevoir comme des blocs que l'on conserve ou que l'on supprime notamment par rapport aux schémas.
+
+**les obligatoires:**
+- tei (déclaration des classes, macros et types)
+- textstructure (elements de la structure du fichier)
+- core (ensemble des éléments considérés comme basiques et communs à tous les encodages)
+- header (métadonnées)
+
+**les spécialisés:**
+- analysis (analyse linguistique);
+- certainty (certitude et responsabilité) ;
+- corpus (corpus) ;
+- drama (théâtre) ;
+- figures (tableaux, figures et formules) ;
+- gaiji (caractères non standard) ;
+- iso-fs (structures de traits) ;
+- linking (liens, segmentation, alignements) ;
+- msdescription (description des manuscrits) ;
+- namesdates (noms, dates, lieux) ;
+- nets (graphes, réseaux, arbres) ;
+- textcrit (apparat critique) ;
+- transcr (transcription) ;
+- verse (poèsie).
+
+## Pourquoi faire?
+Il permet de traduire la dimension sémantique d'un document et de le rendre compréhensible à un ordinateur.
+Il distingue la mise en forme du document qui correspond à l'affichage et la structuration du texte lui-même.
+Il autorise les traitements et des exploitations des informations encodés.
