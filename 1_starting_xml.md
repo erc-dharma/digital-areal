@@ -60,6 +60,29 @@ Il n'y a pas de limites au nombre d'attributs. Il faut ajouter un **espace** ent
  ```
 <hi rend="souligne gras italique">mon texte à mettre en forme</hi>
  ```
+Il n'y a pas d'ordre nécessaire dans les attributs lorsqu'il y en a plusieurs, ni dans les valeurs d'attributs.
 
 ## Règles d'héritage
-Arboresence 
+Arboresence
+
+## Faire des commentaires dans un fichier XML
+Il est possible d'ajouter des commentaires dans votre fichier.
+Le commentaire est encadré par des chevrons. La partie d'ouverture se distingue par l'ajout d'un point d'exclamation suivi par deux tirets, la partie de fermeture par deux tirets seulement.
+
+```
+<!-- votre commentaire -->
+```
+
+## Caractères spéciaux en XML  
+Certains caractères spéciaux ont besoin d'être échappé afin de ne pas se confondre avec les éléments formant la syntaxe du XML, comme les chevrons par exemple.
+En XML, il y a 5 éléments avec des valeurs prédéfinies qui s'échappent en débutant avec une esperluette et en terminant avec un point-virgule: `&`+ nom+`;`
+
+|nom|caractère|description|échappement|
+|:-----:|:-----:|:-----:|:-----:|
+|quot|"|Guillemet droit, délimiteur d'attribut en XML|`&quot;`|
+|amp|&|Esperluette (« et commercial »), délimiteur de référence en XML|`&amp;`|
+|apos|'|Apostrophe, délimiteur d'attribut en XML|`&apos;`|
+|lt|<|Signe inférieur à, délimiteur de balise en XML|`&lt;`|
+|gt|>|Signe supérieur à, délimiteur de balise en XML|`&gt;`|
+
+## Vers un document XML bien formé et valide
