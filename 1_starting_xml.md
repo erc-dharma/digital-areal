@@ -86,3 +86,22 @@ En XML, il y a 5 éléments avec des valeurs prédéfinies qui s'échappent en d
 |gt|>|Signe supérieur à, délimiteur de balise en XML|`&gt;`|
 
 ## Vers un document XML bien formé et valide
+C'est deux notions sont essentielles pour obtenir un fichier exploitable.
+
+### Vers un XML bien formé
+Pour avoir un document XML bien formé, il faut qu'il respecte tous les préceptes de la syntaxe XML:
+- une déclaration XML ;
+- un ou plusieurs éléments ;
+- un élément racine encapsulant tous les autres éléments et leurs attributs (`<TEI> ... </TEI>`) ;
+- les éléments ont une balise de début et de fin ;
+- les éléments sont correctement imbriqués (<P> <EM> ... </EM> </P>) ;
+- les deux parties de la balise ont toutes les deux le même nom;
+- les éléments vides sont bien fermés par le / ;
+- un attribut apparaît uniquement dans la balise ouvrante et une seule fois dans cette balise ;
+- les valeurs des attributs sont entre guillemets ou apostrophes ;
+- les caractères spéciaux sont échappés ;
+
+### Vers un XML valide
+Pour avoir un document valide, il faut qu'un modèle soit déclaré. Dans le cas de la TEI, cela signifie qu'une référence doit être faite à un schéma:
+- il est bien formé
+- il est conforme au schéma auquel il fait référence (DTD ou autre)

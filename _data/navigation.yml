@@ -2,17 +2,20 @@
 - title: Introduction
   url: /introduction
 
-- title: Starting with XML
+- title: Les bases de l'XML
   url: /1_starting_xml
 
-- title: Starting with TEI
+- title: Commencer avec la TEI
   url: /2_starting_TEI
 
-- title: Encoding with Manu
-  url: /3_encoding
+- title: Prendre en main Oxygen
+  url: /3_transformation
 
-- title: Generating a display
-  url: /4_transformation
+- title: Encoder avec Manu
+  url: /4_encoding
+
+- title: Générer un affichage
+  url: /5_transformation
 
 - title: Vocabulaire
   url: /vocabulaire
