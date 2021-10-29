@@ -5,7 +5,7 @@ Présentation by Emmanuel Francis & Axelle Janiak
 
 ## Avant de commencer
 ### Editeurs de texte
-Il est nécessaire de se munir d'un éditeur de texte:
+Il est nécessaire d'avoir un éditeur de texte:
 - soit Oxygen version d’essai (1 mois). https://www.oxygenxml.com/xml_editor/download_oxygenxml_editor.html
 - soit Atom (éditeur de texte open-source) https://atom.io/ et installation du module de validation (https://atom.io/packages/linter-autocomplete-jing)
 - soit votre éditeur habituel/préféré, si vous en avez un
