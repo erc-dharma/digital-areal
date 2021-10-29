@@ -74,8 +74,8 @@ Le commentaire est encadré par des chevrons. La partie d'ouverture se distingue
 ```
 
 ## Caractères spéciaux en XML  
-Certains caractères spéciaux ont besoin d'être échappé afin de ne pas se confondre avec les éléments formant la syntaxe du XML, comme les chevrons par exemple.
-En XML, il y a 5 éléments avec des valeurs prédéfinies qui s'échappent en débutant avec une esperluette et en terminant avec un point-virgule: `&`+ nom+`;`
+Certains caractères spéciaux ont besoin d'être échappé afin de ne pas se confondre avec les éléments formant la syntaxe du XML, comme les chevrons par exemple.  
+En XML, il y a 5 éléments avec des valeurs prédéfinies qui s'échappent en débutant avec une esperluette et en terminant avec un point-virgule: `&`+ nom+`;`.
 
 |nom|caractère|description|échappement|
 |:-----:|:-----:|:-----:|:-----:|
