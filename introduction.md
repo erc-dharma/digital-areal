@@ -71,4 +71,4 @@ Les modules correspondent aux chapitres des Guidelines. Ils définissent des com
 ## Pourquoi faire?
 - L'XML-TEI permet de traduire la dimension sémantique d'un document et de la rendre compréhensible à un ordinateur.
 - Distingue la mise en forme du document qui correspond à l'affichage et la structuration du texte lui-même.
-- et autorise les traitements et des exploitations des informations encodés.
+- Autorise les traitements et des exploitations des informations encodés.
