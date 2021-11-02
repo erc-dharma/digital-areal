@@ -1,4 +1,4 @@
-# Encoder les métadonnées d'un fichier TEI
+# Encoder les métadonnées d'un texte avec Manu
 
 Ajouter une définition des métadonnées.
 
