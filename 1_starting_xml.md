@@ -1,4 +1,4 @@
-# Commencer en XMl
+# Commencer avec l'XML
 XML : eXtensible markup language. Il s'agit d'un language à balise, comme latex, l'html ou même le markdown.
 
 ```
