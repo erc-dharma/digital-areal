@@ -111,12 +111,12 @@ Il n'y a pas d'ordre nécessaire dans les attributs lorsqu'il y en a plusieurs, 
 
 ## Règles d'héritage
 Un document XML se présente sous la forme d'une arborescence. Tout le corps du document doit être compris dans le contenu d'un unique élément appelé élément **racine**. En tei, il s'agit de la racine/balise: `<TEI>`.
-
+Exemple de l'arbre XML minimal de la TEI:
 ![TEI Tree](/assets/images/tei-tree.png)
+
+Exemple de l'arbre XML minimal d'Epidoc:
 ![Epidoc Tree](/assets/images/epidoc-tree.png)
 
-
-source: https://www.irif.fr/~carton/Enseignement/XML/Cours/support.html#idm140605729164112
 ```
 <parent xml:lang="eng">
   <sibling1> ... </sibling1>
@@ -130,8 +130,11 @@ source: https://www.irif.fr/~carton/Enseignement/XML/Cours/support.html#idm14060
 </parent>
 ```
 ![Liens de parenté en XML](/assets/images/parente.png)
+*[source](https://www.irif.fr/~carton/Enseignement/XML/Cours/support.html#idm140605729164112)*
+
 Dans l'exemple ci-dessus, le contenu de l'élément self s'étend de la balise ouvrante <child1> jusqu'à la balise de fin </child3>. Ce contenu comprend tous les éléments child1, child2 et child3 ainsi que les éléments desc1, desc2, desc3 et desc4. Tous les éléments qu'il contient sont appelés *descendants* de l'élément self.
 Parmi ces *descendants*, les éléments child1, child2 et child3 qui sont directement inclus dans self sans élément intermédiaire sont appelés les *enfants* de l'élément self. Inversement, l'élément *parent* qui contient directement self est appelé le parent de l'élément self. Les autres éléments qui contiennent l'élément self sont appelés les *ancêtres* de l'élément self. Les autres *enfants* sibling1, sibling2 et sibling3 de l'élément *parent* sont appelés les frères de l'élément self.
+
 
 ## Faire des commentaires dans un fichier XML
 Il est possible d'ajouter des commentaires dans votre fichier.
@@ -211,7 +214,7 @@ Selon la technogolie mobilisée, il peut-être nécessaire de déclarer une uri 
 NB: Les schémas permettent de valider l'encodage de votre fichier selon les régles spécifiques que vous avez fixé pour votre projet.
 Il existe plusieurs technologies: DTD, xml schema, Relax NG, Schematron.
 **Un projet d'édition numérique en TEI se doit d'avoir son schéma et sa documentation**
-***
+* * *
 
 ## Vers un document XML bien formé et valide
 C'est deux notions sont essentielles pour obtenir un fichier exploitable.
@@ -222,9 +225,9 @@ Pour avoir un document XML bien formé, il faut qu'il respecte tous les précept
 - un ou plusieurs éléments ;
 - un élément racine encapsulant tous les autres éléments et leurs attributs (`<TEI> ... </TEI>`) ;
 - les éléments ont une balise de début et de fin ;
-- les éléments sont correctement imbriqués (<P> <EM> ... </EM> </P>) ;
+- les éléments sont correctement imbriqués (`<P> <EM> ... </EM> </P>`) ;
 - les deux parties de la balise ont toutes les deux le même nom;
-- les éléments vides sont bien fermés par le / ;
+- les éléments vides sont bien fermés par le `/`;
 - un attribut apparaît uniquement dans la balise ouvrante et une seule fois dans cette balise ;
 - les valeurs des attributs sont entre guillemets ou apostrophes ;
 - les caractères spéciaux sont échappés ;
@@ -236,6 +239,6 @@ Pour avoir un document valide, il faut qu'un modèle soit déclaré. Dans le cas
 - il est conforme au schéma auquel il fait référence (DTD ou autre)
 
 ## Conclusion
-1- L'XML est un métalangue qui repose sur le balisage sémantique et structuré du contenu.
-2- L'XML est un ensemble de règles qui détermine ce que doit être un document est bien formé et valide. Il ne donne pas de vocabulaire caractérisé mais permet d'en créer.
+1- L'XML est un métalangue qui repose sur le balisage sémantique et structuré du contenu.  
+2- L'XML est un ensemble de règles qui détermine ce que doit être un document est bien formé et valide. Il ne donne pas de vocabulaire caractérisé mais permet d'en créer.  
 3- Il peut s'appliquer à toutes sortes de données textuelles, mais il n'est pas pour autant la réponse à tout. Il faut songer dès l'élaboration de l'encodage aux attentes et enjeux pour l'utilisation finale et surtout à l'exploitation des données.
