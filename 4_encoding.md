@@ -68,7 +68,9 @@ ajouter un exemple
 Distinguer :
 - nature/objectif de l'intervention (correction, régularisation,...) ;
 - responsabilité, source, justification de cette intervention
-<reg> et <orig>
+
+### Choice
+### <reg> et <orig>
 
 ## abbreviation
 ```
