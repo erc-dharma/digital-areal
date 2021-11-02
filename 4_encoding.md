@@ -1,6 +1,6 @@
 # Encoder un texte avec Manu
 
-## Eléments généraux de structure
+## Eléments généraux
 - `<p>` pour des paragraphes  
 - `<ab>` pour une unité de texte quelconque, de niveau "composant", faisant office de contenant anonyme pour une expression ou des éléments de niveau intermédiaire, analogue à un paragraphe mais sans sa portée sémantique
 - `<seg>` pour des subdivisions internes au paragraphe ou d'analyse
@@ -30,40 +30,24 @@
 - `<cb/>` pour un changement de colonne
 - `<lb/>` pour les changements de ligne avec `@n` pour donner le numéro de ligne et `@break="no"` lorsqu'une ligne ne coincide pas avec la fin d'un mot orthographique.
 
-```
-ajouter un exemple
-```
-
 ### Difficulté de lecture
 `<unclear>` en spécifiant
--
--
-```
-<unclear reason="illegible"></unclear>
-```
+- la raison avec l'attribut `@reason`
+
 ### Passage impossible à transcrire pour diverses raisons
 `<gap>` en spécifiant
 - la raison avec l'attribut `@reason`
 - les dimensions, si besoin, avec les attributs `@unit` et `@quantity`
-```
-ajouter un exemple
-```
 
 ### Interventions par le describe
 #### Additions
-```
-<add place="above"></add>
-```
-#### Ratures
-```
-<del rend="strikethrough"></del>
-```
+`<add>` en spécifiant
+- la position de l'ajout avec l'attribut `@place`
 
-#### Combinaison des deux
-```
-<subst><add place="above"></add><del rend="strikethrough"></del></subst>
-```
-
+#### Ratures
+`<del>` en spécifiant
+- la mise en forme avec l'attribut `@rend`
+
 ## Régularisation et correction
 Distinguer :
 - nature/objectif de l'intervention (correction, régularisation,...) ;
@@ -85,34 +69,17 @@ Distinguer :
 ## Cractères spéciaux
 <g>
 
-```
-<encodingDesc>
- <charDecl>
- <glyph xml:id="s-long">
- <glyphName>LATIN SMALL LETTER LONG S EXTENDING BELOW THE
-LINE</glyphName> <!-- Nom donné au glyphe -->
- <charProp> <!-- Description de ses propriétés -->
- <localName>entity</localName>
- <value>s-long</value>
- </charProp>
- <mapping type="modern">s</mapping>
- <mapping type="simplified">&#383;</mapping>
- </glyph>
- </charDecl>
- </encodingDesc>
-```
-
 ## Elements d'indexation
 ### Noms et personnes
-```
-<persName>Benjamin</persName>
-```
-### Lieux
-```
-<placeName>Hull</placeName>
-```
+`<persName>` en spécifiant
+- une typologie avec l'attribut `@type` voire avec aussi `@subtype`
+- une référence pour donner une uri avec l'attribut `@ref`
+- une normalisation du nom l'attribut `@key`
 
-### Dates
-```
-<date when="1822-10-17"> 17 octobre 1822 </date>
-```
+### Lieux
+`<placeName>` en spécifiant
+- une typologie avec l'attribut `@type` voire avec aussi `@subtype`
+- une référence pour donner une uri avec l'attribut `@ref`
+- une normalisation du nom l'attribut `@key`
+
+`<geogName>` parfois pour des noms associés à une dimension géographique, comme une rivière ou une montagne par exemple. 
