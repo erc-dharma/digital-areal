@@ -1,5 +1,6 @@
 theme: jekyll-theme-cayman
 title: Atelier TEI
+markdown: GFM
 description: Atelier TEI, ANF Digital Areal, 7-10 novembre 2021, Fréjus
 github:
   zip_url: https://erc-dharma.github.io/digital-areal/download.zip
