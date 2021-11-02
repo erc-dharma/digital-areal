@@ -1,10 +1,14 @@
-# digital-areal: Atelier TEI
-Action Nationale de Formation "Digital Areal" 7-10 novembre 2021, Fréjus
-
+# Atelier TEI
+Action Nationale de Formation "Digital Areal" 7-10 novembre 2021, Fréjus  
 Présentation by Emmanuel Francis & Axelle Janiak
 
-## Avant de commencer
-### Editeurs de texte
+## Contenu du repository
+- Les pages de cours en format markdown utilisé pour générer le site statique
+- Templates Epidoc et TEI pour les encodages
+- Schéma de validation: Epidoc, TEI all
+
+
+## Editeurs de texte
 Il est nécessaire d'avoir un éditeur de texte:
 - soit Oxygen version d’essai (1 mois). https://www.oxygenxml.com/xml_editor/download_oxygenxml_editor.html
 - soit Atom (éditeur de texte open-source) https://atom.io/ et installation du module de validation (https://atom.io/packages/linter-autocomplete-jing)
