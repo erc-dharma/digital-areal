@@ -12,17 +12,17 @@
 - `<table>` pour des tableaux  
 - `<figure>` pour des images  
 
-## Structuration de la poésie
+## Éléments pour la poèsie
 - `<lg>` (line group) pour les groupes et sous-groupes de vers (poèmes, strophes, etc.) avec un `@type`
 - `<l>` pour chacun des vers
 
-## Structuration du théâtre
+## Éléments pour le théâtre
 - `<sp>`(speech) pour du texte parlé, dont  
   - `<speaker> `pour celui qui parle  
   - `<stage>` pour les didascalies  
   - `<p>` ou `<lg>` le cas échéant pour ce qui est dit  
 
-## Structuration de la correspondance
+## Éléments pour la correspondance
 
 ## Éléments de représentation de la source
 ### Structuration matérielle
@@ -82,4 +82,4 @@ Distinguer :
 - une référence pour donner une uri avec l'attribut `@ref`
 - une normalisation du nom l'attribut `@key`
 
-`<geogName>` parfois pour des noms associés à une dimension géographique, comme une rivière ou une montagne par exemple. 
+`<geogName>` parfois pour des noms associés à une dimension géographique, comme une rivière ou une montagne par exemple.
