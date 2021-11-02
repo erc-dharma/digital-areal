@@ -8,10 +8,10 @@
 - title: Commencer avec la TEI
   url: /2_starting_TEI
 
-- title: Prendre en main Oxygen
-  url: /3_transformation
+- title: Les métadonnées: le teiHeader
+  url: /3_metadata
 
-- title: Encoder avec Manu
+- title: Strucuturer un texte
   url: /4_encoding
 
 - title: Générer un affichage

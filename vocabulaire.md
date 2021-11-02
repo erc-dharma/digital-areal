@@ -1,4 +1,5 @@
 CSS : Cascading stylesheets  
+DOM : Document Object Model
 DTD: Document Type Definition. Il permet de déclarer des rules de structure pour le balisage d'un fichier XML.
 ODD : One Document Does it All
 RelaxNG : Regular Language for XML Next Generation, language de schéma pour la validation de la structure XML. Ce langage peut s'exprimer selon deux syntaxes.  

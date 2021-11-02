@@ -25,7 +25,7 @@ An official full length release is to be published soon, you can find the candid
 |collection||Declares a collection for a manuscript|Rsisasana|
 |colophon|-@xml:lang (mandatory)|Record scribal statements not shared between your different witnesses.|§2.1.3|
 |correction||Give specifications regarding the correction principles within your edition|§2.2.1.1|
-|date|-@from -@to|Mandatory|Contains a date in any format.|§2.1.2|
+|date|-@from -@to|Contains a date in any format.|§2.1.2|
 |del|-@rend (values: strikeout, dots, ui, check)|Purposeful deletion. Text deleted by scribe.|§5.5.12.2|
 |div|-@type(values:chapter, canto, dyad, section, group, interpolation) - @n(Recommended) -@met -@real -@xml:id -@rend(value: check) -@corresp -@resp -@source|Text division. Contains a subdivision of the text.|§3.2; §3.4.2; §4.4; §4.6; §4.7; §4.8; §4.8.1; §5.6.1; §9.1.2.2; §9.1.3.1; §9.1.3.2; §9.2.2.2|
 |editor|-@ref(Mandatory) -@xml:id|The `<editor>` element is allowed to record the editors of the critical edition. It must contained either `<forename>`and `<surname>`, either `<name>`. |§2.1.1.2; §9.1.1; §9.2.1; §9.3.1|

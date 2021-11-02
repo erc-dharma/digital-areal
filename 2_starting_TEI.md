@@ -1,4 +1,4 @@
-# Commencer avec la TEI: créer un premier fichier.
+# Commencer avec la TEI.
 
 ## Ajouter un prologue: la déclaration XML et les instructions de traitements
 ```
@@ -7,7 +7,7 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 ```
 
-## Ajouter unestructure de départ pour un fichier TEI
+## Ajouter une structure de départ pour un fichier TEI
 Exemple de la structure minimal obligatoire d'un fichier TEI
 ```
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
@@ -42,6 +42,57 @@ La division du `text` se fait en trois éléments:
 - `back`  
 
 Le body est la seule partie obligatoire. C'est celle qui contient votre édition. Le front est disponible dans les cas où vous souhaitez faire une édition "facsimilé" d'un imprimé avec des pièces prélimianires. A l'inverse, le back va permettre de stocker des pages comme les index, si vous souhaitez les conserver.
+
+![Structuration logique d'un texte](/assets/images/structure.png)
+*[Jean-Baptiste Camps, Structuration des données et des documents : balisage XML](https://halshs.archives-ouvertes.fr/cel-01706530)*
+
+## division logique du texte
+### `<div>`
+Permet de diviser le texte contenu dans le `<body>`, `<front>`  et `<back>`,  en sous-unité que l'on peut qualifier à l'aide de l'attribut `@type`. 
+
+```
+<body>
+ <div type="part" n="1">
+  <div type="chapter" n="1">
+<!-- text of part 1, chapter 1 -->
+  </div>
+  <div type="chapter" n="2">
+<!-- text of part 1, chapter 2 -->
+  </div>
+ </div>
+ <div type="part" n="2">
+  <div n="1" type="chapter">
+<!-- text of part 2, chapter 1 -->
+  </div>
+  <div n="2" type="chapter">
+<!-- text of part 2, chapter 2 -->
+  </div>
+ </div>
+</body>
+```
+### `<div1>`, `<div2>`...
+Une division en sous-unité avec une numérotation intégrée de 1 à 7. Une division ne peut contenir que des niveaux inférieurs. Ainsi, un `<div4>` ne peut avoir comme élément enfant les éléments: `<div1>`, `<div2>` et `<div3>`
+
+```
+<body>
+ <div1 type="part" n="1">
+  <div2 type="chapter" n="1">
+<!-- text of part 1, chapter 1 -->
+  </div2>
+  <div2 type="chapter" n="2">
+<!-- text of part 1, chapter 2 -->
+  </div2>
+ </div1>
+ <div1 type="part" n="2">
+  <div2 n="1" type="chapter">
+<!-- text of part 2, chapter 1 -->
+  </div2>
+  <div2 n="2" type="chapter">
+<!-- text of part 2, chapter 2 -->
+  </div2>
+ </div1>
+</body>
+```
 
 ## Exception à la structure du fichier TEI
 Il existe une exception à la structure basique d'un fichier tei: le `teiCorpus` dans lequel vous pouvez agreger plusieurs structures TEI.  
