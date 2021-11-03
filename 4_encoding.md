@@ -34,7 +34,7 @@
 `<unclear>` en spécifiant
 - la raison avec l'attribut `@reason`
 
-### Passage impossible à transcrire pour diverses raisons
+### Passage impossible à transcrire
 `<gap>` en spécifiant
 - la raison avec l'attribut `@reason`
 - les dimensions, si besoin, avec les attributs `@unit` et `@quantity`
@@ -56,7 +56,7 @@ Distinguer :
 ### Choice
 ### <reg> et <orig>
 
-## abbreviation
+## Abréviation
 ```
 17
  <choice>
@@ -66,10 +66,10 @@ Distinguer :
  1822
 ```
 
-## Cractères spéciaux
+## Caractères spéciaux
 <g>
 
-## Elements d'indexation
+## Éléments d'indexation
 ### Noms et personnes
 `<persName>` en spécifiant
 - une typologie avec l'attribut `@type` voire avec aussi `@subtype`

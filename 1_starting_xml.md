@@ -33,12 +33,6 @@ Mais ce n'est pas un langage de programmation, ni de gestion des bases de donné
   - interroger les documents comme dans une base de données: XQuery
   - transformations: XSLT
 
-### Quelques exemples d'XML
-- TEI pour l'édition scientifique
-- EAD pour les descriptions archivistiques
-- MEI pour les notations musicales
-- MathXML pour les formules mathématiques
-
 ## Les éléments
 ### La syntaxe
 Un élément se signale par des chevrons et compose de deux parties :   
@@ -147,6 +141,10 @@ Il n'y a pas de restrictions sur l'usage des commentaires, mais
 - ils ne peuvent être utilisés avant la declaration XML
 - ils ne peuvent pas apparaître dans les valeurs d'attributs
 - ils ne peuvent pas être imbriqués les uns dans les autres.
+
+* * *
+NB: Il faut néanmoins faire attention à l'usage des commentaires, ils ont tendance à générer des espaces ou des erreurs lors des transformations des fichiers d'un format à l'autre.
+* * *
 
 ## Caractères spéciaux en XML  
 Certains caractères spéciaux ont besoin d'être échappé afin de ne pas se confondre avec les éléments formant la syntaxe du XML, comme les chevrons par exemple.  

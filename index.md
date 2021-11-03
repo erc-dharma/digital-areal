@@ -1,6 +1,6 @@
 # Atelier TEI
 Action Nationale de Formation "Digital Areal" 7-10 novembre 2021, Fréjus  
-Présentation by Emmanuel Francis & Axelle Janiak
+Présentation par Emmanuel Francis (CNRS-EHESS, CEIAS) et Axelle Janiak.
 
 ## Contenu du repository
 - Les pages de cours en format markdown utilisé pour générer le site statique
@@ -23,10 +23,10 @@ Lou  Burnard, *What is the Text Encoding Initiative? How to add intelligent mark
 Marjorie Burghart, Editer des sources historiques en ligne grâce à XML – Un guide pratique. Lyon, 2010: http://mutec.huma-num.fr/sites/www.mutec-shs.fr/files/Guide%20Editer%20des%20sources%20historiques%20%20gr%C3%A2ce%20a%20XML.pdf
 Marjorie Burghart, James Cummings & Elena Pierazzo, *Digital Editing of Medieval Manuscripts : A Textbook*. Online course: https://www.digitalmanuscripts.eu/?page_id=648
 
-### Encoding Guidelines
+### Guides d'encodage
 *TEI Guidelines*: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html
 *EpiDoc Guidelines: Ancient documents in TEI XML*: https://epidoc.stoa.org/gl/latest/
 
-### DHARMA documentation
+### Documentation du projet DHARMA
 Daniel Bálogh et Arlo Griffiths, *Dharma Encoding Guide*, 2019: https://halshs.archives-ouvertes.fr/halshs-02888186
-Daniel Bálogh et Arlo Griffiths, *Dharma Transliteration Guide*, 201ç:  https://hal.archives-ouvertes.fr/halshs-02272407v3
+Daniel Bálogh et Arlo Griffiths, *Dharma Transliteration Guide*, 2019:  https://hal.archives-ouvertes.fr/halshs-02272407v3
