@@ -17,9 +17,9 @@ prose
 - `-Desc` : description, en prose courante, pouvant être structurée en sous-éléments
 * * *
 
-## `<fileDesc>`
+## fileDesc
 Élément obligatoire, il contient la notice biliographique complète du fichier électronique. Son modèle copie les standards établis pour le catalogage.
-### `<titleStmt>`
+### titleStmt
 Le `<titleStmt>` groupe les informations relatives au titre et l'ensemble des personnes ou institutions impliquées dans la production du fichier.
 - `<title>` (titre) contient le titre complet du fichier. Il peut être repété pour donner plusieurs titres, parfois en plusieurs langues, et typé avec un attribut pour distinguer le titre principal du sous-titre par exemple.
 ```
@@ -85,7 +85,7 @@ Les rôles de chacun peuvent être indiqué de manière générale en utilisant 
 			</titleStmt>
 ```
 
-### `<editionStmt>`
+### editionStmt
 regroupe les informations relatives à l’édition d’un texte, ses changements ou ses révisions par exemple. Il est optionnel, mais est recommandé par la TEI.
 
 - `<edition>` (édition) décrit les particularités de l’édition d’un texte.
@@ -110,7 +110,7 @@ regroupe les informations relatives à l’édition d’un texte, ses changement
 ```
 *source: [TEI Guidelines](https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/HD.html#HD22)*
 
-### `<extent>`
+### extent
 décrit la taille approximative d’un texte stocké sur son support, numérique ou non numérique, exprimé dans une unité quelconque appropriée. L'encodage de ses données est tout à fait optionnel.
 ```
 <extent>between 1 and
@@ -123,7 +123,7 @@ décrit la taille approximative d’un texte stocké sur son support, numérique
 *source: [TEI Guidelines](https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/HD.html#HD23)*  
 Il est possible de structurer davantage le contenu de l'élément `<extent>`, mais c'est pas une pratique mobilisée par beaucoup de projets.
 
-### `<publicationStmt>`
+### publicationStmt
 Cette section regroupe des informations concernant la publication ou la diffusion d’un texte électronique ou autre. Bien que non imposé par le schéma, **un document conforme à la TEI doit donner des informations sur le lieu de publication, l'adresse, l'identifiant, les droits de diffusion et la date dans cet ordre, après le nom de l'éditeur, du distributeur, ou de l'autorité concernée**.
 - `<publisher>` (éditeur) donne le nom de l'organisme responsable de la publication ou de la distribution d'un élément de la bibliographie.
 - `<distributor>` (diffuseur) donne le nom d’une personne ou d’un organisme responsable de la diffusion d’un texte.
@@ -152,16 +152,16 @@ licence contient des informations légales applicables au texte, notamment le co
  </publicationStmt>
 ```
 
-### `<serieStmt>`
+### serieStmt
 regroupe toute information relative à la collection à laquelle appartient une publication. C'est un élément que l'on retrouve assez souvent en prose, plutôt que sous une forme structurée.
 - `<seriesStmt>` (mention de collection) regroupe toute information relative à la collection (si elle existe) à laquelle appartient une publication.
 Il mobilise des éléments que nous avons déjà évoqués: `<title>`, `<idno>`, `<respStmt>`, `<resp>` et `<name>`.
 
-### `<notesStmt>`
+### notesStmt
 rassemble toutes les notes fournissant des informations sur un texte, en plus des informations mentionnées dans d'autres parties de la description bibliographique. Il se structure par un ou plusieurs éléments `<note>`, chaque note correspondant à un unique sujet.
 On utilise cet élément, le plus souvent, lorsque l'on ne sait pas où mettre l'information.
 
-### `<sourceDesc>`
+### sourceDesc
  Partie la plus developpée du teiHeader, elle décrit la source à partir de laquelle un texte électronique a été dérivé ou produit, habituellement une description bibliographique pour un texte numérisé, pour une édition critique, on va y déclarer la liste des témoins et ainsi de suite.
 
 ```
@@ -252,7 +252,7 @@ fichier d'origine -->
 </sourceDesc>
 ```        
 
-## `<encodingDesc>`
+## encodingDesc
 Il explicite la relation entre la version éléctronique du texte et la ou les sources. Il permet de clarifier des choix éditoriaux, de transcription, de sélection du texte... Il donne aussi des éléments plus techniques déclarant des styles pour le rendu, des pointeurs vers des ressources extérieures, des catégories et des vocabulaires utilisés par votre projet.
 C'est une partie le plus souvent commune à tous les fichiers. Vous y trouverez souvent le système de XInclude mobilisé ici, pour toute la section ou en partie.
 
@@ -343,7 +343,7 @@ ce qui suppose un autre fichier, que nous avons appelé prefixDef.xml, pour cont
 </listPrefixDef>
 ```
 
-## `<profilDesc>`
+## profilDesc
 Il contient des éléments non bibliographiques sur texte. Il peut contenir un résumé du texte, des informations sur les circonstances de création du fichier, la langue et ses variantes, une liste de mots-clés... Il offre quelques possibilités, mais la plus courante est la déclaration des langues avec les éléments `<langUsage>` et `<language>`.
 
 ```
@@ -355,7 +355,7 @@ Il contient des éléments non bibliographiques sur texte. Il peut contenir un r
   </profileDesc>
 ```
 
-## `<revisionDesc>`
+## revisionDesc
 Présente une sucession d'éléments `<change>`, par ordre antéchronologique, qui documente les différentes interventions faites dans les fichiers, et qui peuvent être groupés par `<list>` ou par `<listChange>`. Fonctionne souvent avec les attributes `@who` et `@when`, ou avec les sous-éléments `<name>` et `<date>`.
 
 ```

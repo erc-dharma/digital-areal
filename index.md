@@ -1,6 +1,8 @@
 # Atelier TEI
 Action Nationale de Formation "Digital Areal" 7-10 novembre 2021, Fréjus  
-Présentation par Emmanuel Francis (CNRS-EHESS, CEIAS) et Axelle Janiak.
+Présentation par Emmanuel Francis (CNRS-EHESS, CEIAS) et Axelle Janiak (CNRS-EHESS, CEIAS).
+
+Pour nous contacter: [manufrancis@gmail.com](manufrancis@gmail.com) et [axelle.janiak@ehess.fr](axelle.janiak@ehess.fr]) 
 
 ## Contenu du repository
 - Les pages de cours en format markdown utilisé pour générer le site statique

@@ -10,7 +10,8 @@ SGML : Standard generalized markup language est un métalangage fonctionnant ave
 schéma :
 TEI: Text Encoding Initiative  
 W3C : World Wide Web Consortium est une organisation internationale qui maintient et développe les standards du web.
-XHTML :  
+XHTML :
+XInclude :   
 XML : eXtensible markup language est un métalangage à balises, déterminé par une syntaxe normée par le W3C.
 XQuery : XML Query language s'utilise dans des bases de données XML comme BaseX et eXistDB et/ou avec des serveurs orientés XML comme MarkLogic
 XSLT : eXtensible stylesheet language, langage de transformation de fichiers XML
