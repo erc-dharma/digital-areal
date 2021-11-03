@@ -5,11 +5,12 @@ Présentation par Emmanuel Francis (CNRS-EHESS, CEIAS) et Axelle Janiak (CNRS-EH
 Pour nous contacter: [manufrancis@gmail.com](manufrancis@gmail.com) et [axelle.janiak@ehess.fr](axelle.janiak@ehess.fr])
 
 ## TO DO pour finaliser l'ensemble
-- [ ] finir la section sourceDesc
-- [ ] faire le chapitre 3
-- [ ] écrire la XSLT pour la fable et le texte en prose de Proust
-- [ ] bonnes pratiques lorsque l'on travaille avec l'XML
-- [ ] XML et les espaces
+- [] faire le chapitre 3
+- [] écrire la XSLT pour la fable et le texte en prose de Proust
+- [] bonnes pratiques lorsque l'on travaille avec l'XML
+- [] XML et les espaces
+- [] Finir les définitions
+- [] Relire pour corriger les coquilles
 
 ## Contenu du repository
 - Les pages de cours en format markdown utilisé pour générer le site statique
@@ -26,16 +27,19 @@ Il est nécessaire d'avoir un éditeur de texte:
 
 ## Bibliographie
 ### Tutoriels et introductions
-“v. A Gentle Introduction to XML”, *TEI Guidelines*, Version 4.3.0: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SG.html
-Melissa Terras, Edward Vanhoutte, and Ron Van den Branden. *TEI by Example*. Online course: https://teibyexample.org/
-Lou  Burnard, *What is the Text Encoding Initiative? How to add intelligent markup to digital resources*. Nouvelle édition [en ligne]. Marseille : OpenEdition Press, 2014: http://books.openedition.org/oep/426
-Marjorie Burghart, Editer des sources historiques en ligne grâce à XML – Un guide pratique. Lyon, 2010: http://mutec.huma-num.fr/sites/www.mutec-shs.fr/files/Guide%20Editer%20des%20sources%20historiques%20%20gr%C3%A2ce%20a%20XML.pdf
+“v. A Gentle Introduction to XML”, *TEI Guidelines*, Version 4.3.0: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SG.html  
+Melissa Terras, Edward Vanhoutte, and Ron Van den Branden. *TEI by Example*. Online course: https://teibyexample.org/  
+Lou  Burnard, *What is the Text Encoding Initiative? How to add intelligent markup to digital resources*. Nouvelle édition [en ligne]. Marseille : OpenEdition Press, 2014: http://books.openedition.org/oep/426  
+Marjorie Burghart, Editer des sources historiques en ligne grâce à XML – Un guide pratique. Lyon, 2010: http://mutec.huma-num.fr/sites/www.mutec-shs.fr/files/Guide%20Editer%20des%20sources%20historiques%20%20gr%C3%A2ce%20a%20XML.pdf  
 Marjorie Burghart, James Cummings & Elena Pierazzo, *Digital Editing of Medieval Manuscripts : A Textbook*. Online course: https://www.digitalmanuscripts.eu/?page_id=648
 
 ### Guides d'encodage
-*TEI Guidelines*: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html
+*TEI Guidelines*: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html  
 *EpiDoc Guidelines: Ancient documents in TEI XML*: https://epidoc.stoa.org/gl/latest/
 
 ### Documentation du projet DHARMA
-Daniel Bálogh et Arlo Griffiths, *Dharma Encoding Guide*, 2019: https://halshs.archives-ouvertes.fr/halshs-02888186
+Daniel Bálogh et Arlo Griffiths, *Dharma Encoding Guide*, 2019: https://halshs.archives-ouvertes.fr/halshs-02888186  
 Daniel Bálogh et Arlo Griffiths, *Dharma Transliteration Guide*, 2019:  https://hal.archives-ouvertes.fr/halshs-02272407v3
+
+### Codes, templates et schéma du projet DHARMA
+Tout est accessible sur le repository gitHub Project-documentation https://github.com/erc-dharma/project-documentation  

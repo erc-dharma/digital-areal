@@ -19,6 +19,7 @@ prose
 
 ## fileDesc
 Élément obligatoire, il contient la notice biliographique complète du fichier électronique. Son modèle copie les standards établis pour le catalogage.
+
 ### titleStmt
 Le `<titleStmt>` groupe les informations relatives au titre et l'ensemble des personnes ou institutions impliquées dans la production du fichier.
 - `<title>` (titre) contient le titre complet du fichier. Il peut être repété pour donner plusieurs titres, parfois en plusieurs langues, et typé avec un attribut pour distinguer le titre principal du sous-titre par exemple.
@@ -162,8 +163,76 @@ rassemble toutes les notes fournissant des informations sur un texte, en plus de
 On utilise cet élément, le plus souvent, lorsque l'on ne sait pas où mettre l'information.
 
 ### sourceDesc
- Partie la plus developpée du teiHeader, elle décrit la source à partir de laquelle un texte électronique a été dérivé ou produit, habituellement une description bibliographique pour un texte numérisé, pour une édition critique, on va y déclarer la liste des témoins et ainsi de suite.
+Partie obligatoire du `<teiHeader>`, elle décrit la source à partir de laquelle un texte électronique a été dérivé ou produit. On peut y trouver une description bibliographique pour un texte numérisé, une liste des témoins dans le cadre d'une édition critique et ainsi de suite.
 
+Pour être valide, le `<sourceDesc>` doit contenir l'un des éléments suivants:
+- `<p>`
+- `<bibl>` (référence bibliographique.) contient une référence bibliographique faiblement structurée dans laquelle les sous-composants peuvent ou non être explicitement balisés.
+- `<biblStruct>` (référence bibliographique structurée) contient une référence bibliographique dans laquelle seuls des sous-éléments bibliographiques apparaissent et cela, selon un ordre déterminé.
+- `<biblFull>` (référence bibliographique totalement structurée) contient une référence bibliographique totalement structurée : tous les composants de la description du fichier TEI y sont présents.
+- `<listBibl>` (liste de références bibliographiques) contient une liste de références bibliographiques de toute nature.   
+Le minium est une référence bibliographique de la source éditée sous forme de prose avec `<p>`, un peu plus formel mais assez souple sous avec `<bibl>`, une version plus structurée avec `<biblStruct>` ou une version exhaustive avec `<biblFull>`. D'autres éléments sont possibles, mais sont moins courant, à l'exception de:
+- `<msDesc>`	(description d'un manuscrit) contient la description d'un manuscrit individuel
+- `<listWit>`	(liste de témoins) donne une liste de définitions pour tous les témoignages cités dans un apparat critique, pouvant être groupées de façon hiérarchique.
+
+`<bibl>`, `<biblStruct>`, et `<biblFull>` partagent des éléments enfants
+- Personnes impliquées:
+  - `<author>`
+  - `<editor>`
+  - `<distributor>`
+  - `<publisher>`
+  - `<funder>`
+  - `<principal>`
+  - `<sponsor>`
+  - `<respStmt>`
+- informations sur l'édition:
+  - `<title>`
+  - `<date>`
+  - `<pubPlace>`
+  - `<edition>`
+  - `<series>`
+  - `<idno>`
+  - `<biblScope>`
+  - `<extent>`
+
+Exemple avec une gradation d'un niveau de structuration de la donnée.
+```
+<sourceDesc>
+<p>The Wild Ass​’s Skin by Honoré de Balzac. London : Dent, 1906. xv, 288 p. Translated by Ellen Marriage ; preface by George Saintsbury.</p>
+</sourceDesc>
+```
+```
+<sourceDesc>
+<bibl>The Wild Ass​’s Skin by Honoré de Balzac. London : Dent, 1906. xv, 288 p. Translated by Ellen Marriage ; preface by George Saintsbury.</bibl>
+</sourceDesc>
+```
+```
+<sourceDesc>
+<bibl><title>The Wild Ass​’s Skin</title> by <author>Honoré de Balzac</author>. <pubPlace>London</pubPlace> : <publisher>Dent</publisher>, <date when="1906">1906</date>. <extent>xv</extent>, <extent>288 p.</extent> Translated by <editor role="translator">Ellen Marriage</editor> ; preface by <editor role="preface">George Saintsbury</editor>.</bibl>
+</sourceDesc>
+```
+```
+<sourceDesc>
+<biblStruct>
+<monogr>
+<title>The Wild Ass​’s Skin</title>
+<author>Honoré de Balzac</author>
+<editor role="translator">Ellen Marriage</editor>
+<editor role="preface">George Saintsbury</editor>
+<imprint>
+<pubPlace>London</pubPlace>
+<publisher>Dent</publisher>
+<date when="1906">1906</date>
+</imprint>
+<extent>xv</extent>
+<extent>288 p.</extent>
+</monogr>
+</biblStruct>
+</sourceDesc>
+```
+Source: [TEI by examples](https://teibyexample.org/tutorials/TBED02v00.htm#sourceDesc)
+
+Un exemple avec une liste de trois témoins, dont l'un est développé, pour une édition critique:
 ```
 <sourceDesc>
             <listWit>

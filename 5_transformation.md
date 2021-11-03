@@ -82,7 +82,7 @@ Nous allons le faire avec Oxygen.
 - Dans l'onglet XSLT
   - Choisir un nom pour la transformation, sinon le nom par défaut sera le nom du fichier XML.
     - Mettre la valeur `${currentFileURL}` dans le champ XML URL
-    - Dans le champ XSL URL, mettre  ![Parameters to transformation a file](/assets/images/transformationScenario04.png).
+    - Dans le champ XSL URL, sélectionner `xslt/affichage.xsl` ![Parameters to transformation a file](/assets/images/transformationScenario04.png).
     - Sélectionner un processeur de transformation Saxon, selon la version disponible dans Oxygen. `Saxon-PE` est la version professionnelle, mais HE ou EE ne font pas de différences à notre niveau d'usage. ![Select a transformateur](/assets/images/transformationScenario04.png).
 - Dans l'onglet Output
     - Cliquer sur `save as`, vous pouvez choisir le dossier que vous souhaitez. Vous pouvez nommer le fichier comme vous le souhaiter ou bien utiliser les variables disponibles dans Oxygen. En général, j'utilise `${cfn}`, le nom de fichier sans extension et j'ajoute `.html`, et selon les besoins j'aime bien utilise aussi la variable date `${date(yyyy-MM-dd)}`.

@@ -10,11 +10,11 @@
 **SGML** : Standard generalized markup language est un métalangage fonctionnant avec des balises, et déterminé par une DTD. Il est l'ancêtre de l'XML.  
 **schéma** :  
 **TEI**: Text Encoding Initiative  
-**W3C** : World Wide Web Consortium est une organisation internationale qui maintient et développe les standards du web.
-**XHTML** :
+**W3C** : World Wide Web Consortium est une organisation internationale qui maintient et développe les standards du web.  
+**XHTML** :  
 **XInclude** :   
 **XML** : eXtensible markup language est un métalangage à balises, déterminé par une syntaxe normée par le W3C.
-**XQuery** : XML Query language s'utilise dans des bases de données XML comme BaseX et eXistDB et/ou avec des serveurs orientés XML comme MarkLogic
-**XSL** : XML stylesheet language langage de transformation de fichiers XML qui se divise en deux unités distinctes: la XSLT et la XSL-FO.
-**XSL-FO** : XML Stylesheet Language - Formatting Objets
+**XQuery** : XML Query language s'utilise dans des bases de données XML comme BaseX et eXistDB et/ou avec des serveurs orientés XML comme MarkLogic.  
+**XSL** : XML stylesheet language langage de transformation de fichiers XML qui se divise en deux unités distinctes: la XSLT et la XSL-FO.  
+**XSL-FO** : XML Stylesheet Language - Formatting Objets  
 **XSLT** : XML stylesheet language Transformation, langage de mise en page de documents lors des transformations des fichiers XML.
