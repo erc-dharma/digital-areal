@@ -1,57 +1,85 @@
-# DHARMA Stylesheets Documentation
+# Transformer un XML-TEI en une page web
 
-Before starting, you must clone the project-documentation repository in order to have a version of the Stylesheets on your computer. Remember to regularly update it to access the latest version of the codes.
+La transformation d'un fichier XML-TEI s'effectue majoritairement par XSLT 2.0, mais peut aussi se faire par XQuery, si l'on travaille avec une base de données XML.
 
-## How to use the XSLT for inscriptions
-- Go `Document>Transformation>Configure Transformation Scenarios...` or click on the `Configure Transformation Scenarios` in the tools bar
-![Configure transformation scenario](https://github.com/erc-dharma/project-documentation/blob/master/stylesheets/images/transformationScenario01.png)
-- Create a new Scenario. ![Click on new](https://github.com/erc-dharma/project-documentation/blob/master/stylesheets/images/transformationScenario02.png)
-- Select `XML transformation with XSLT`![Click on XML transformation with XSLT](https://github.com/erc-dharma/project-documentation/blob/master/stylesheets/images/transformationScenario03.png)
-- In the XSLT tab
-  - You can choose any name you want but use something clear enough not to confuse it with other stylesheets we might add later for the project. Note that a default name will be given from one of your opened XML files.
-    - set the value in XML URL field  as `${currentFileURL}` and in the XSL URL set the path toward  `*[write the path depending the set up of your computer]*/project-documentation/stylesheets/inscriptions/start-edition.xsl` ![Parameters to transformation a file](https://github.com/erc-dharma/project-documentation/blob/master/stylesheets/images/transformationScenario04.png). *Please note that there is another launching file `start-edition-with-bibl.xsl`, it can be used only if your bibliographical data are stabilized in Zotero, otherwise you will get an error message from the transformer : "Premature end of file".*
-    - We recommend as a Transformer  `Saxon-PE` in the version you have available in your Oxygen. It is the Professional edition of the processor, but the HE or EE will also work just fine for the transformation we are doing here. ![Select a transformateur](https://github.com/erc-dharma/project-documentation/blob/master/stylesheets/images/transformationScenario04.png).
-      - If you are still working with a previous version of Oxygen:
-          - check if your licence key allows you to update it. If yes, do it.
-          - Otherwise, we recommend you at least update the Saxon processor to its 9.9 version. **See below how to do both procedures.**
-          - The Epidoc stylesheets have been tested with Saxon 9.6, so you will be able to transform your XML with any higher version.
-- In the Output tab
-    - click on `save as` and set a value for the folder path.
-    - You can choose anywhere you want on your computer. However if you want to store it in a repository, please add a folder `output`, so `*[write the path depending the set up of your computer]*/output/${cfn}${date(yyyy-MM-dd)}.html`.
-    We also recommend your named the output with the variable allowed by Oxygen. Select the current filename without extension `${cfn}`, then add the variable of date `${date(yyyy-MM-dd)}` and finally add the extension `.html`. Thanks to those variables, we will be able to identify the file as well as its output version.
-    - Click on `Òpen in Browser/System Application` and on `Saved file` under it. ![Parameters the output file](https://github.com/erc-dharma/project-documentation/blob/master/stylesheets/images/transformationScenario06.png)
-- To launch the transformation, open the file you want to transform and click on the `Apply the Transformation(s) scenario(s)` button.![Run the transformation](https://github.com/erc-dharma/project-documentation/blob/master/stylesheets/images/transformationScenario07.png)
+## XSL
+Le langage XSL, XML Stylesheet Language, a été conçu pour transformer des documents XML en d'autres formats. En cours de développement, le projet a été divisé en deux unités: la XSLT et la XSL-FO.  
 
-## How to use the XSLT for critical editions
-- Go `Document>Transformation>Configure Transformation Scenarios...` or click on the `Configure Transformation Scenarios` in the tools bar
-- Create a new Scenario.
-- Select `XML transformation with XSLT`
-  - You can choose any name you want but use something clear enough not to confuse it with other stylesheets we might add later for the project.
-    - set the value in XML URL as `${currentFileURL}` and in the XSL URL set the path toward  `*[write the path depending the set up of your computer]*/project-documentation/stylesheets/criticalEditions/start-edition.xsl`
-    - We recommend as a Transformer  `Saxon-PE` in the version you have available in your Oxygen. It is the Professional edition of the processor, but the HE or EE will also work just fine for the transformation we are doing here.
-- In the Output tab
-    - click on `save as` and set a value for the folder path.
-      - You can choose anywhere you want on your computer. However if you want to store it in a repository, please add a folder `output`, so `*[write the path depending the set up of your computer]*/output/${cfn}${date(yyyy-MM-dd)}.html`.
-      We also recommend your named the output with the variable allowed by Oxygen. Select the current filename without extension `${cfn}`, then add the variable of date `${date(yyyy-MM-dd)}` and finally add the extension `.html`. Thanks to those variables, we will be able to identify the file as well as its output version.
-    - The file will be saved with the file name followed by the date and a html extension. Click on `Òpen in Browser/System Application` and on `Saved file` under it. ![Parameters the output file](https://github.com/erc-dharma/project-documentation/blob/master/stylesheets/images/transformationScenario06.png)
-- To launch the transformation, open the file you want to transform and click on the `Apply the Transformation(s) scenario(s)` button.![Run the transformation](https://github.com/erc-dharma/project-documentation/blob/master/stylesheets/images/transformationScenario07.png)
+### XSLT
+La XSLT, XML Stylesheet Language Transformation, est un langage pour transformer le document XML. Il est capable de transformer tous les fichiers XML dans un autre format XML.
+C'est un langage de l'environnement  XML. Ceci signifie qu'une feuille de style XSLT est un document XML qui peut lui-même être manipulé ou produit par d'autres feuilles de style.
 
-## Updating your Oxygen Editor
-The possibility to update your editor depends on the licence key. To check it, go to  `Help>Check for a new version` ![Select the check for a new version](https://github.com/erc-dharma/project-documentation/blob/master/stylesheets/images/transformationScenario08.png)
-A new window will open. Telling you if a new release is available. Check for the following remark "**Your current license key can be used with this release.**".
-- if you have it, click on the Download version link and click on the download button. Install if as you would for any other software.
-Do not keep files from the previous version. Your user-specific add-ons or settings are kept in a separate folder in your user home directory. So it will be reimported.
+La feuille de style se présente comme une série de règles, appliquées à un fichier XML par un processeur.
+En SHS, on utilise surtout la XSLT 2.0, même si une version 3 est sortie en 2007.
 
-## Updating your Saxon processor
-- Go `Help>Install new add-ons...` in the tools bar.
-![install add-ons](https://github.com/erc-dharma/project-documentation/blob/master/stylesheets/images/transformationScenario09.png)
-- In the opening contextual window, select `-- All Available Sites --` in menu `Show add-ons from`. You can tick the box `show only compatible add-ons` at the bottom to help you select find the right version.
-- Fetch the `Saxon 9.9 XSLT and XQuery Transformer` and select it.
-- Click on the `next` button.
-![Choose Saxon 9.9](https://github.com/erc-dharma/project-documentation/blob/master/stylesheets/images/transformationScenario10.png)
-- The extension is dowloaded. You must accept the terms of licence at the bottom of the window and then click on the `install` button.
-![install Saxon 9.9](https://github.com/erc-dharma/project-documentation/blob/master/stylesheets/images/transformationScenario11.png)
-- Restart the application.
-- To set Saxon 9.9 as the default XSLT validation engine for your validation scenario, go to `Document>Transformation>Configure Transformation Scenarios...` or click on the `Configure Transformation Scenarios` in the tools bar.
-- Select the DHARMA scenario, if you have already created it and click on the `Edit` button.
-- In the XSLT Tab, in the menu for the transformer, select the `Saxon-EE 9.9.1.6 (External)`. As an add-ons, you might not have the choice between the editions.
+### XSL-FO
+La XSL-FO, XML Stylesheet Language - Formatting Objets, prend en charge la mise en page du document, surtout lors de la production de PDF. Dans ce cas, le processus fonctionne en deux étapes: 1- le document XML est transformé en un fichier lisible pour la XSL-FO par la XSLT, 2- il est ensuite converti en un document imprimable par un processeur FO.
+
+### Modèle de traitement
+La transformation prend en compte les nœuds du fichier XML source. Chaque règle s'applique sur un nœud qui produit un fragment du document de sortie, puis tous les fragments sont assemblés pour former le document final.  
+Le processus de transformation applique des règles sur des nœuds dits actifs du documents source. Au départ, seule la racine est active, qui entraîne à sa suite d'autres nœuds. La transformation se termine lorsqu'il n'y a plus de nœuds actifs.  
+Si on reprend la structure en arborescence déjà évoqué, cela revient à parcourir cet arbre, à la nuance qu'en XSLT le traitement d'un nœud n'entraîne pas systématique la transformation de ses enfants, dont dépend des instructions que l'on établit.   
+
+### Traitements des espaces
+Un premier passage de nettoyage des espaces est systèmatiquement réalisé par les processeurs XSLT. Cela consiste à supprimer les nœuds textuels vides, c'est-à-dire ne comprenant que des espaces et autres caractères d'espacement. Si le nœud contient au moins un autre caractère, il est conservé. Il est évidemment possible de prévenir ce traitement sur des parties du fichier XML-TEI en utilisant l'attribut `@xml:space` ou en donnant des règles particulières à la XSLT.
+
+Exemple d'un extrait d'une transformation en html pour le fichier ARIE, dont le résultat complet accessible sur [erc-dharma](https://erc-dharma.github.io/arie/).
+```
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
+    exclude-result-prefixes="xs tei"
+    version="2.0">
+    <xsl:output method="html" indent="no" encoding="UTF-8"/>
+
+    <xsl:template match="doc">
+        <xsl:element name="html">
+            <xsl:call-template name="dharma-head"/>
+            <xsl:element name="body">
+                <xsl:attribute name="class">font-weight-light</xsl:attribute>
+                <xsl:call-template name="nav-bar"/>
+                <xsl:element name="div">
+                    <xsl:attribute name="class">container</xsl:attribute>
+                <xsl:apply-templates/>
+                    <xsl:element name="footer">
+                        <xsl:attribute name="class">footer mt-auto py-3</xsl:attribute>
+                        <xsl:element name="div">
+                            <xsl:text>©ARIE. Online display made available by DHARMA</xsl:text>
+                        </xsl:element>
+                    </xsl:element>
+                    <xsl:call-template name="dharma-script"/>            
+                </xsl:element>  
+            </xsl:element>
+        </xsl:element>
+    </xsl:template>
+</xsl:stylesheet>
+```    
+## Produire une page Web
+Une page web mobilise en réalité plusieurs langages dont l'ensemble est interprété par le navigateur web. Dans les bonnes pratiques, on sépare les différents composants
+- structure avec le HTML
+- mise en page et stylage avec la CSS  
+- les scripts avec le javaScript
+
+### Comment générer une page html avec une XSLT
+Il y a plusieur solutions pour appliquer une transformation à un fichier : lignes de commandes, l'automatisation par le biais de script, certains éditeurs disposent d'aide au lancement...
+
+#### Transformation locale: lancer une transformation avec oxygen
+- `Document>Transformation>Configure Transformation Scenarios...` ou `Configure Transformation Scenarios` dans la bar d'outils
+![Configure transformation scenario](/assets/images/transformationScenario01.png)
+- Créer un nouveau scénario ![Click on new](/assets/images/transformationScenario02.png)
+- Sélectionner `XML transformation with XSLT`![Click on XML transformation with XSLT](/assets/images/transformationScenario03.png)
+- Dans l'onglet XSLT
+  - Choisir un nom pour la transformation, sinon le nom par défaut sera le nom du fichier XML.
+    - Mettre la valeur `${currentFileURL}` dans le champ XML URL
+    - Dans le champ XSL URL, mettre  ![Parameters to transformation a file](/assets/images/transformationScenario04.png).
+    - Sélectionner un processeur de transformation Saxon, selon la version disponible dans Oxygen. `Saxon-PE` est la version professionnelle, mais HE ou EE ne font pas de différences à notre niveau d'usage. ![Select a transformateur](/assets/images/transformationScenario04.png).
+- Dans l'onglet Output
+    - Cliquer sur `save as`, vous pouvez choisir le dossier que vous souhaitez. Vous pouvez nommer le fichier comme vous le souhaiter ou bien utiliser les variables disponibles dans Oxygen. En général, j'utilise `${cfn}`, le nom de fichier sans extension et j'ajoute `.html`, et selon les besoins j'aime bien utilise aussi la variable date `${date(yyyy-MM-dd)}`.
+    - Cliquer sur `Òpen in Browser/System Application` et sur `Saved file`. ![Parameters the output file](/assets/images/transformationScenario06.png)
+- Pour lancer une transformation, il suffit d'ouvrir le fichier XML de votre choix  et de cliquer sur le bouton `Apply the Transformation(s) scenario(s)`.![Run the transformation](/assets/images/transformationScenario07.png)
+
+### Comment ça se passe sur un site?
+Il n'y a pas vraiment de règles uniques: tout dépend des technologies utilisées par les projets et des choix qui ont été faits. 
+Avec un site statique, c'est-à-dire un site qui fonctionne avec des pages htmls pré-générés, les pages sont transformés en amont, puis mises en ligne. C'est le cas dans les pages gitHub du projet DHARMA par exemple. Notre transformation s'effectue en lot et de manière automatique sur les serveurs de github et on récupère l'ensemble via les fonctionnalités des pages github et de javascript par la biais de l'API (interface de programmation d'application). Nous aurions pu utilisé une solution javaScript pour les générer au fur et à mesure, et du côté "client".  
+
+Dans le cadre d'un site dynamique, les pages peuvent être générés au fur et à mesure des demandes, la transformation peut se faire sur le serveur en php ou en XQuery par exemple.

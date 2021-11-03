@@ -2,7 +2,15 @@
 Action Nationale de Formation "Digital Areal" 7-10 novembre 2021, Fréjus  
 Présentation par Emmanuel Francis (CNRS-EHESS, CEIAS) et Axelle Janiak (CNRS-EHESS, CEIAS).
 
-Pour nous contacter: [manufrancis@gmail.com](manufrancis@gmail.com) et [axelle.janiak@ehess.fr](axelle.janiak@ehess.fr]) 
+Pour nous contacter: [manufrancis@gmail.com](manufrancis@gmail.com) et [axelle.janiak@ehess.fr](axelle.janiak@ehess.fr])
+
+## TO DO pour finaliser l'ensemble
+- [ ] finir la section sourceDesc
+- [ ] faire le chapitre 3
+- [ ] faire le chapitre 5
+- [ ] écrire la XSLT pour la fable et le texte en prose de Proust
+- [ ] bonnes pratiques lorsque l'on travaille avec l'XML
+- [ ] XML et les espaces
 
 ## Contenu du repository
 - Les pages de cours en format markdown utilisé pour générer le site statique
