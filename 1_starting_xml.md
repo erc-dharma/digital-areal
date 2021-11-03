@@ -58,7 +58,7 @@ ou peut-être vide
 ```
 Un élément vide fusionne les deux parties de la balise en une seule: : **`<` + nom + `/` + `>`**  
 
-### Quelques règles d'usage:
+### Quelques règles d'usage
 Les éléments ne peuvent pas s'entrecroisés ou se chevaucher. Les éléments doivent être fermés afin de respecter l'arborescence.
 
 **XML bien formé**:

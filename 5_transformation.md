@@ -13,7 +13,9 @@ La feuille de style se présente comme une série de règles, appliquées à un 
 En SHS, on utilise surtout la XSLT 2.0, même si une version 3 est sortie en 2007.
 
 ### XSL-FO
-La XSL-FO, XML Stylesheet Language - Formatting Objets, prend en charge la mise en page du document, surtout lors de la production de PDF. Dans ce cas, le processus fonctionne en deux étapes: 1- le document XML est transformé en un fichier lisible pour la XSL-FO par la XSLT, 2- il est ensuite converti en un document imprimable par un processeur FO.
+La XSL-FO, XML Stylesheet Language - Formatting Objets, prend en charge la mise en page du document, surtout lors de la production de PDF. Dans ce cas, le processus fonctionne en deux étapes:   
+  1- le document XML est transformé en un fichier lisible pour la XSL-FO par la XSLT  
+  2- il est ensuite converti en un document imprimable par un processeur FO.
 
 ### Modèle de traitement
 La transformation prend en compte les nœuds du fichier XML source. Chaque règle s'applique sur un nœud qui produit un fragment du document de sortie, puis tous les fragments sont assemblés pour former le document final.  
@@ -63,7 +65,16 @@ Une page web mobilise en réalité plusieurs langages dont l'ensemble est interp
 ### Comment générer une page html avec une XSLT
 Il y a plusieur solutions pour appliquer une transformation à un fichier : lignes de commandes, l'automatisation par le biais de script, certains éditeurs disposent d'aide au lancement...
 
-#### Transformation locale: lancer une transformation avec oxygen
+#### Transformation locale: utiliser son navigateur web
+Une transformation en XSLT peut être effectué avec certains navigateurs web: IE, Mozilla/Firefox et Opera. A l'inverse, d'autres navigateurs, comme Chrome, refusent de les exécuter et il faut les déposer sur des serveurs, ou générer un serveur local.
+Il faut s'assurer dans ce cas de déclarer la XSLT dans le fichier XML, à l'aide d'instructions de traitement.
+
+* * *
+NB: Le résultat n'est pas toujours le plus propre, ni le plus complet, selon la manière dont la CSS et le javascript peuvent être connectés à la XSLT.
+* * *  
+
+#### Transformation locale: lancer une transformation avec éditeur
+Nous allons le faire avec Oxygen.
 - `Document>Transformation>Configure Transformation Scenarios...` ou `Configure Transformation Scenarios` dans la bar d'outils
 ![Configure transformation scenario](/assets/images/transformationScenario01.png)
 - Créer un nouveau scénario ![Click on new](/assets/images/transformationScenario02.png)
@@ -79,7 +90,8 @@ Il y a plusieur solutions pour appliquer une transformation à un fichier : lign
 - Pour lancer une transformation, il suffit d'ouvrir le fichier XML de votre choix  et de cliquer sur le bouton `Apply the Transformation(s) scenario(s)`.![Run the transformation](/assets/images/transformationScenario07.png)
 
 ### Comment ça se passe sur un site?
-Il n'y a pas vraiment de règles uniques: tout dépend des technologies utilisées par les projets et des choix qui ont été faits. 
+Il n'y a pas vraiment de règles uniques: tout dépend des technologies utilisées par les projets et des choix qui ont été faits.
+
 Avec un site statique, c'est-à-dire un site qui fonctionne avec des pages htmls pré-générés, les pages sont transformés en amont, puis mises en ligne. C'est le cas dans les pages gitHub du projet DHARMA par exemple. Notre transformation s'effectue en lot et de manière automatique sur les serveurs de github et on récupère l'ensemble via les fonctionnalités des pages github et de javascript par la biais de l'API (interface de programmation d'application). Nous aurions pu utilisé une solution javaScript pour les générer au fur et à mesure, et du côté "client".  
 
 Dans le cadre d'un site dynamique, les pages peuvent être générés au fur et à mesure des demandes, la transformation peut se faire sur le serveur en php ou en XQuery par exemple.

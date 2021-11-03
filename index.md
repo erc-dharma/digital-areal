@@ -7,7 +7,6 @@ Pour nous contacter: [manufrancis@gmail.com](manufrancis@gmail.com) et [axelle.j
 ## TO DO pour finaliser l'ensemble
 - [ ] finir la section sourceDesc
 - [ ] faire le chapitre 3
-- [ ] faire le chapitre 5
 - [ ] écrire la XSLT pour la fable et le texte en prose de Proust
 - [ ] bonnes pratiques lorsque l'on travaille avec l'XML
 - [ ] XML et les espaces
@@ -18,14 +17,14 @@ Pour nous contacter: [manufrancis@gmail.com](manufrancis@gmail.com) et [axelle.j
 - Schéma de validation: Epidoc, TEI all
 
 
-## Editeurs de texte
+## Editeurs de texte et de code
 Il est nécessaire d'avoir un éditeur de texte:
 - soit Oxygen version d’essai (1 mois). https://www.oxygenxml.com/xml_editor/download_oxygenxml_editor.html
 - soit Atom (éditeur de texte open-source) https://atom.io/ et installation du module de validation (https://atom.io/packages/linter-autocomplete-jing)
 - soit votre éditeur habituel/préféré, si vous en avez un
 - NB: Notepad ++ ou textEdit fonctionnent, mais vous n’aurez aucune aide pour la saisie et pour valider les encodages.
 
-## Bibliographie:
+## Bibliographie
 ### Tutoriels et introductions
 “v. A Gentle Introduction to XML”, *TEI Guidelines*, Version 4.3.0: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SG.html
 Melissa Terras, Edward Vanhoutte, and Ron Van den Branden. *TEI by Example*. Online course: https://teibyexample.org/
