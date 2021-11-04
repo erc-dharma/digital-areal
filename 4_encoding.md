@@ -12,7 +12,7 @@
 - `<table>` pour des tableaux  
 - `<figure>` pour des images  
 
-## Éléments pour la poèsie
+## Éléments pour la poésie
 - `<lg>` (line group) pour les groupes et sous-groupes de vers (poèmes, strophes, etc.) avec un `@type`
 - `<l>` pour chacun des vers
 
@@ -72,27 +72,27 @@ Distinguer :
 - responsabilité, source, justification de cette intervention
 
 ### Choice
-L'élément `<choice>` permet de représenter des phénomènes qui se produisent en simultanée d'un même segment de texte, le plus souvent des états du texte connus ou supposés. Si le plus commun est de représenter deux états, il n'y a pas de limites au nombre d'éléments enfants que peut avoir `<choice>`.
+L'élément `<choice>` permet de représenter des phénomènes qui se produisent en simultané d'un même segment de texte, le plus souvent des états du texte connus ou supposés. Si le plus commun est de représenter deux états, il n'y a pas de limites au nombre d'éléments enfants que peut avoir `<choice>`.
 On le retrouve ainsi avec des éléments de correction ou de régularisation des graphies, dans des cas d'incertitude ou d'abréviations.
 
 #### Les couples orig et reg, et sic et corr
-Avant de se lancer dans la correction ou la régularisation d'un texte, il vaut mieux que les membres d'un même projet se mette d'accord sur les définitions de ces deux concepts et qu'ils décident aussi ce qu'ils corrigent et régularisent par l'encodage et ce qui est fait de manière silencieuse dans le texte.
-Les éléments de corrections
+Avant de se lancer dans la correction ou la régularisation d'un texte, il vaut mieux que les membres d'un même projet se mettent d'accord sur les définitions de ces deux concepts et qu'ils décident aussi ce qu'ils corrigent et régularisent par l'encodage et ce qui est fait de manière silencieuse dans le texte.
+Les éléments de correction
 - `<corr>`  (correction) contient la forme correcte d'un passage qui est considéré erroné dans la copie du texte.
 - `<sic>` (du latin, ainsi) contient du texte reproduit quoiqu'il est apparemment incorrect ou inexact.
-Lorsqu'il  sont combinés, l'encodeur souligne que le contenu de `<sic>` lui semble erroné et y apporte une correction avec `<corr>`.
-- `<reg>` (régularisation) contient une partie qui a été régularisée ou normalisée de façon quelconque
+Lorsqu'ils sont combinés, l'encodeur souligne que le contenu de `<sic>` lui semble erroné et y apporte une correction avec `<corr>`.
+- `<reg>` (régularisation) contient une partie qui a été régularisée ou normalisée de façon quelconque.
 - `<orig>` (forme originale) contient une partie notée comme étant fidèle à l'original et non pas normalisée ou corrigée.
 
 #### orig, reg, sic et corr peuvent-ils être utilisés seuls?
 Ces quatre éléments peuvent être utilisés de manière indépendante. Cela arrive souvent avec `<sic>`, un peu moins avec les trois autres.
 
 ### Exprimer la certitude
-Pour exprimer, son degré de certitude sur une intervention, l'encodeur peut utiliser l'attribut `@cert`.
-- `@cert` (certitude) donne le degré de certitude associée à l'intervention ou à l'interprétation. Trois valeurs sont couramment utilisées en TEI: low, medium et high.
+Pour exprimer son degré de certitude sur une intervention, l'encodeur peut utiliser l'attribut `@cert`.
+- `@cert` (certitude) donne le degré de certitude associé à l'intervention ou à l'interprétation. Trois valeurs sont couramment utilisées en TEI: low, medium et high.
 
 ### Responsabilité
-A l'inverse, si vous voulez signaler l'éditeur, responsable de l'intervention, vous pouvez utiliser l'attribut `@resp`. Néanmoins, pour utiliser cet attribut, il faut que l'éditeur soit déclaré avec un `@xml:id` soit dans le `<teiHeader>`, soit dans un fichier externe. Lorsque le pointer est interne, la convention est de le faire précéder par `#`.   
+A l'inverse, si vous voulez signaler l'éditeur, responsable de l'intervention, vous pouvez utiliser l'attribut `@resp`. Néanmoins, pour utiliser cet attribut, il faut que l'éditeur soit déclaré avec un `@xml:id` soit dans le `<teiHeader>`, soit dans un fichier externe. Lorsque le pointeur est interne, la convention est de le faire précéder par `#`.   
 - `@resp` (responsable) indique l'agent responsable de l'intervention ou de l'interprétation, par exemple un éditeur ou un transcripteur.
 
 ```
@@ -130,7 +130,7 @@ Pour traiter les allographes présents dans la fable, plusieurs solutions sont p
 </choice>
 ```
 
-2- On peut aussi déclarer le caractère spécial dans un doctype. On lui donne un nom auquel on associe un encodage
+2- On peut aussi déclarer le caractère spécial dans un doctype. On lui donne un nom auquel on associe un encodage <!--si je ne me trompe pas, le doctype tient de la DTD non? du coup ça me parait pas ultra clair pour des non spécialistes, vu qu'on est plus dans la simple balise ou attribut-->
 ```
 <!DOCTYPE TEI [
  <!ENTITY s-long
@@ -159,7 +159,7 @@ LINE</glyphName> <!-- Nom donné au glyphe -->
  </charDecl>
  </encodingDesc>
  ```
-Pour l'utiliser, l'encodage combine l'élément avec un attribut ce référence dont le pointer vise la déclaration faite dans le `<teiHeader>`.
+Pour l'utiliser, l'encodage combine l'élément avec un attribut de référence dont le pointeur vise la déclaration faite dans le `<teiHeader>`.
 ```
 <g ref="#s-long">s</g>
 ```
