@@ -6,12 +6,12 @@
 .lineation:before {
     content:"[";
     padding-left:0.1rem;
-    color: black; 
+    color: black;
 }
 .lineation:after{
     content:"]";
     padding-right:0.1rem;
-    color: black; 
+    color: black;
 }
 
 .sig{
@@ -23,7 +23,7 @@
 }
 
 .lineation{
-    color: black; 
+    color: black;
 }
 
 .initial{
