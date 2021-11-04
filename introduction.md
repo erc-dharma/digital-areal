@@ -40,15 +40,15 @@ the texts.
 
 ## TEI Consortium (2000)
 Le Consortium est une fondation à but non lucratif, dont le financement se fait par les contributions de ses membres. Il se compose notamment d'un bureau, d'un conseil technique, de membres institutionnels et des groupes de travail et de groupes d'intérêt.
-Son rôle principal est de maintenir les guidelines et de les faire évoluer selon les besoins des communautés d'utilisateur.
+Son rôle principal est de maintenir les guidelines et de les faire évoluer selon les besoins des communautés d'utilisateurs.
 
 ## Le modèle TEI
-Il s'agit d'un modèle abstrait de données, soit un ensemble de concepts ainsi que les différentes relations entre eux. Il faut donc distinguer ce modèle des implémentations techniques, quelles soient générales par l'importation de modules entiers comme celui du théâtre ou de la transcription, ou particulières avec une sélection d'éléments pour correspondre aux besoins d'un projet.
+Il s'agit d'un modèle abstrait de données, soit un ensemble de concepts ainsi que les différentes relations entre eux. Il faut donc distinguer ce modèle des implémentations techniques, qu'elles soient générales par l'importation de modules entiers comme celui du théâtre ou de la transcription, ou particulières avec une sélection d'éléments pour correspondre aux besoins d'un projet.
 Les modules correspondent aux chapitres des Guidelines. Ils définissent des composantes du modèle (éléments, classes, macros), les spécifications techniques et peuvent se concevoir comme des blocs que l'on conserve ou que l'on supprime notamment par rapport aux schémas.
 
 **les obligatoires:**
 - tei (déclaration des classes, macros et types)
-- textstructure (elements de la structure du fichier)
+- textstructure (éléments de la structure du fichier)
 - core (ensemble des éléments considérés comme basiques et communs à tous les encodages)
 - header (métadonnées)
 
@@ -66,23 +66,23 @@ Les modules correspondent aux chapitres des Guidelines. Ils définissent des com
 - nets (graphes, réseaux, arbres) ;
 - textcrit (apparat critique) ;
 - transcr (transcription) ;
-- verse (poèsie).
+- verse (poésie).
 
 * * *
-NB: il doit y avoir aujourd'hui plus de 600 éléments disponibles dans le modèle TEI. Aucun projet ne les mobilise tous; c'est pourquoi, le modèle théorique est souvent "réduit" aux seuls éléments nécessaires aux objectifs d'un projet. Cela peut aussi s'accompagner de la création d'éléments propos à un projet, lorsque la TEI n'offre pas de solution, ou que l'on ne les trouve pas satisfaisantes.
+NB: il doit y avoir aujourd'hui plus de 600 éléments disponibles dans le modèle TEI. Aucun projet ne les mobilise tous; c'est pourquoi le modèle théorique est souvent "réduit" aux seuls éléments nécessaires aux objectifs d'un projet. Cela peut aussi s'accompagner de la création d'éléments propres à un projet, lorsque la TEI n'offre pas de solution, ou que l'on ne les trouve pas satisfaisantes.
 Un exemple: le [projet Menota](https://www.menota.org/HB3_index.xml). Les éléments créés fonctionnent avec l'espace de nom `me:`
   - `<me:all>` pour encoder les allitérations dans un vers
   - `<me:ass>`	pour encoder les changements de rythmes dans un vers
   - `<me:textSpan/>` pour encoder des structures qui se chevauchent
-    - `@me:category` pour qualifier le type de l'élément problèmatique par rapport à la structure. La liste des valeurs d'attributs est fermée. 
+    - `@me:category` pour qualifier le type de l'élément problématique par rapport à la structure. La liste des valeurs d'attributs est fermée.
 * * *
 
-## Epidoc, une personalisation de la TEI
-Epidoc est un projet collaboratif qui a vu le jour en 2000 à l'initiative de Tom Elliot et qui vise à établir des normes d'encodage en TEI pour les documents anciens. L'idée initiale était d'établir un standard afin de favoriser l'interopérabilité et la constante des encodages entre les documents anciens afin de permettre des regroupements de corpus issus de plusieurs projets.
+## Epidoc, une personnalisation de la TEI
+Epidoc est un projet collaboratif qui a vu le jour en 2000 à l'initiative de Tom Elliot et qui vise à établir des normes d'encodage en TEI pour les documents anciens. L'idée initiale était d'établir un standard afin de favoriser l'interopérabilité et la constance des encodages entre les documents anciens afin de permettre des regroupements de corpus issus de plusieurs projets.
 Cette personnalisation offre une documentation assez complète avec des schémas de validation et des feuilles de style pour les transformations.
 Actuellement, Epidoc migre vers la version 9.3 et l'ensemble du contenu est en open-source : (https://epidoc.stoa.org/gl/latest/index.html).
 
-## Quelques exemples de normes utilisants l'XML
+## Quelques exemples de normes utilisant l'XML
 - EAD pour les descriptions archivistiques
 - MEI pour les notations musicales
 - MathXML pour les formules mathématiques
@@ -91,4 +91,4 @@ Actuellement, Epidoc migre vers la version 9.3 et l'ensemble du contenu est en o
 ## Pourquoi faire?
 - L'XML-TEI permet de traduire la dimension sémantique d'un document et de la rendre compréhensible à un ordinateur.
 - Distingue la mise en forme du document qui correspond à l'affichage et la structuration du texte lui-même.
-- Autorise les traitements et des exploitations des informations encodés.
+- Autorise les traitements et des exploitations des informations encodées.
