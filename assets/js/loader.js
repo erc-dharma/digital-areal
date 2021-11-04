@@ -2,11 +2,13 @@ var xml = "/assets/examples/fable.xml";
 var xslt = "/assets/xslt/affichage-client.xsl";
 
 function outline() {
+        if (document.implementation && document.implementation.createDocument) {
         xsltProcessor = new XSLTProcessor();
         xsltProcessor.importStylesheet(xslt);
         resultDocument = xsltProcessor.transformToFragment(xml, document);
         document.getElementById('main').appendChild(resultDocument);
      }
+}
 
 var content = $("#root").append(content);
             outline();
