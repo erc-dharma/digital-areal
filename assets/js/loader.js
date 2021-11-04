@@ -5,7 +5,7 @@ function outline() {
         xsltProcessor = new XSLTProcessor();
         xsltProcessor.importStylesheet(xslt);
         resultDocument = xsltProcessor.transformToFragment(xml, document);
-        document.getElementById('#main').appendChild(resultDocument);
+        document.getElementById('main').appendChild(resultDocument);
      }
 
 var content = $("#root").append(content);
