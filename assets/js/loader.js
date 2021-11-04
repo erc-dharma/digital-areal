@@ -5,7 +5,7 @@ function outline() {
   $.when($.get(xml),$.get(xslt)).done(function(x,y,z) {
     xsltProcessor = new XSLTProcessor();
     xsltProcessor.importStylesheet(y[0]);
-    content = xsltProcessor.transformToDocument(x[0]),
+    var content = xsltProcessor.transformToDocument(x[0]),
     $("#main").append(content);
   });
 }
