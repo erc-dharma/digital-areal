@@ -20,10 +20,10 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="tei:lb" mode="numerotation">
+    <xsl:template match="tei:l" mode="numerotation">
         <xsl:copy>
             <xsl:attribute name="n"> 
-                <xsl:number count="tei:lb" level="any" 
+                <xsl:number count="tei:l" level="any" 
                     format="1" from="tei:div"/>
             </xsl:attribute>
             <xsl:apply-templates select="node()|@*" mode="numerotation"/>
