@@ -34,8 +34,8 @@ else if (document.implementation && document.implementation.createDocument)
   }
 }*/
 
-var xml= "https://erc-dharma.github.io/digital-areal/assets/examples/fable.xml";
-var xsl="https://erc-dharma.github.io/digital-areal//assets/xslt/affichage-client.xsl"; 
+var xml= "examples/fable.xml";
+var xsl="xslt/affichage-client.xsl";
 
 function load(url, callback) {
   var req = new XMLHttpRequest();
