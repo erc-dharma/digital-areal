@@ -2,12 +2,11 @@ var xml = "/assets/examples/fable.xml";
 var xslt = "/assets/xslt/affichage-client.xsl";
 
 function outline() {
-  $.when($.get(xml),$.get(xslt)).done(function(x,y,z) {
-    xsltProcessor = new XSLTProcessor();
-    xsltProcessor.importStylesheet(y[0]);
-    var content = xsltProcessor.transformToDocument(x[0]);
-  });
-}
+        xsltProcessor = new XSLTProcessor();
+        xsltProcessor.importStylesheet(xslt);
+        resultDocument = xsltProcessor.transformToFragment(xml, document);
+        document.getElementById('#main').appendChild(resultDocument);
+     }
 
 var content = $("#root").append(content);
             outline();
