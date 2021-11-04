@@ -1,4 +1,4 @@
-function loadXMLDoc(filename)
+/*function loadXMLDoc(filename)
 {
 if (window.ActiveXObject)
   {
@@ -16,8 +16,8 @@ return xhttp.responseXML;
 
 function displayResult()
 {
-xml = loadXMLDoc("/assets/examples/fable.xml");
-xsl = loadXMLDoc("/assets/xslt/affichage-client.xsl");
+xml = loadXMLDoc("digital-areal/assets/examples/fable.xml");
+xsl = loadXMLDoc("digital-areal/assets/xslt/affichage-client.xsl");
 // code for IE
 if (window.ActiveXObject || xhttp.responseType == "msxml-document")
   {
@@ -31,6 +31,45 @@ else if (document.implementation && document.implementation.createDocument)
   xsltProcessor.importStylesheet(xsl);
   resultDocument = xsltProcessor.transformToFragment(xml, document);
   document.getElementById("main").appendChild(resultDocument);
+  }
+}*/
+
+var xml= "https://erc-dharma.github.io/digital-areal/assets/examples/fable.xml";
+var xsl="https://erc-dharma.github.io/digital-areal//assets/xslt/affichage-client.xsl"; 
+
+function load(url, callback) {
+  var req = new XMLHttpRequest();
+  req.open('GET', url);
+  // to allow us doing XSLT in IE
+  try { req.responseType = "msxml-document" } catch (ex) {}
+  req.onload = function() {
+    callback(req.responseXML);
+  };
+  req.send();
+}
+
+function transform(xml, xsl) {
+  load(
+    xml,
+    function(inputXml) {
+      load(
+        xsl,
+        function(xsltSheet) {
+          displayResult(inputXml, xsltSheet);
+        }
+      );
+    }
+  );
+}
+
+function displayResult(xmlInput, xsltSheet) {
+  if (typeof XSLTProcessor !== 'undefined') {
+    var proc = new XSLTProcessor();
+    proc.importStylesheet(xsltSheet);
+    document.getElementById('main').appendChild(proc.transformToFragment(xmlInput, document));
+  }
+  else if (typeof xmlInput.transformNode !== 'undefined') {
+    document.getElementById("main").innerHTML = xmlInput.transformNode(xsltSheet);
   }
 }
 
