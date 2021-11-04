@@ -32,6 +32,7 @@ else if (document.implementation && document.implementation.createDocument)
   resultDocument = xsltProcessor.transformToFragment(xml, document);
   document.getElementById("main").appendChild(resultDocument);
   }
+}
 
 var content = $("#root").append(content);
             outline();
