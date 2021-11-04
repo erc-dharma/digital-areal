@@ -2,6 +2,9 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<!DOCTYPE TEI [
+<!ENTITY s-long '<g ref="#s-long">s</g>' >
+]>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -19,125 +22,130 @@
     </teiHeader>
     <text>
         <front>
-            <titlePage>
+            <titlePage facs="../facsimiles/LaFontaine_001.jpg">
                 <docTitle>
                     <titlePart>
                         <lb n="1"/>Fables choisies,
                         <lb n="2"/>mises en vers
-                        <lb n="3"/> Par M. de la Fontaine 
                     </titlePart>
                 </docTitle>
+                <byline>
+                    <lb n="3"/>Par <docAuthor>M. de la Fontaine</docAuthor>
+                </byline>
                 <docImprint>
-                    <lb n="4"/>A <placeName>Paris</placeName>,
-                    <lb n="5"/>Chez Claude de Barbin, au Palais sur le perron
-                    <lb n="6"/>de la Sainte Chapelle
+                    <lb n="4"/>A <pubPlace>Paris</pubPlace>,
+                    <lb n="5"/>Chez <persName>Claude de Barbin</persName>, au <pubPlace>Palais sur le perron
+                        <lb n="6"/>de la Sainte Chapelle</pubPlace>
+                    <lb n="7"/>
                     <docDate>MDCLXVIII</docDate>
                 </docImprint>
                 <imprimatur>Avec privilege du Roy.</imprimatur>
             </titlePage>
         </front>
         <body>
-            <div>
-                <pb n="10"/>
-                <fw place="top-left" type="pageNum">10</fw>
-                <fw place="top-center" type="head">Fables choisies.</fw>
-                <div n="5">
+            <div type="edition">
+                <div type="fable" n="5">
+                    <pb n="10" facs="../facsimiles/LaFontaine_002.jpg"/>
+                    <fw place="top-left" type="pageNum">10</fw>
+                    <fw place="top-center" type="head">Fables choisies.</fw>
                     <head>
                         <lb n="1"/>Fable cinquiesme.</head>
                     <head>
                         <lb n="2"/>Le loup &amp; le chien.</head>
                     <lg>
-                        <l>
-                            <lb n="3"/>Un Loup n'avoit que les os &amp; la peau,</l>
-                        <l>
-                            <lb n="4"/>Tant les Chiens faisoient <gap reason="illegible"/> garde.</l>
-                        <l>
+                        <l n="1">
+                            <lb n="3"/>
+                            <c type="initial">U</c>n Loup <choice><orig>n'avoit</orig><reg>n'avait</reg></choice> que les os &amp; la peau,</l>
+                        <l n="2">
+                            <lb n="4"/>Tant les Chiens <choice><orig>faisoient</orig><reg>faisaient</reg></choice> <gap reason="illegible"/> garde.</l> 
+                        <l n="3">
                             <lb n="5"/>Ce Loup rencontre un Dogue aussi puissant que
                             <lb n="6"/>beau,</l>
-                        <l>
-                            <lb n="7"/>Gras, poly, qui s'estoit fourvoyé par mégarde.</l>
-                        <l>
-                            <lb n="8"/>L'attaquer, le <unclear reason="faded">mettre</unclear> en quartiers,</l>
-                        <l>
-                            <lb n="9"/>Sire Loup l'eust fait volontiers:</l>
-                        <l>
-                            <lb n="10"/>Mais il faloit livrer bataille;</l>
-                        <l>
-                            <lb n="11"/>Et le Mâtin estoit de bataille</l>
-                        <l>
-                            <lb n="12"/>A se défendre hardi<supplied reason="damage">ment</supplied>.</l>
-                        <l>
-                            <lb n="13"/>Le Loup donc l'aborde hum<unclear reason="faded">bl</unclear>em<supplied reason="damage">e</supplied>nt,</l>
-                        <pb n="11"/>
+                        <l n="4">
+                            <lb n="7"/>Gras, poly, qui <choice><orig>s'estoit</orig><reg>s'était</reg></choice> fourvoyé par mégarde.</l>
+                        <l n="5">
+                            <lb n="8"/>L'attaquer, le <unclear>mettre</unclear> en quartiers,</l>
+                        <l n="6">
+                            <lb n="9"/>Sire Loup l'<choice><orig>eust</orig><reg>eût</reg></choice> fait volontiers:</l>
+                        <l n="7">
+                            <lb n="10"/>Mais il <choice><orig>faloit</orig><reg>fallait</reg></choice> livrer bataille;</l>
+                        <l n="8">
+                            <lb n="11"/>Et le Mâtin <choice><orig>estoit</orig><reg>était</reg></choice> de bataille</l>
+                        <l n="9">
+                            <lb n="12"/>A &s-long;e défendre hardi<supplied reason="illegible">ment</supplied>.</l>
+                        <l n="10">
+                            <lb n="13"/>Le Loup donc l'aborde hum<unclear>bl</unclear>em<supplied>e</supplied>nt,</l>
+                        <pb n="11" facs="../facsimiles/LaFontaine_003.jpg"/>
                         <fw place="top-center" type="head">Livre I.</fw>
                         <fw place="top-right" type="pageNum">11</fw>
-                        <l>
-                            <lb n="14"/>Entre ce propos, &amp; luy fait compliment</l>
-                        <l>
+                        <l n="11">
+                            <lb n="14"/>Entre ce propos, &amp; <choice><sic>luy</sic><corr>lui</corr></choice> fait compliment</l>
+                        <l n="12">
                             <lb n="15"/>Sur son embonpoint qu'il admire.</l>
-                        <l>
-                            <lb n="16"/>Il ne tiendra qu'à vous, beau sire,</l>
-                        <l>
-                            <lb n="17"/>D'estre aussi gras que mou, luy repartit le Chien:</l>
-                        <l>
+                        <l n="13">
+                           <lb n="16"/>Il ne tiendra qu'à vous, beau sire,</l>
+                        <l n="14">
+                            <lb n="17"/>D'estre aussi gras que mou, <choice><sic>luy</sic><corr>lui</corr></choice> repartit le Chien:</l>
+                        <l n="15">
                             <lb n="18"/>Quittez les bois, vous ferez bien :</l>
-                        <l>
+                        <l n="16">
                             <lb n="19"/>Vos pareils y sont misérables,</l>
-                        <l>
+                        <l n="17">
                             <lb n="20"/>Cancres, haires, et pauvres diables,</l>
-                        <l>
+                        <l n="18">
                             <lb n="21"/>Dont la condition est de mourir de faim.</l>
-                        <l>
-                            <lb n="22"/>Car quoy ? Rien d'assuré, point de franche lipée.</l>
-                        <l>
+                        <l n="19">
+                            <lb n="22"/>Car <choice><sic>quoy</sic><corr>quoi</corr></choice> ? Rien d'assuré, point de franche lipée.</l>
+                        <l n="20">
                             <lb n="23"/>Tout à la pointe de l'épée:</l>
-                        <l>
-                            <lb n="24"/>Suivez-moy ; vous aurez un bien meilleur destin.</l>
-                        <l>
+                        <l n="21">
+                            <lb n="24"/>Suivez-<choice><sic>moy</sic><corr>moi</corr></choice> ; vous aurez un bien meilleur destin.</l>
+                        <l n="22">
                             <lb n="25"/>Le Loup reprit : Que me faudra-t-il faire ?</l>
-                        <l>
+                        <l n="23">
                             <lb n="26"/>Presque rien, dit le Chien : donner la chasse aux
                             <lb n="27"/>gens</l>
-                        <l>
+                        <l n="24">
                             <lb n="28"/>Portans bastons, et mendians;</l>
-                        <l>
+                        <l n="25">
                             <lb n="29"/>Flater ceux du logis, à son Maistre complaire ;</l>
-                        <l>
-                            <lb n="30"/>Moyennant quoy vostre salaire</l>
-                        <l>
+                        <l n="26">
+                            <lb n="30"/>Moyennant <choice><sic>quoy</sic><corr>quoi</corr></choice> vostre salaire</l>
+                        <l n="27">
                             <lb n="31"/>Sera force reliefs de toutes les façons:</l>
-                        <l>
+                        <l n="28">
                             <lb n="32"/>Os de poulets, Os de pigeons,</l>
-                        <l>
+                        <l n="29">
                             <lb n="33"/>Sans parler de mainte caresse.</l>
-                        <l>
+                        <l n="30">
                             <lb n="34"/>Le loup déjà se forge une felicité</l>
-                        <l>
+                        <l n="31">
                             <lb n="35"/>Qui le fait pleurer de tendresse.</l>
-                        <l>
+                        <l n="32">
                             <lb n="36"/>Chemin faisant il vit le col du Chien, pelé :</l>
                         <fw place="bot-right" type="sig">B ij</fw>
-                        <pb n="12"/>
+                        <pb n="12" facs="../facsimiles/LaFontaine_004.jpg"/>
                         <fw place="top-left" type="pageNum">12</fw>
                         <fw place="top-center" type="head">Fables choisies.</fw>
-                        <l>
-                            <lb n="37"/>Qu'est-ce <gap reason="illegible"/>  Quoy rien ?
-                            <lb n="38"/><unclear reason="illegible">P</unclear>eu de chose.</l>
-                        <l>
+                        <l n="33">
+                            <lb n="37"/>Qu'est-ce <gap reason="illegible"/>  <choice><sic>Quoy</sic><corr>Quoi</corr></choice> rien ?
+                            <lb n="38"/>
+                            <unclear reason="illegible">P</unclear>eu de chose.</l>
+                        <l n="34">
                             <lb n="39"/>Mais encor ?  <supplied reason="damage">Le</supplied> collier dont je suis attaché</l>
-                        <l>
+                        <l n="35">
                             <lb n="40"/>De ce <unclear>que vous voyez est p</unclear>eut-être la cause.</l>
-                        <l>
+                        <l n="36">
                             <lb n="41"/>Attaché ? dit le Loup : vous ne courez donc pas</l>
-                        <l>
+                        <l n="37">
                             <lb n="42"/>Où vous voulez ?  Pas toujours, mais qu'importe ?</l>
-                        <l>
+                        <l n="38">
                             <lb n="43"/>Il importe si bien, que de tous vos repas</l>
-                        <l>
+                        <l n="39">
                             <lb n="44"/>Je ne veux en aucune sorte,</l>
-                        <l>
+                        <l n="40">
                             <lb n="45"/>Et ne voudrais pas même à ce prix un tresor.</l>
-                        <l>
+                        <l n="41">
                             <lb n="46"/>Cela dit, Maistre Loup s'enfuit, et court encor.</l>
                     </lg>
                 </div>

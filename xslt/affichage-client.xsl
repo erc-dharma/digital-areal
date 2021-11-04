@@ -289,7 +289,7 @@
         </xsl:element>
         </xsl:element>
         <xsl:if test="./following-sibling::tei:div[@type='fable']">
-            <xsl:element name="hr"/>
+            <xsl:element name="hr"></xsl:element>
         </xsl:if>
     </xsl:template>
     
@@ -353,7 +353,7 @@
                 </xsl:if>
             </xsl:element>
         </xsl:element>
-        <xsl:element name="hr"/>
+        <xsl:element name="hr"></xsl:element>
     </xsl:template>
     
     <!--  fw ! -->
@@ -813,38 +813,6 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
-    <!-- Templates nommés -->
-    <!-- DHARMA html prolog -->
-    <xsl:template name="fable-head">
-        <xsl:variable name="title">
-            <xsl:if test="//tei:titleStmt/tei:title/text()">
-                <xsl:if test="//tei:idno[@type='filename']/text()">
-                    <xsl:value-of select="//tei:idno[@type='filename']"/>
-                    <xsl:text>. </xsl:text>
-                </xsl:if>
-                <xsl:value-of select="//tei:titleStmt/tei:title"/>
-            </xsl:if>
-        </xsl:variable>
-        <head>
-            <title>
-                <xsl:value-of select="$title"/>
-            </title>
-            <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-                <!-- Bootstrap CSS -->
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
-                <link rel="stylesheet" href="../assets/css/fable-style.css"></link>
-            </meta>
-        </head>
-    </xsl:template>
 
-    <!-- scripts  -->
-    <xsl:template name="fable-script">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"/>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"/>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"/>
-        <script src="../assets/js/loader.js"></script>
-    </xsl:template>
     
 </xsl:stylesheet>
