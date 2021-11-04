@@ -1,0 +1,83 @@
+.img-fluid{
+    max-width: 70%;
+	height: auto;
+}
+
+.lineation:before {
+    content:"[";
+    padding-left:0.1rem;
+    color: black; 
+}
+.lineation:after{
+    content:"]";
+    padding-right:0.1rem;
+    color: black; 
+}
+
+.sig{
+     display: block;
+}
+
+.header{
+     display: block;
+}
+
+.lineation{
+    color: black; 
+}
+
+.initial{
+    font-size: xxx-large;
+}
+
+.gap:before {
+    content:"[";
+}
+.gap:after {
+    content:"]";
+}
+
+.scribe-deletion:before {
+    content:"⟦";
+}
+
+.scribe-deletion:after {
+    content:"⟧";
+}
+
+.unclear:before {
+    content:"(";
+}
+
+.unclear:after {
+    content:")";
+}
+
+.sic-crux:before {
+    content:"†";
+}
+
+.sic-crux:after {
+    content:"†";
+}
+
+.ed-insertion:before {
+    content:"⟨⟨";
+}
+.ed-insertion:after {
+    content:"⟩⟩";
+}
+
+.surplus:before {
+    content:"{";
+}
+
+.surplus:after {
+    content:"}";
+}
+
+.symbol {
+        border: 2px solid black;
+        border-radius: 8px;
+        padding: 0.03em;
+        }
