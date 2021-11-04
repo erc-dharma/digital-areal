@@ -8,7 +8,7 @@
 ```
 
 ## Ajouter une structure de départ pour un fichier TEI
-Exemple de la structure minimal obligatoire d'un fichier TEI
+Exemple de la structure minimale obligatoire d'un fichier TEI
 ```
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
   <teiHeader>
@@ -35,13 +35,13 @@ La racine du fichier est toujours `TEI`, avec la déclaration de son namespace (
 - le `teiHeader` pour déclarer les métadonnées
 - la partie `text` pour contenir l'edition.
 
-La division du `teiHeader` ne requiert qu'un `fileDesc` dans leqeul vous pouvez déclarer le nom du fichier, les informations de publication, une information de la source publiée et ainsi de suite.  
+La division du `teiHeader` ne requiert qu'un `fileDesc` dans lequel vous pouvez déclarer le nom du fichier, les informations de publication, une information de la source publiée et ainsi de suite.  
 La division du `text` se fait en trois éléments:
 - `front`
 - `body`
 - `back`  
 
-Le body est la seule partie obligatoire. C'est celle qui contient votre édition. Le front est disponible dans les cas où vous souhaitez faire une édition "facsimilé" d'un imprimé avec des pièces prélimianires. A l'inverse, le back va permettre de stocker des pages comme les index, si vous souhaitez les conserver.
+Le body est la seule partie obligatoire. C'est celle qui contient votre édition. Le front est disponible dans les cas où vous souhaitez faire une édition "facsimilé" d'un imprimé avec des pièces préliminaires. A l'inverse, le back va permettre de stocker des pages comme les index, si vous souhaitez les conserver.
 
 ![Structuration logique d'un texte](/assets/images/structure.png)
 *[Jean-Baptiste Camps, Structuration des données et des documents : balisage XML](https://halshs.archives-ouvertes.fr/cel-01706530)*
@@ -71,7 +71,7 @@ Permet de diviser le texte contenu dans le `<body>`, `<front>`  et `<back>`,  e
 </body>
 ```
 ### div1, div2...
-Une division en sous-unité avec une numérotation intégrée de 1 à 7. Une division ne peut contenir que des niveaux inférieurs. Ainsi, un `<div4>` ne peut avoir comme élément enfant les éléments: `<div1>`, `<div2>` et `<div3>`
+Une division en sous-unité avec une numérotation intégrée de 1 à 7. Une division ne peut contenir que des niveaux inférieurs. Ainsi, un `<div4>` ne peut avoir comme élément enfant que les éléments: `<div1>`, `<div2>` et `<div3>`
 
 ```
 <body>
@@ -95,8 +95,8 @@ Une division en sous-unité avec une numérotation intégrée de 1 à 7. Une div
 ```
 
 ## Exception à la structure du fichier TEI
-Il existe une exception à la structure basique d'un fichier tei: le `teiCorpus` dans lequel vous pouvez agreger plusieurs structures TEI.  
-Dans ces circonstances, il faut noter que le `teiCorpus` a besoin de son propre `teiHeader` et que chacun des éléments d'édition se compose d'une balise `TEI` avec pour enfant la structure vue si dessus avec `teiHeader`, `text`.
+Il existe une exception à la structure basique d'un fichier tei: le `teiCorpus` dans lequel vous pouvez agréger plusieurs structures TEI.  
+Dans ces circonstances, il faut noter que le `teiCorpus` a besoin de son propre `teiHeader` et que chacun des éléments d'édition se compose d'une balise `TEI` avec pour enfant la structure vue ci-dessus avec `teiHeader`, `text`.
 
 ```
 <teiCorpus xmlns="http://www.tei-c.org/ns/1.0">
