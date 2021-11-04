@@ -35,7 +35,6 @@ else if (document.implementation && document.implementation.createDocument)
 }
 
 var content = $("#root").append(content);
-            outline();
             initializePopovers();
 
 function initializePopovers() {
