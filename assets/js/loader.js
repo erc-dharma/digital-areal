@@ -23,10 +23,10 @@ function Init(){
 
   var fragment = xsltProcessor.transformToFragment(xmlDoc, document);
 
-  document.getElementById("example").textContent = "";
+  document.getElementById("content").textContent = "";
 
   myDOM = fragment;
-  document.getElementById("example").appendChild(fragment);
+  document.getElementById("content").appendChild(fragment);
 }
 
 var content = $("#root").append(content);
