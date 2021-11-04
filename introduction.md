@@ -1,3 +1,7 @@
+---
+layout: default
+title: introduction
+---
 # Rapide introduction de la TEI
 
 - 1987, naissance de la *Text Encoding Initiative* par trois sociétés savantes :
