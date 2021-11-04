@@ -289,7 +289,7 @@
         </xsl:element>
         </xsl:element>
         <xsl:if test="./following-sibling::tei:div[@type='fable']">
-            <xsl:element name="hr"/>
+            <xsl:element name="hr"></xsl:element>
         </xsl:if>
     </xsl:template>
     
@@ -353,7 +353,7 @@
                 </xsl:if>
             </xsl:element>
         </xsl:element>
-        <xsl:element name="hr"/>
+        <xsl:element name="hr"></xsl:element>
     </xsl:template>
     
     <!--  fw ! -->
