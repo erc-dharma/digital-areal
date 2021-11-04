@@ -16,7 +16,7 @@ title: Exemple fable
                         <br>de la Sainte Chapelle
                     <br>
                     MDCLXVIII
-                </p><p>Avec privilege du Roy.</p></div><div class="col-6"><img src="{{ site.baseurl }}/facsimiles/LaFontaine_001.jpg" class="img-fluid" alt="Image de la page  de l'édition de la Fontaine"></div></div><hr>
+                </p><p>Avec privilege du Roy.</p></div><div class="col-6"><img src="{{ site.baseurl }}/facsimiles/LaFontaine_001.jpg" class="img-fluid" alt="Image de la page  de l'édition de la Fontaine"></div></div><hr></hr>
 
 
                 <div class="row"><div class="col-1">fable 5</div><div class="col-5 text-center">
