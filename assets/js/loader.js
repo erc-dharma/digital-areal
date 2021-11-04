@@ -1,35 +1,15 @@
-var xslStylesheet;
-var xsltProcessor = new XSLTProcessor();
-var myDOM;
+var xml = "/assets/examples/fable.xml";
+var xslt = "/assets/xslt/affichage-client.xsl";
 
-var xmlDoc;
-
-function Init(){
-
-  // load the xslt file, example1.xsl
-  var myXMLHTTPRequest = new XMLHttpRequest();
-  myXMLHTTPRequest.open("GET", "../assets/xslt/affichage-client.xsl", false);
-  myXMLHTTPRequest.send(null);
-
-  xslStylesheet = myXMLHTTPRequest.responseXML;
-  xsltProcessor.importStylesheet(xslStylesheet);
-
-  // load the xml file, example1.xml
-  myXMLHTTPRequest = new XMLHttpRequest();
-  myXMLHTTPRequest.open("GET", "./assets/examples/fable.xml", false);
-  myXMLHTTPRequest.send(null);
-
-  xmlDoc = myXMLHTTPRequest.responseXML;
-
-  var fragment = xsltProcessor.transformToFragment(xmlDoc, document);
-
-  document.getElementById("example").textContent = "";
-
-  myDOM = fragment;
-  document.getElementById("example").appendChild(fragment);
-}
+function outline() {
+        xsltProcessor = new XSLTProcessor();
+        xsltProcessor.importStylesheet(xslt);
+        resultDocument = xsltProcessor.transformToFragment(xml, document);
+        document.getElementById('main').appendChild(resultDocument);
+     }
 
 var content = $("#root").append(content);
+            outline();
             initializePopovers();
 
 function initializePopovers() {
