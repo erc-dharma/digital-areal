@@ -1,32 +1,13 @@
-var xslStylesheet;
-var xsltProcessor = new XSLTProcessor();
-var myDOM;
+var xml = "/assets/examples/fable.xml";
+var xslt = "/assets/xslt/affichage-client.xsl";
 
-var xmlDoc;
-
-function Init(){
-
-  // load the xslt file, example1.xsl
-  var myXMLHTTPRequest = new XMLHttpRequest();
-  myXMLHTTPRequest.open("GET", "../assets/xslt/affichage-client.xsl", false);
-  myXMLHTTPRequest.send(null);
-
-  xslStylesheet = myXMLHTTPRequest.responseXML;
-  xsltProcessor.importStylesheet(xslStylesheet);
-
-  // load the xml file, example1.xml
-  myXMLHTTPRequest = new XMLHttpRequest();
-  myXMLHTTPRequest.open("GET", "./assets/examples/fable.xml", false);
-  myXMLHTTPRequest.send(null);
-
-  xmlDoc = myXMLHTTPRequest.responseXML;
-
-  var fragment = xsltProcessor.transformToFragment(xmlDoc, document);
-
-  document.getElementById("content").textContent = "";
-
-  myDOM = fragment;
-  document.getElementById("content").appendChild(fragment);
+function outline() {
+  $.when($.get(xml),$.get(xslt)).done(function(x,y,z) {
+    xsltProcessor = new XSLTProcessor();
+    xsltProcessor.importStylesheet(y[0]);
+    content = xsltProcessor.transformToDocument(x[0]),
+    $("#main").append(content);
+  });
 }
 
 var content = $("#root").append(content);
