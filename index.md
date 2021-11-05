@@ -5,9 +5,6 @@ Présentation par Emmanuel Francis (CNRS-EHESS, CEIAS) et Axelle Janiak (CNRS-EH
 Pour nous contacter: [manufrancis@gmail.com](manufrancis@gmail.com) et [axelle.janiak@ehess.fr](axelle.janiak@ehess.fr])
 
 ## TO DO pour finaliser l'ensemble
-- Faire le chapitre 3
-- Monter l'exemple sur le site
-- Finir les définitions
 - Relire pour corriger les coquilles
 
 ## Contenu de ce repository
@@ -23,7 +20,7 @@ Pour nous contacter: [manufrancis@gmail.com](manufrancis@gmail.com) et [axelle.j
 **L'ensemble est disponible en licence CC-BY, grâce au financement de l'ERC du projet DHARMA.**
 
 ## Déroulé du cours
-Le cours a été conçu pour mobiliser un maximum de connaissances et de notions de l'univers de l'XML. Il se compose d'une introduction à la TEI et de cinq chapitres expliquant les principes de l'XML, la structure d'un fichier TEI, le teiHeader, l'édition d'un texte et enfin quelques principes sur la XSLT. Il est aussi accompagné d'un lexique et d'une liste d'éléments utilisés dans le cas des éditions critiques de DHARMA pour permettre aux participants ayant amené leur propre texte ou corpus d'accèder à plus d'éléments. 
+Le cours a été conçu pour mobiliser un maximum de connaissances et de notions de l'univers de l'XML. Il se compose d'une introduction à la TEI et de cinq chapitres expliquant les principes de l'XML, la structure d'un fichier TEI, le teiHeader, l'édition d'un texte et enfin quelques principes sur la XSLT. Il est aussi accompagné d'un lexique et d'une liste d'éléments utilisés dans le cas des éditions critiques de DHARMA pour permettre aux participants ayant amené leur propre texte ou corpus d'accèder à plus d'éléments.
 
 ## Editeurs de texte et de code
 Il est nécessaire d'avoir un éditeur de texte:
