@@ -23,8 +23,31 @@ Le processus de transformation applique des règles sur des nœuds dits actifs d
 Si on reprend la structure en arborescence déjà évoqué, cela revient à parcourir cet arbre, à la nuance qu'en XSLT le traitement d'un nœud n'entraîne pas systématique la transformation de ses enfants, dont dépend des instructions que l'on établit.   
 
 ### Traitements des espaces
-Un premier passage de nettoyage des espaces est systèmatiquement réalisé par les processeurs XSLT. Cela consiste à supprimer les nœuds textuels vides, c'est-à-dire ne comprenant que des espaces et autres caractères d'espacement. Si le nœud contient au moins un autre caractère, il est conservé. Il est évidemment possible de prévenir ce traitement sur des parties du fichier XML-TEI en utilisant l'attribut `@xml:space` ou en donnant des règles particulières à la XSLT.
+Un premier passage de nettoyage des espaces est systèmatiquement réalisé par les processeurs XSLT. Cela consiste à supprimer les nœuds textuels vides, c'est-à-dire ne comprenant que des espaces et autres caractères d'espacement. Si le nœud contient au moins un autre caractère, il est conservé. Il est évidemment possible de prévenir ce traitement sur des parties du fichier XML-TEI en utilisant l'attribut `@xml:space` ou en donnant des règles particulières à la XSLT.  
+Néanmoins, il y a certaines conventions de le traitement des espaces:
+- `collapsing` lorsque plusieurs espaces se suivent, ils sont réduit à un unique espace. On appelle cela
+- `trimming` les processeurs coupent les espaces, s'ils existent, après la balise d'ouverture, et avant la balise de fermeture. Cette règle peut donc poser des problèmes dans les affichages en particulier sur des contenus très structurés ou lorsqu'il a du contenu mixte.
+```
+   <p>The <emph>cat</emph> ate the <foreign>grande croissant</foreign>. I didn't!</p>
+```
+[source](https://wiki.tei-c.org/index.php/XML_Whitespace)
 
+Dans ce cas, les algorithmes:
+- `collapsing` réduissent les espaces
+- `trimming`
+  - si le premier caractère est un espace dans le premier nœud texte
+  - si le dernier caractère est un espace dans le dernier nœud texte
+  - supprime les deux dans les cas, où un nœud parent débute et se termine par un nœud texte
+Donc si l'encodage de la phrase est de cette manière
+```
+   <p>The<emph> cat </emph>ate the <foreign>grande croissant</foreign>. I didn't!</p>
+```
+Le résultat serait :
+```
+Thecatate the grande croissant. I didn't!
+```
+
+### Exemple d'une feuille de style XSLT
 Exemple d'un extrait d'une transformation en html pour le fichier ARIE, dont le résultat complet accessible sur [erc-dharma](https://erc-dharma.github.io/arie/).
 ```
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
