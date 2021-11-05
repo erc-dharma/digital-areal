@@ -18,9 +18,10 @@
             <xsl:call-template name="fable-head"/>
             <xsl:element name="body">
                 <xsl:attribute name="class">font-weight-light</xsl:attribute>
+                <xsl:apply-templates select="./tei:teiHeader"/>
+                <xsl:call-template name="table"/>
                 <xsl:element name="div">
                     <xsl:attribute name="class">container</xsl:attribute>
-                    <xsl:apply-templates select="./tei:teiHeader"/>
                     <xsl:apply-templates select="./tei:text"/>   
                     <xsl:apply-templates select="//tei:note | //tei:choice[child::tei:sic and child::tei:corr] | //tei:choice[child::tei:orig and child::tei:reg] | //tei:choice[child::tei:unclear]" mode="modals"/> 
                 </xsl:element>
@@ -735,7 +736,7 @@
                         <xsl:for-each select="tei:fileDesc/tei:titleStmt/tei:editor">
                             <xsl:choose>
                                 <xsl:when test="position()= 1">
-                                    <xsl:text>Edited by </xsl:text>
+                                    <xsl:text>Édition réalisée par </xsl:text>
                                 </xsl:when>
                                 <xsl:when test="position()=last()">
                                     <xsl:text> &amp; </xsl:text>
@@ -754,7 +755,7 @@
                         <xsl:for-each select="tei:fileDesc/tei:titleStmt/tei:respStmt/tei:persName">
                             <xsl:choose>
                                 <xsl:when test="position()= 1">
-                                    <xsl:text>Edited by </xsl:text>
+                                    <xsl:text>Édition réalisée par </xsl:text>
                                 </xsl:when>
                                 <xsl:when test="position()=last()">
                                     <xsl:text> &amp; </xsl:text>
@@ -847,4 +848,195 @@
         <script src="../assets/js/loader.js"></script>
     </xsl:template>
     
+    <xsl:template name="tab-metadata">
+        <xsl:element name="div">
+            <xsl:attribute name="class">tab-pane fade</xsl:attribute>
+            <xsl:attribute name="id">metadata</xsl:attribute>
+            <xsl:attribute name="role">tabpanel</xsl:attribute>
+            <xsl:attribute name="aria-labelledby">metadata-tab</xsl:attribute> 
+            <xsl:element name="h4">Métadonnées de l'édition</xsl:element>
+            <xsl:element name="ul">
+                <xsl:element name="li">
+                    <xsl:element name="b">
+                        <xsl:text>Title</xsl:text>
+                    </xsl:element>
+                    <xsl:text>: </xsl:text>
+                    <xsl:choose>
+                        <xsl:when test="//tei:title/@*">
+                        <xsl:apply-templates select="//tei:title[@type='main']"/>
+                    <xsl:text>. </xsl:text>
+                    <xsl:apply-templates select="//tei:title[@type='sub']"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates select="//tei:titleStmt/tei:title"/> 
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:element>
+                <xsl:element name="li">
+                    <xsl:element name="b">
+                        <xsl:text>Identifiant du texte</xsl:text>
+                    </xsl:element>
+                    <xsl:text>: </xsl:text>
+                    <xsl:value-of select="//tei:idno[@type='filename']"/>
+                </xsl:element>
+                <xsl:element name="li">
+                    <xsl:choose>
+                        <xsl:when test="//tei:titleStmt[1]/tei:editor">
+                            <xsl:for-each select="//tei:titleStmt[1]/tei:editor">
+                                <xsl:choose>
+                                    <xsl:when test="position()= 1">
+                                        <xsl:element name="b">
+                                            <xsl:text>Édition réalisée par </xsl:text>
+                                        </xsl:element>                                  
+                                    </xsl:when>
+                                    <xsl:when test="position()=last()">
+                                        <xsl:text> &amp; </xsl:text>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:text>, </xsl:text>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                <xsl:apply-templates select="normalize-space(.)"/>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:when test="not(//tei:titleStmt[1]/tei:editor)">
+                            <xsl:for-each select="//tei:titleStmt[1]/tei:respStmt/tei:persName">
+                                <xsl:choose>
+                                    <xsl:when test="position()= 1">
+                                        <xsl:element name="b">
+                                            <xsl:text>Édition réalisée par </xsl:text>
+                                        </xsl:element>                                  
+                                    </xsl:when>
+                                    <xsl:when test="position()=last()">
+                                        <xsl:text> &amp; </xsl:text>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:text>, </xsl:text>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                <xsl:apply-templates select="normalize-space(.)"/>
+                            </xsl:for-each>
+                        </xsl:when>
+                    </xsl:choose>
+                </xsl:element>
+                <xsl:element name="li">
+                    <xsl:value-of select="replace(//tei:fileDesc/tei:publicationStmt//tei:licence/tei:p[2], '\(c\)', '©')"/>
+                </xsl:element>
+            </xsl:element>
+            <xsl:if test="//tei:projectDesc/tei:p"> 
+                <xsl:apply-templates select="//tei:projectDesc/tei:p"/>
+            </xsl:if>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template name="tab-source">
+        <xsl:element name="div">
+            <xsl:attribute name="class">tab-pane active</xsl:attribute>
+            <xsl:attribute name="id">witnesses</xsl:attribute>
+            <xsl:attribute name="role">tabpanel</xsl:attribute>
+            <xsl:attribute name="aria-labelledby">witnesses-tab</xsl:attribute>
+            <xsl:element name="h4">Informations sur la source</xsl:element>
+            <xsl:element name="ul">
+                <xsl:if test="//tei:sourceDesc/tei:biblStruct//text()">
+                    <xsl:element name="li">
+                        <xsl:element name="b">
+                            <xsl:text>Ouvrage</xsl:text>
+                        </xsl:element>
+                        <xsl:text>: </xsl:text>
+                        <xsl:element name="ul">
+                            <xsl:if test="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:title">
+                                <xsl:element name="li">
+                                    <xsl:element name="b">
+                                        <xsl:text>Titre</xsl:text>
+                                    </xsl:element>
+                                    <xsl:text>: </xsl:text>
+                                    <xsl:apply-templates select="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:title"/>
+                                </xsl:element>
+                            </xsl:if>
+                            <xsl:if test="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:author">
+                                <xsl:element name="li">
+                                    <xsl:element name="b">
+                                        <xsl:text>Auteur</xsl:text>
+                                    </xsl:element>
+                                    <xsl:text>: </xsl:text>
+                                    <xsl:apply-templates select="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:author"/>
+                                </xsl:element>
+                            </xsl:if>
+                            <xsl:if test="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint">
+                                <xsl:element name="li">
+                                    <xsl:element name="b">
+                                        <xsl:text>Éditeur</xsl:text>
+                                    </xsl:element>
+                                    <xsl:text>: </xsl:text>
+                                    <xsl:apply-templates select="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:publisher"/>
+                                    <xsl:text>, </xsl:text>
+                                    <xsl:apply-templates select="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:pubPlace"/>
+                                    
+                                </xsl:element>
+                            </xsl:if>
+                            <xsl:if test="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:date">
+                                <xsl:element name="li">
+                                    <xsl:element name="b">
+                                        <xsl:text>Date</xsl:text>
+                                    </xsl:element>
+                                    <xsl:text>: </xsl:text>
+                                    <xsl:apply-templates select="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:date"/>
+                                </xsl:element>
+                            </xsl:if>
+                        </xsl:element>
+                    </xsl:element> 
+                </xsl:if>
+            </xsl:element>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template name="table">
+        <xsl:element name="div">
+            <xsl:attribute name="class">row wrapper</xsl:attribute>
+            <xsl:element name="ul">
+                <xsl:attribute name="class">nav nav-tabs nav-justified</xsl:attribute>
+                <xsl:attribute name="id">tab</xsl:attribute>
+                <xsl:attribute name="role">tablist</xsl:attribute>
+                <xsl:element name="li">
+                    <xsl:attribute name="class">nav-item</xsl:attribute>
+                    <xsl:attribute name="role">presentation</xsl:attribute>
+                    <xsl:element name="a">
+                        <xsl:attribute name="class">nav-link active</xsl:attribute>
+                        <xsl:attribute name="id">witnesses-tab</xsl:attribute>
+                        <xsl:attribute name="data-toggle">tab</xsl:attribute>
+                        <xsl:attribute name="href">#witnesses</xsl:attribute>
+                        <xsl:attribute name="role">tab</xsl:attribute>
+                        <xsl:attribute name="aria-controls">witnesses</xsl:attribute>
+                        <xsl:attribute name="aria-selected">true</xsl:attribute>
+                        <xsl:element name="div">
+                            <xsl:attribute name="class">panel</xsl:attribute>
+                            <xsl:text>Source</xsl:text>
+                        </xsl:element>
+                    </xsl:element> 
+                </xsl:element>
+                <xsl:element name="li">
+                    <xsl:attribute name="class">nav-item</xsl:attribute>
+                    <xsl:attribute name="role">presentation</xsl:attribute>
+                    <xsl:element name="a">
+                        <xsl:attribute name="class">nav-link</xsl:attribute>
+                        <xsl:attribute name="id">metadata-tab</xsl:attribute>
+                        <xsl:attribute name="data-toggle">tab</xsl:attribute>
+                        <xsl:attribute name="href">#metadata</xsl:attribute>
+                        <xsl:attribute name="role">tab</xsl:attribute>
+                        <xsl:attribute name="aria-controls">metadata</xsl:attribute>
+                        <xsl:attribute name="aria-selected">false</xsl:attribute>
+                        <xsl:element name="div">
+                            <xsl:attribute name="class">panel</xsl:attribute>
+                            <xsl:text>Métadonnées</xsl:text>
+                        </xsl:element>
+                    </xsl:element>
+                </xsl:element>
+            </xsl:element>                     
+            <xsl:element name="div">
+                <xsl:attribute name="class">tab-content</xsl:attribute>
+                <xsl:call-template name="tab-source"/>
+                <xsl:call-template name="tab-metadata"/>
+            </xsl:element>
+        </xsl:element>
+    </xsl:template>
 </xsl:stylesheet>

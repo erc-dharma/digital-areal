@@ -9,16 +9,46 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Fables choisies, mises en vers</title>
+                <title>Edition numérique des Fables choisies, mises en vers</title>
                 <author>Jean de la Fontaine</author>
+                <editor>Axelle Janiak</editor>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <authority>DHARMA pour ANF-Digital Areal</authority>
+                <pubPlace>Fréjus</pubPlace>
+                <idno type="filename">fable005</idno>
+                <availability>
+                    <licence target="https://creativecommons.org/licenses/by/4.0/">
+                        <p>This work is licensed under the Creative Commons Attribution 4.0 Unported
+                            Licence. To view a copy of the licence, visit
+                            https://creativecommons.org/licenses/by/4.0/ or send a letter to
+                            Creative Commons, 444 Castro Street, Suite 900, Mountain View,
+                            California, 94041, USA.</p>
+                        <p>Copyright (c) 2021 by Axelle Janiak.</p>
+                    </licence>
+                </availability>
+                <date when="2021">2021</date>
             </publicationStmt>
             <sourceDesc>
-                <p>Information about the source</p>
+                <biblStruct>
+                    <monogr>
+                        <title>Fables choisies , mises en vers par M. de La Fontaine</title>
+                        <author>Jean de la Fontaine</author>
+                        <imprint>
+                            <pubPlace>Paris</pubPlace>
+                            <publisher>Claude Barbin</publisher>
+                            <date when="1668">1668</date>
+                        </imprint>
+                        <extent>[56]-284-[2] p. : ill. ; in-4 </extent>
+                    </monogr>
+                </biblStruct>
             </sourceDesc>
         </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Exemple réalisé dans le cadre de l'ANF <foreign>Digital Areal</foreign>, 7-10 novembre 2021, Fréjus, par Axelle Janiak.</p>
+            </projectDesc>
+        </encodingDesc>
     </teiHeader>
     <text>
         <front>
