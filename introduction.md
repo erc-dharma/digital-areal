@@ -22,17 +22,17 @@ La fondation de la TEI repose sur la volonté d'établir
 3. (a) define a recommended syntax for the format, (b) a metalanguage for the
 description of text-encoding schemes, (c) describe the new format and
 representative existing schemes both in that metalanguage and in prose ;
-4.propose sets of coding conventions suited for various applications.
-5.include a minimal set of conventions for encoding new texts in the format.
-6.The guidelines are to be drafted by committees on text documentation, text
+4. propose sets of coding conventions suited for various applications.
+5. include a minimal set of conventions for encoding new texts in the format.
+6. The guidelines are to be drafted by committees on text documentation, text
 representation, text interpretation and analysis, metalanguage definition and
 description of existing and proposed schemes, coordinated by a steering
 committee of representatives of the principal sponsoring organizations.
-7.Compatibility with existing standards will be maintained as far as possible.
-8.A number of large text archives have agreed in principle to support the guidelines
+7. Compatibility with existing standards will be maintained as far as possible.
+8. A number of large text archives have agreed in principle to support the guidelines
 in their function as an interchange format. We encourage funding agencies to
 support development of tools to facilitate this interchange.
-9.Conversion of existing machine-readable texts to the new format involves the
+9. Conversion of existing machine-readable texts to the new format involves the
 translation of their conventions into the syntax of the new format. No
 requirements will be made for the addition of information not already coded in
 the texts.

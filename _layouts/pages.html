@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include _head-custom.html %}
   </head>
-  <body onload="transform(xml, xsl)">
+  <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
@@ -29,8 +29,8 @@
     </header>
 
     <main id="content" class="main-content" role="main">
-      <div id="example"/>
-      <!-- {{ content }}-->
+
+     {{ content }}
 
       <footer class="site-footer">
         {% if site.github.is_project_page %}

@@ -9,27 +9,57 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Fables choisies, mises en vers</title>
+                <title>Edition numérique des Fables choisies, mises en vers</title>
                 <author>Jean de la Fontaine</author>
+                <editor>Axelle Janiak</editor>
             </titleStmt>
             <publicationStmt>
-                <p>Publication Information</p>
+                <authority>DHARMA pour ANF-Digital Areal</authority>
+                <pubPlace>Fréjus</pubPlace>
+                <idno type="filename">fable005</idno>
+                <availability>
+                    <licence target="https://creativecommons.org/licenses/by/4.0/">
+                        <p>This work is licensed under the Creative Commons Attribution 4.0 Unported
+                            Licence. To view a copy of the licence, visit
+                            https://creativecommons.org/licenses/by/4.0/ or send a letter to
+                            Creative Commons, 444 Castro Street, Suite 900, Mountain View,
+                            California, 94041, USA.</p>
+                        <p>Copyright (c) 2021 by Axelle Janiak.</p>
+                    </licence>
+                </availability>
+                <date when="2021">2021</date>
             </publicationStmt>
             <sourceDesc>
-                <p>Information about the source</p>
+                <biblStruct>
+                    <monogr>
+                        <title>Fables choisies , mises en vers par M. de La Fontaine</title>
+                        <author>Jean de la Fontaine</author>
+                        <imprint>
+                            <pubPlace>Paris</pubPlace>
+                            <publisher>Claude Barbin</publisher>
+                            <date when="1668">1668</date>
+                        </imprint>
+                        <extent>[56]-284-[2] p. : ill. ; in-4 </extent>
+                    </monogr>
+                </biblStruct>
             </sourceDesc>
         </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Exemple réalisé dans le cadre de l'ANF <foreign>Digital Areal</foreign>, 7-10 novembre 2021, Fréjus, par Axelle Janiak.</p>
+            </projectDesc>
+        </encodingDesc>
     </teiHeader>
     <text>
         <front>
             <titlePage facs="../facsimiles/LaFontaine_001.jpg">
                 <docTitle>
-                    <titlePart>
+                    <titlePart rend="bold">
                         <lb n="1"/>Fables choisies,
                         <lb n="2"/>mises en vers
                     </titlePart>
                 </docTitle>
-                <byline>
+                <byline rend="italic">
                     <lb n="3"/>Par <docAuthor>M. de la Fontaine</docAuthor>
                 </byline>
                 <docImprint>
@@ -39,7 +69,7 @@
                     <lb n="7"/>
                     <docDate>MDCLXVIII</docDate>
                 </docImprint>
-                <imprimatur>Avec privilege du Roy.</imprimatur>
+                <imprimatur rend="italic">Avec privilege du Roy.</imprimatur>
             </titlePage>
         </front>
         <body>
@@ -49,8 +79,11 @@
                     <fw place="top-left" type="pageNum">10</fw>
                     <fw place="top-center" type="head">Fables choisies.</fw>
                     <head>
-                        <lb n="1"/>Fable cinquiesme.</head>
+                        <graphic url="../facsimiles/frise.png"/>
+                    </head>
                     <head>
+                        <lb n="1"/>Fable cinquiesme.</head>
+                    <head rend="italic">
                         <lb n="2"/>Le loup &amp; le chien.</head>
                     <lg>
                         <l n="1">
@@ -118,7 +151,7 @@
                         <l n="29">
                             <lb n="33"/>Sans parler de mainte caresse.</l>
                         <l n="30">
-                            <lb n="34"/>Le loup déjà se forge une felicité</l>
+                            <lb n="34"/>Le loup déjà se forge une <choice><reg>s</reg><orig>&#383;</orig></choice>elicité</l>
                         <l n="31">
                             <lb n="35"/>Qui le fait pleurer de tendresse.</l>
                         <l n="32">
@@ -147,6 +180,10 @@
                             <lb n="45"/>Et ne voudrais pas même à ce prix un tresor.</l>
                         <l n="41">
                             <lb n="46"/>Cela dit, Maistre Loup s'enfuit, et court encor.</l>
+                        <figure>
+                            <graphic url="../facsimiles/chevron.png"/>
+                            <desc>Chevron</desc>
+                        </figure>
                     </lg>
                 </div>
             </div>

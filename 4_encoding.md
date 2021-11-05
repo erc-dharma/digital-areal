@@ -10,7 +10,8 @@
 - `<cit>` avec `<quote>` et `<bibl>` pour les citations avec référence
 - `<bibl>` pour des références bibliographiques
 - `<table>` pour des tableaux  
-- `<figure>` pour des images  
+- `<figure>` pour des images
+- `<note>` pour les notes   
 
 ## Éléments pour la poésie
 - `<lg>` (line group) pour les groupes et sous-groupes de vers (poèmes, strophes, etc.) avec un `@type`
@@ -23,6 +24,32 @@
   - `<p>` ou `<lg>` le cas échéant pour ce qui est dit  
 
 ## Éléments pour la correspondance
+### Élements que l'on peut utiliser en début d'une division
+- `<opener>`	(formule de début) regroupe la date, la mention de responsabilité, la formule de politesse et d'autres expressions de ce type dans un groupe préliminaire au début d’une division, en particulier au commencement d’une lettre.
+- `<signed>`	(signature) contient la dernière salutation, ajoutée à un avant-propos, à une dédicace ou à une autre division du texte.
+### Élements que l'on peut utiliser à la fin d'une division
+- `<closer>`	(formule finale) regroupe une formule de politesse, une indication d'une date et d'autres expressions semblables figurant comme expression à la fin d’une division, en particulier à la fin d’une lettre.
+- `<postscript>`	contient un post-scriptum, par exemple au bas d' une lettre.
+- `<signed>`	(signature) contient la dernière salutation, ajoutée à un avant-propos, à une dédicace ou à une autre division du texte.
+- `<trailer>`	contient un titre de fin ou de bas de page à la fin d’une division du texte.
+### Élements que l'on peut utiliser en début et à la fin d'une division
+- `<dateline>`	(mention de date) contient une brève description des lieux, date, heure, etc. concernant la production d’une lettre, d’un article de journal ou d’un autre texte qui, placée au début ou à la fin, lui est associée comme en-tête ou annonce de fin.
+- `<salute>`	(formule de politesse) contient un dédicace ou une formule de salut qui précède un avant-propos ou autre division du texte; ou bien encore la formule de politesse qui conclut une lettre, une préface, etc.
+
+## Éléments pour une page de titre
+- `<titlePage>` (page de titre) contient la page de titre d’un texte qui figure dans les parties liminaires.
+- `<docTitle>` (titre du document) contient le titre d’un document, incluant la totalité de ses composants tels qu’ils sont donnés sur la page de titre.
+- `<titlePart>` (title part) contient une section ou division du titre d’un ouvrage telle qu’elle est indiquée sur la page de titre.
+type	(type) précise le rôle de cette subdivision du titre. Les valeurs suggérées comprennent: 1] main (main); 2] sub (subordinate); 3] alt (alternate); 4] short (short); 5] desc (descriptive)
+- `<argument>` (argument) liste formelle ou description en texte libre des sujets traités dans une subdivision d’un texte
+- `<byline>` (mention de responsabilité) indique la responsabilité principale pour une œuvre donnée sur la page de titre ou au début ou à la fin de l’œuvre.
+- `<docAuthor>` (auteur du document) contient le nom de l’auteur du document tel qu’il est donné sur la page de titre (ce nom est le plus souvent contenu dans une mention de responsabilité) .
+- `<epigraph>` (epigraph) contient une citation, anonyme ou attribuée et qui apparaît au début d’une section ou d’un chapitre ou sur une page de titre.
+- `<imprimatur>` (imprimatur) contient une mention formalisée autorisant la publication d’un ouvrage, parfois exigée sur une page de titre ou à son verso.
+- `<docEdition>` (édition du document) contient une mention d’édition telle qu’elle figure sur la page de titre d’un document.
+- `<docImprint>` (mention d'impression) contient la mention d'impression de l'éditeur (lieu et date de publication, nom de l’éditeur), telle qu’elle est généralement donnée au bas de la page de titre.
+- `<docDate>` (date du document) contient la date d’un document telle qu’elle est (généralement ) donnée sur une page de titre.
+- `<graphic>` (graphic) indique l'emplacement d'une image, d'une illustration ou d'un schéma intégrés.
 
 ## Transcrire sa source
 ### Structuration matérielle
@@ -48,7 +75,7 @@
 - la raison avec l'attribut `@reason`
 
 ### Interventions du scribe
-#### Additions
+#### Ajouts
 `<add>` ( ajout) contient des lettres, des mots ou des phrases insérés dans le texte par un auteur, un copiste, un annotateur ou un correcteur.
 - la position de l'ajout avec l'attribut `@place`
 
@@ -56,7 +83,7 @@
 `<del>` (suppression) contient une lettre, un mot ou un passage supprimé, marqué comme supprimé, sinon indiqué comme superflu ou erroné dans le texte par un auteur, un copiste, un annotateur ou un correcteur.
 - la mise en forme avec l'attribut `@rend`
 
-#### Combiner une addition et une suppression sur un même segment de texte
+#### Combiner una ajout et une suppression sur un même segment de texte
 `<subst>` ( substitution) regroupe une ou plusieurs parties de texte supprimées et une ou plusieurs parties de texte ajoutées, lorsque cette combinaison peut être considérée comme une intervention unique sur le texte.
 
 ```
@@ -102,7 +129,8 @@ A l'inverse, si vous voulez signaler l'éditeur, responsable de l'intervention, 
 </choice>
 ```
 
-## Abréviation
+## Abréviations
+Les abréviations
 ```
 17
  <choice>
@@ -113,10 +141,13 @@ A l'inverse, si vous voulez signaler l'éditeur, responsable de l'intervention, 
 ```
 
 ## Caractères spéciaux
-<g>
-### traitement des allographes
+- `<c>` (caractère) représente un caractère.
+- `<g>` (caractère ou glyphe) représente un glyphe, ou un caractère non standard.
+L'élément `<c>` doit se comprendre principalement comme un caractère issu de l'alphabet latin, à l'inverse `<g>`, issue du module `gaiji` et signifiant glyphe offre plus de possibilités. Il peut s'associer à des attributs `@ref` pour pointer vers une explicitation du caractère, ou encore avec `@type`, s'il s'agit d'établir une typologie.
+
+### Traitement des allographes
 Pour traiter les allographes présents dans la fable, plusieurs solutions sont possibles:
-1- Utiliser `<choice>` puis déclarer systématiquement le caractère
+1- Utiliser `<choice>` puis déclarer systématiquement le caractère  
 ```
 <choice>
  <reg>s</reg>
@@ -170,6 +201,67 @@ Soit un doctype avec l'élément `<g>`.
 <!ENTITY s-long '<g ref="#s-long">s</g>' >
 ```
 * * *
+
+### Formatter un caractère ou une chaîne de caractères
+- `<hi>` (mis en évidence) distingue un mot ou une expression comme graphiquement distincte du texte environnant, sans en donner la raison.
+- `@rend` (interprétation) indique comment l'élément en question a été rendu ou présenté dans le texte source
+Il est possible d'indiquer la manière typographique utilisé pour rendre un caractère, grâce à l'attribute `@rend`. Cet attribut peut s'utiliser sur l'ensemble des éléments étant membre de la classe att.global.rendition.
+```
+<head rend="italic"><lb n="2"/>Le loup &amp; le chien.</head>
+```
+Lorsqu'une indication typographique est nécessaire, mais que vous ne disposer pas d'élément pour l'indiquer, vous pouvez faire appel à l'élément générique `<hi>`. C'est cet élément que nous avons utilisé dans l'exemple de l'abrévitiation.
+```
+<head>
+  <lb n="1"/>Fable cinquiesme.
+  <lb n="2"/><hi rend="italic">Le loup & le chien.</hi>
+</head>
+```
+ 
+## Encoder des éléments en langue étrangère
+- `<foreign>` (étranger) reconnaît un mot ou une expression comme appartenant à une langue différente de celle du contexte
+  - `@xml:lang` pour déclarer la langue. La valeur de l'attribut correspond le plus souvent à la norme ISO 639 qui se compose de plusieurs parties, ainsi le français peut se déclarer
+    - `fr` 639-1
+    - `fra` 639-2/T et 639-3
+    - `fre` 639-2/B
+Pour les variations régionales ou historiques, voir la norme [ISO 639-3](https://iso639-3.sil.org/)
+L'attribut `@xml:lang` fait partie de la classe `att.global` qui est disponible sur l'ensemble des éléments de la tei, au même titre que `@xml:id`, `@n`, `@xml:base` et `@xml:space`.
+
+## Encoder une image
+### Décrire les facsimilés
+Les facsimilés d'une édition peuvent se déclarer dans le `<teiHeader>` dans l'une des sous-sections de `<sourceDesc>`, ou peuvent aussi se déclarer entre le `<teiHeader>` et le `<text>` à l'aide de l'élément `<facsimile>`.
+- `<facsimile>` contient une représentation d'une source écrite quelconque sous la forme d'un ensemble d'images plutôt que sous la forme d'un texte transcrit ou encodé.
+- `<sourceDoc>` contains a transcription or other representation of a single source document potentially forming part of a dossier génétique or collection of sources.
+```
+<facsimile>
+ <graphic url="LaFontaine_001.jpg"/>
+ <graphic url="LaFontaine_002.jpg"/>
+ <graphic url="LaFontaine_003.jpg"/>
+ <graphic url="LaFontaine_004.jpg"/>
+</facsimile>
+```
+### Lier une partie du texte avec un facsimilé
+Il est possible de lier une division et une section de texte avec le facsimilé. Pour se faire, il suffit d'utiliser l'attribut `@facs` auquel on donne comme valeur soit le chemin vers l'image, soit le nom de l'image, selon les conventions établis par le projet. Dans les pratiques TEI, on retrouve souvent l'utilisation de cet attribut avec l'élément `<pb/>`.
+```
+<pb n="10" facs="../facsimiles/LaFontaine_002.jpg"/>
+```
+
+### Encoder une image
+Encoder une image peut se faire de plusieurs manières et avec plusieurs degrès d'information, notamment il est possible de renseigner les coordonnées de l'image sur le facsimilé, à l'aide des éléments `<surface>` et `<zone>`. Nous ne considérerons que des solutions simples dans le cadre de cette présentation.
+```
+<facsimile>
+<surface ulx="50" uly="20" lrx="400"
+lry="280">
+<zone ulx="0" uly="0" lrx="500" lry="321">
+ <graphic url="graphic.png "/>
+</zone>
+</surface>
+</facsimile>
+````
+source: [TEI Guidelines](https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-zone.html)
+
+- `<figure>` (figure) regroupe des éléments représentant ou contenant une information graphique comme une illustration ou une figure
+- `<graphic>` (graphic) indique l'emplacement d'une image, d'une illustration ou d'un schéma intégrés.
+  - avec l'attribut `@url` pour indiquer le chemin vers la donnée.
 
 ## Éléments d'indexation
 ### Noms et personnes
