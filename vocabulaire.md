@@ -1,26 +1,27 @@
 **API** : Application Programming Interface, est une interface qui met à disposition des données d'un système d'information pour que d'autres systèmes puissent s'en servir.  
-**CSS** : Cascading Stylesheets  
-**DOM** : Document Object Model.  
-**DTD** : Document Type Definition. Il permet de déclarer des règles de structure pour le balisage d'un fichier XML.  
+**CSS** : Cascading stylesheets. Le principe des feuilles de style CSS est de séparer le contenu de la forme. On le retrouve associées avec HTML et à XHTML.  
+**DOM** : Document Object Model. DOM une API permettant de charger un document XML sous forme d'un arbre qu'il est ensuite possible de manipuler. L'application construit alors une représentation du document XML sous forme d'un arbre. Cette notion est mobilisée dans le cadre de la programmation XML.  
+**DTD** : Document Type Definition. Il permet de déclarer des règles de structure pour le balisage d'un fichier XML.  Il utilise une syntaxe héritée de SGML et est particulièrement adaptée pour de petits modèles. Les contraintes spécifient quels sont les éléments qui peuvent apparaître dans le contenu d'un élément, l'ordre éventuel de ces éléments et la présence de texte brut. Elles définissent aussi, pour chaque élément, les attributs autorisés et les attributs obligatoires.  
 **Epidoc** :  Personnalisation de la TEI pour les textes et documents anciens, et plus spécifiquement l'épigraphie grecque et latine.  
-<<<<<<< HEAD
-**HTML** : L'HyperText Markup Language est un langage standardisé fonctionnant avec des balises pour l'affichage des documents sur des navigateurs web et qui peut être associé à de la Cascading Style Sheets et à des scripts comme le JavaScript.    
-**Namespace** : La notion d'espace de nom (*namespace*) désigne en informatique un vocabulaire abstrait conçu pour accueillir tous les termes appartenant à un même ensemble.  Il est matérialisé par un préfixe identifiant de manière unique un vocabulaire, afin de lever toute ambiguïté entre des termes appartenant à différents ensembles et qui pourraient être homonymes lorsqu'ils sont utilisés conjointement. Les technologies XML font un usage intensif de ces espaces de noms, car les documents XML doivent avoir la capacité de mélanger sans ambiguïté plusieurs vocabulaires distincts.  
-=======
-**HTML** : L'HyperText Markup Language est un langage standardisé fonctionant avec des balises pour l'affichage des documents sur des navigateurs webs et qui peut être associé à de la Cascading Style Sheets et à des scripts comme le javaScript.  
+**HTML** : L'HyperText Markup Language est un langage standardisé fonctionant avec des balises pour l'affichage des documents sur des navigateurs webs et qui peut être associé à de la Cascading Style Sheets et à des scripts comme le javaScript.    
 **Modélisation** : Opération par laquelle on établit le modèle d'un système complexe, afin d'étudier plus commodément et de mesurer les effets sur ce système des variations de tel ou tel de ses éléments composants. Source: J. Giraud, P. Pamart, J. Riverain, *Les nouveaux mots « dans le vent »*, Paris, France, 1974.  
 **Namespace** : La notion d'espace de noms (*namespace*) désigne en informatique un vocabulaire abstrait conçu pour accueillir tous les termes appartenant à un même ensemble.  Il est matérialisé par un préfixe identifiant de manière unique un vocabulaire, afin de lever toute ambiguïté entre des termes appartenant à différents ensemble et qui pourraient être homonymes lorsqu'ils sont utilisés conjointement. Les technologies XML font un usage intensif de ces espaces de noms, car les documents XML doivent avoir la capacité de mélanger sans ambiguïté plusieurs vocabulaires distincts.  
->>>>>>> bc66d4fa086201d8ad776cb12fbae21da3fa2f72
-**ODD** : One Document Does it All  
-**RelaxNG** : Regular Language for XML Next Generation, langage de schéma pour la validation de la structure XML. Ce langage peut s'exprimer selon deux syntaxes.<!--il manque les deux syntaxes non?-->  
-**SGML** : Standard Generalized Markup Language est un métalangage fonctionnant avec des balises, et déterminé par une DTD. Il est l'ancêtre de l'XML.  
-**schéma** :  
-**TEI**: Text Encoding Initiative  
-**W3C** : World Wide Web Consortium est une organisation internationale qui maintient et développe les standards du Web.  
-**XHTML** :  
-**XInclude** :   
-**XML** : eXtensible Markup Language est un métalangage à balises, déterminé par une syntaxe normée par le W3C.
-**XQuery** : XML Query Language s'utilise dans des bases de données XML comme BaseX et eXistDB et/ou avec des serveurs orientés XML comme MarkLogic.  
-**XSL** : XML stylesheet Language est un langage de transformation de fichiers XML qui se divise en deux unités distinctes: la XSLT et la XSL-FO.  
+**ODD** : One Document Does it All. Document qui centralise la documentation, le schéma de validation d'un projet, et parfois les règles de transformation.   
+**RelaxNG** : Regular Language for XML Next Generation, langage de schéma pour la validation de la structure XML. Ce langage peut s'exprimer selon deux syntaxes: XML (rng) et une compact (rnc).   
+**SAX** : API permettant de lire un fichier XML sous forme de flux. Au cours de la lecture du document XML, le gestionnaire reçoit les événements générés par le parseur. Cette notion est mobilisée dans le cadre de la programmation XML.   
+**SGML** : Standard generalized markup language est un métalangage fonctionnant avec des balises, et déterminé par une DTD. Il est l'ancêtre de l'XML.  
+**schéma** : Les schémas XML définissent des modèles de documents que l'on peut ensuite utilisé pour vérifier les documents produits, c'est-à-dire que l'on vérifier qu'un document donné respecte les contraintes fixées. Ils ont été introduits pour combler certaines lacunes des DTD.  
+**schematron** : Schematron permet de spécifier la structure d'un document XML. C'est au départ une alternative aux schémas mais son formalisme n'est pas très adapté pour définir l'imbrication des éléments comme le font les DTD ou les schémas en donnant une grammaire. C'est pourquoi, il est plutôt complémentaire des schémas. Car, il permet d'imposer des contraintes sur le document qu'il est difficile, voire impossible, d'exprimer avec les schémas. Il est fréquent d'utiliser les deux formalismes conjointement: nn schéma définit alors la structure globale d'un document et un schematron la complète en ajoutant des contraintes supplémentaires que doit satisfaire le document pour être valide.   
+**TEI**: Text Encoding Initiative.    
+**TEI classe** : Les classes organisent les éléments et les attributs du modèle TEI et permettent de fixer des propriétés et des règles d'héritage partagés par plusieurs éléments et attributs. Les classes sont identifiables par le préfixe `att.` pour les attributs et par `model.` pour les modèles d'éléments.  
+**TEI macro** : les macros sont des raccourcis qui permettent de spécifier le contenu, en particulier pour le contenu d'un élément ou pour les valeurs d'un attribut. Elles sont employées lors de la création des schémas. Elles débutent par le préfixe `macro.`.     
+**TEI module** : Sous-ensemble de la TEI qui détermine l'ensemble des éléments propre à un type d'objet, une approche ou à une discipline, afin de répondre à une problématique particulière. Un module est systématiquement documenté par un chapitre des *Guidelines* et établit des composantes du modèle et leurs spécificités techniques.   
+**W3C** : World Wide Web Consortium est une organisation internationale qui maintient et développe les standards du web.  
+**XHTML** :  Il s'agit d'un html qui est formé de manière rigoureuse. Le <!DOCTYPE> is y obligatoire, de même que l'espace de nom. Les éléments doivent y être fermés, correctement emboîtés et syntaxés.   
+**XInclude** : Permet d'importer des fragments d'XML dans un autre fichier XML. Il fonctionne avec un élément `<xi:include>` qui a un attribut `@href` qui contient le nom du fichier à inclure.  
+**XML** : eXtensible markup language est un métalangage à balises, déterminé par une syntaxe normée par le W3C.  
+**XPath** : langage permettant de sélectionner des parties d'un document XML. Les schematrons sont essentiellement basés sur XPath et le langage XSLT en fait également un usage intensif pour désigner les parties à traiter.  
+**XQuery** : XML Query language s'utilise dans des bases de données XML comme BaseX et eXistDB et/ou avec des serveurs orientés XML comme MarkLogic.  
+**XSL** : XML stylesheet language langage de transformation de fichiers XML qui se divise en deux unités distinctes: la XSLT et la XSL-FO.  
 **XSL-FO** : XML Stylesheet Language - Formatting Objets  
-**XSLT** : XML Stylesheet Language Transformation, langage de mise en page de documents lors des transformations des fichiers XML.
+**XSLT** : XML stylesheet language Transformation, langage de mise en page de documents lors des transformations des fichiers XML.

@@ -16,7 +16,8 @@ title: Exemple fable
 <br>de la Sainte Chapelle
 <br>
 <span>MDCLXVIII</span>
-</span><span class="font-italic">Avec privilege du Roy.</span></p></div><div class="col-6"><img src="facsimiles/LaFontaine_001.jpg" class="img-fluid" alt="Image de la pagede l'édition de la Fontaine"></div></div><hr>
+</span>
+<br><span class="font-italic">Avec privilege du Roy.</span></p></div><div class="col-6"><img src="facsimiles/LaFontaine_001.jpg" class="img-fluid" alt="Image de la pagede l'édition de la Fontaine"></div></div><hr>
 <div class="row"><div class="col-1 font-weight-bold">Fable 5</div><div class="col-5 text-center">
 <p class="text-muted form-work&#xA; float-left">10</p>
 <p class="text-muted form-work&#xA; text-center font-weight-bold header">Fables choisies.</p>
