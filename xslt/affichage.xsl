@@ -308,6 +308,19 @@
         </xsl:element>
     </xsl:template>
     <!--  F ! -->
+    <!-- figure -->
+    <xsl:template match="tei:figure">
+        <xsl:element name="div">
+            <xsl:apply-templates select="tei:graphic"/>
+            <xsl:if test="child::tei:desc">
+                <xsl:element name="p">
+                    <xsl:attribute name="class">font-italic</xsl:attribute>
+                    <xsl:apply-templates select="child::tei:desc"/>
+                </xsl:element>
+            </xsl:if>
+        </xsl:element>
+    </xsl:template>
+    
     <!--  foreign ! -->
     <xsl:template match="tei:foreign">
         <xsl:element name="span">
@@ -324,9 +337,6 @@
     <xsl:template match="tei:front">
         <xsl:element name="div">
             <xsl:attribute name="class">row</xsl:attribute>
-        <!--<xsl:element name="h1">
-            
-        </xsl:element>-->
             <xsl:element name="div">
                 <xsl:attribute name="class">col-1</xsl:attribute>
                 <xsl:text>page de titre</xsl:text>
@@ -434,6 +444,32 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    <!-- graphic -->
+    <xsl:template match="tei:graphic">
+        <xsl:choose>
+            <xsl:when test="@url">
+                <xsl:element name="img">
+            <xsl:attribute name="src">
+                <xsl:value-of select="@url"/>
+            </xsl:attribute>
+            <xsl:attribute name="class">
+                <xsl:text>img-fluid</xsl:text>
+            </xsl:attribute>
+            <xsl:attribute name="alt">
+                <xsl:text>Image de la page </xsl:text>
+                <xsl:value-of select="@n"/>
+                <xsl:text> de l'édition de la Fontaine</xsl:text>
+            </xsl:attribute>
+        </xsl:element>
+            </xsl:when>
+                <xsl:otherwise>
+                    <xsl:element name="span">
+                    <xsl:text>Emplacement d'une image</xsl:text>
+                    </xsl:element>
+                </xsl:otherwise>            
+        </xsl:choose>
+    </xsl:template>
+    
     <!--  H ! -->
     <!--  head ! -->
     <xsl:template match="tei:head">
