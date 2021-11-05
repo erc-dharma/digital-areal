@@ -75,6 +75,9 @@ Un exemple: le [projet Menota](https://www.menota.org/HB3_index.xml). Les élém
   - `<me:ass>`	pour encoder les changements de rythmes dans un vers
   - `<me:textSpan/>` pour encoder des structures qui se chevauchent
     - `@me:category` pour qualifier le type de l'élément problématique par rapport à la structure. La liste des valeurs d'attributs est fermée.
+
+**C'est pourquoi un travail de modélisation est nécessaire lorsque l'on établit un modèle TEI pour un ou des corpus.**
+La modélisation est une : « opération par laquelle on établit le modèle d'un système complexe, afin d'étudier plus commodément et de mesurer les effets sur ce système des variations de tel ou tel de ses éléments composants » Source: J. Giraud, P. Pamart, J. Riverain, *Les nouveaux mots « dans le vent »*, Paris, France, 1974.
 * * *
 
 ## Epidoc, une personnalisation de la TEI
