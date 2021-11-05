@@ -54,12 +54,12 @@
         <front>
             <titlePage facs="../facsimiles/LaFontaine_001.jpg">
                 <docTitle>
-                    <titlePart>
+                    <titlePart rend="bold">
                         <lb n="1"/>Fables choisies,
                         <lb n="2"/>mises en vers
                     </titlePart>
                 </docTitle>
-                <byline>
+                <byline rend="italic">
                     <lb n="3"/>Par <docAuthor>M. de la Fontaine</docAuthor>
                 </byline>
                 <docImprint>
@@ -69,7 +69,7 @@
                     <lb n="7"/>
                     <docDate>MDCLXVIII</docDate>
                 </docImprint>
-                <imprimatur>Avec privilege du Roy.</imprimatur>
+                <imprimatur rend="italic">Avec privilege du Roy.</imprimatur>
             </titlePage>
         </front>
         <body>

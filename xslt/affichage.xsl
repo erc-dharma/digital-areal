@@ -73,7 +73,8 @@
     
     <!-- byline -->
     <xsl:template match="tei:byline">
-        <xsl:element name="p">
+        <xsl:element name="span">
+            <xsl:call-template name="rendition"/>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
@@ -297,16 +298,27 @@
     <!-- docAuthor -->
     <xsl:template match="tei:docAuthor">
         <xsl:element name="span">
+            <xsl:call-template name="rendition"/>
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    
+    <!-- docDate -->
+    <xsl:template match="tei:docDate">
+        <xsl:element name="span">
+            <xsl:call-template name="rendition"/>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
     
     <!-- docImprint -->
     <xsl:template match="tei:docImprint">
-        <xsl:element name="p">
+        <xsl:element name="span">
+            <xsl:call-template name="rendition"/>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
+    
     <!--  F ! -->
     <!-- figure -->
     <xsl:template match="tei:figure">
@@ -343,7 +355,9 @@
             </xsl:element>
             <xsl:element name="div">
                 <xsl:attribute name="class">col-5</xsl:attribute>
+                <xsl:element name="p">
                 <xsl:apply-templates select="tei:titlePage/child::*"/>
+                </xsl:element>
             </xsl:element>
             <xsl:element name="div">
                 <xsl:attribute name="class">col-6</xsl:attribute>
@@ -493,6 +507,12 @@
                     <xsl:apply-templates/>
                 </xsl:element>
             </xsl:when>
+            <xsl:when test="@rend='bold'">
+                <xsl:element name="span">
+                    <xsl:attribute name="class">font-weight-bold</xsl:attribute>
+                    <xsl:apply-templates/>
+                </xsl:element>
+            </xsl:when>
             <xsl:when test="@rend='italic'">
                 <xsl:element name="span">
                     <xsl:attribute name="class">font-italic</xsl:attribute>
@@ -504,10 +524,12 @@
     
     <!-- imprimatur -->
     <xsl:template match="tei:imprimatur">
-        <xsl:element name="p">
+        <xsl:element name="span">
+            <xsl:call-template name="rendition"/>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
+    
     <!--  l ! -->
     <xsl:template match="tei:l">
         <xsl:element name="span">
@@ -524,12 +546,13 @@
     </xsl:template>
     
     <!-- lb-->
-   <!--<xsl:template match="tei:lb">
-        <xsl:element name="span">
+   <xsl:template match="tei:lb[ancestor-or-self::tei:front]">
+       <!-- <xsl:element name="span">
             <xsl:attribute name="class">text-muted lineation</xsl:attribute>
             <xsl:value-of select="@n"/>
-        </xsl:element>
-    </xsl:template>-->
+        </xsl:element>-->
+       <br/>
+    </xsl:template>
     
     <!--  lg ! -->
     <xsl:template match="tei:lg">
@@ -652,6 +675,7 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
+
     <!--  speaker ! -->
     <xsl:template match="tei:speaker"/>
     <xsl:template match="tei:speaker" mode="bypass">
@@ -707,10 +731,9 @@
     <xsl:template match="tei:supplied">
         <xsl:element name="span">
             <xsl:attribute name="class">text-muted supplied</xsl:attribute>
-            <xsl:attribute name="href">javascript:void(0);</xsl:attribute>
             <xsl:attribute name="data-toggle">tooltip</xsl:attribute>
             <xsl:attribute name="data-placement">top</xsl:attribute>
-            <xsl:attribute name="title">Ajouté par l'éditeur.</xsl:attribute>
+            <xsl:attribute name="title">Ajouté par l'éditeur</xsl:attribute>
             <xsl:choose>
                 <xsl:when test="@reason='omitted'">
                     <xsl:element name="span">
@@ -850,7 +873,8 @@
     
     <!-- titlePart ! -->
    <xsl:template match="tei:titlePart">
-            <xsl:element name="p">
+            <xsl:element name="span">
+                <xsl:call-template name="rendition"/>
                 <xsl:apply-templates/>
             </xsl:element>
     </xsl:template>
@@ -1098,5 +1122,16 @@
                 <xsl:call-template name="tab-metadata"/>
             </xsl:element>
         </xsl:element>
+    </xsl:template>
+    
+    <xsl:template name="rendition">
+        <xsl:choose>
+            <xsl:when test="@rend='bold'">
+                <xsl:attribute name="class">font-weight-bold</xsl:attribute>
+            </xsl:when>
+            <xsl:when test="@rend='italic'">                        
+                <xsl:attribute name="class">font-italic</xsl:attribute>
+            </xsl:when>
+        </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>
