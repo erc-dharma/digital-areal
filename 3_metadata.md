@@ -166,7 +166,7 @@ On utilise cet élément, le plus souvent, lorsque l'on ne sait pas où mettre l
 Partie obligatoire du `<teiHeader>`, elle décrit la source à partir de laquelle un texte électronique a été dérivé ou produit. On peut y trouver une description bibliographique pour un texte numérisé, une liste des témoins dans le cadre d'une édition critique <!--d'un manuscrit, car je ne suis pas sûre que tout le monde sache ce qu'est une édition critique--> et ainsi de suite.
 
 Pour être valide, le `<sourceDesc>` doit contenir l'un des éléments suivants:
-- `<p>`
+- `<p>` (paragraphe)
 - `<bibl>` (référence bibliographique) contient une référence bibliographique faiblement structurée dans laquelle les sous-composants peuvent ou non être explicitement balisés.
 - `<biblStruct>` (référence bibliographique structurée) contient une référence bibliographique dans laquelle seuls des sous-éléments bibliographiques apparaissent et cela, selon un ordre déterminé.
 - `<biblFull>` (référence bibliographique totalement structurée) contient une référence bibliographique totalement structurée : tous les composants de la description du fichier TEI y sont présents.
