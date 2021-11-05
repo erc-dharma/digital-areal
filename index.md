@@ -5,18 +5,25 @@ Présentation par Emmanuel Francis (CNRS-EHESS, CEIAS) et Axelle Janiak (CNRS-EH
 Pour nous contacter: [manufrancis@gmail.com](manufrancis@gmail.com) et [axelle.janiak@ehess.fr](axelle.janiak@ehess.fr])
 
 ## TO DO pour finaliser l'ensemble
-- [] faire le chapitre 3
-- [] écrire la XSLT pour la fable et le texte en prose de Proust
-- [] bonnes pratiques lorsque l'on travaille avec l'XML
-- [] XML et les espaces
-- [] Finir les définitions
-- [] Relire pour corriger les coquilles
+- Faire le chapitre 3
+- Monter l'exemple sur le site
+- Finir les définitions
+- Relire pour corriger les coquilles
 
-## Contenu du repository
-- Les pages de cours en format markdown utilisé pour générer le site statique
-- Templates Epidoc et TEI pour les encodages
-- Schéma de validation: Epidoc, TEI all
+## Contenu de ce repository
+- Les pages de cours en format markdown
+- Le dossier `asset` regroupe les scripts, images et styles utilisés dans l'ensemble des pages du site.
+- Le dossier `examples` contient une proposition d'encodage pour la fable, utilisé pour générer l'exemple sur le site.
+- Le dossier `facsimiles` contient des jpg, les transcriptions de la fable *Le Loup et le chien* de La Fontaine et une version du premier chapitre de *La Recherche du temps perdu* de Proust, et les médatonnées issues de *Gallica*.
+- Le dossier `schema` met à disposition des schémas de validation pour Epidoc, TEI all et des exemples de schéma utilisés par DHARMA (RelaxNG et schematron).
+- Le dossier `templates` propose des templates Epidoc et TEI pour aider à débuter les encodages, ainsi qu'un template d'encodage plus développé utilisé par DHARMA pour les inscritptions.
+- Le dossier `XSLT` contient une XSLT pour numéroter les vers de la fable et une pour le transformer en html.
+- Les autres éléments sont utilisés afin de générer la page gitHub, à l'aide du thème Cayman et de Jekyll.
 
+**L'ensemble est disponible en licence CC-BY, grâce au financement de l'ERC du projet DHARMA.**
+
+## Déroulé du cours
+Le cours a été conçu pour mobiliser un maximum de connaissances et de notions de l'univers de l'XML. Il se compose d'une introduction à la TEI et de cinq chapitres expliquant les principes de l'XML, la structure d'un fichier TEI, le teiHeader, l'édition d'un texte et enfin quelques principes sur la XSLT. Il est aussi accompagné d'un lexique et d'une liste d'éléments utilisés dans le cas des éditions critiques de DHARMA pour permettre aux participants ayant amené leur propre texte ou corpus d'accèder à plus d'éléments. 
 
 ## Editeurs de texte et de code
 Il est nécessaire d'avoir un éditeur de texte:
