@@ -16,12 +16,12 @@ title: Exemple fable
 <br>de la Sainte Chapelle
 <br>
 <span>MDCLXVIII</span>
-</span><span class="font-italic">Avec privilege du Roy.</span></p></div><div class="col-6"><img src="../facsimiles/LaFontaine_001.jpg" class="img-fluid" alt="Image de la pagede l'édition de la Fontaine"></div></div><hr>
+</span><span class="font-italic">Avec privilege du Roy.</span></p></div><div class="col-6"><img src="facsimiles/LaFontaine_001.jpg" class="img-fluid" alt="Image de la pagede l'édition de la Fontaine"></div></div><hr>
 <div class="row"><div class="col-1 font-weight-bold">Fable 5</div><div class="col-5 text-center">
 <p class="text-muted form-work&#xA; float-left">10</p>
 <p class="text-muted form-work&#xA; text-center font-weight-bold header">Fables choisies.</p>
 <p class="font-weight-bold">
-<img src="../facsimiles/frise.png" class="img-fluid" alt="Image de la pagede l'édition de la Fontaine">
+<img src="facsimiles/frise.png" class="img-fluid" alt="Image de la pagede l'édition de la Fontaine">
 </p>
 <p class="font-weight-bold">
 Fable cinquiesme.</p>
@@ -118,7 +118,7 @@ Je ne veux en aucune sorte,</span><br>
 Et ne voudrais pas même à ce prix un tresor.</span><br>
 <span class="vers">
 Cela dit, Maistre Loup s'enfuit, et court encor.</span><br>
-<div><img src="../facsimiles/chevron.png" class="img-fluid" alt="Image de la pagede l'édition de la Fontaine"><p class="font-italic">Chevron</p></div>
+<div><img src="facsimiles/chevron.png" class="img-fluid" alt="Image de la pagede l'édition de la Fontaine"><p class="font-italic">Chevron</p></div>
 </div>
-</div><div class="col-6"><img src="../facsimiles/LaFontaine_002.jpg" class="img-fluid" alt="Image de la page 10 de l'édition de la Fontaine"><img src="../facsimiles/LaFontaine_003.jpg" class="img-fluid" alt="Image de la page 11 de l'édition de la Fontaine"><img src="../facsimiles/LaFontaine_004.jpg" class="img-fluid" alt="Image de la page 12 de l'édition de la Fontaine"></div></div>
+</div><div class="col-6"><img src="facsimiles/LaFontaine_002.jpg" class="img-fluid" alt="Image de la page 10 de l'édition de la Fontaine"><img src="facsimiles/LaFontaine_003.jpg" class="img-fluid" alt="Image de la page 11 de l'édition de la Fontaine"><img src="facsimiles/LaFontaine_004.jpg" class="img-fluid" alt="Image de la page 12 de l'édition de la Fontaine"></div></div>
 <span class="popover-content d-none" id="d1e167"><span><span class="mb-1 lemma-line"><span class="app-orig">n'avoit (orig)</span></span></span></span><span class="popover-content d-none" id="d1e176"><span><span class="mb-1 lemma-line"><span class="app-orig">faisoient (orig)</span></span></span></span><span class="popover-content d-none" id="d1e194"><span><span class="mb-1 lemma-line"><span class="app-orig">s'estoit (orig)</span></span></span></span><span class="popover-content d-none" id="d1e211"><span><span class="mb-1 lemma-line"><span class="app-orig">eust (orig)</span></span></span></span><span class="popover-content d-none" id="d1e220"><span><span class="mb-1 lemma-line"><span class="app-orig">faloit (orig)</span></span></span></span><span class="popover-content d-none" id="d1e229"><span><span class="mb-1 lemma-line"><span class="app-orig">estoit (orig)</span></span></span></span><span class="popover-content d-none" id="d1e267"><span><span class="mb-1 lemma-line"><span class="app-sic">luy (<span class="font-italic">sic</span>)</span></span></span></span><span class="popover-content d-none" id="d1e286"><span><span class="mb-1 lemma-line"><span class="app-sic">luy (<span class="font-italic">sic</span>)</span></span></span></span><span class="popover-content d-none" id="d1e316"><span><span class="mb-1 lemma-line"><span class="app-sic">quoy (<span class="font-italic">sic</span>)</span></span></span></span><span class="popover-content d-none" id="d1e331"><span><span class="mb-1 lemma-line"><span class="app-sic">moy (<span class="font-italic">sic</span>)</span></span></span></span><span class="popover-content d-none" id="d1e362"><span><span class="mb-1 lemma-line"><span class="app-sic">quoy (<span class="font-italic">sic</span>)</span></span></span></span><span class="popover-content d-none" id="d1e387"><span><span class="mb-1 lemma-line"><span class="app-orig">ſ (orig)</span></span></span></span><span class="popover-content d-none" id="d1e420"><span><span class="mb-1 lemma-line"><span class="app-sic">Quoy (<span class="font-italic">sic</span>)</span></span></span></span></div><footer class="footer mt-auto py-3 text-center"><div>Copyright © 2021 by Axelle Janiak.</div></footer>
