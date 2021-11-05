@@ -1,6 +1,6 @@
 # Atelier TEI
 Action Nationale de Formation "Digital Areal" 7-10 novembre 2021, Fréjus.
-Présentation par Emmanuel Francis (CNRS-EHESS, CEIAS) et Axelle Janiak (CNRS-EHESS, CEIASingénieure pour le projet DHARMA)
+Présentation par Emmanuel Francis (CNRS-EHESS, CEIAS) et Axelle Janiak (CNRS-EHESS, CEIASingénieure pour le projet DHARMA).  
 Site réalisé par Axelle Janiak, en collaboration avec Adeline Levivier (EFEO, ingénieure pour le projet DHARMA).
 
 Pour nous contacter: [manufrancis@gmail.com](manufrancis@gmail.com), [adeline.levivier@efeo.net](adeline.levivier@efeo.net) et [axelle.janiak@ehess.fr](axelle.janiak@ehess.fr]).
@@ -45,5 +45,5 @@ Marjorie Burghart, James Cummings & Elena Pierazzo, *Digital Editing of Medieval
 Daniel Bálogh et Arlo Griffiths, *Dharma Encoding Guide*, 2019: [lien](https://halshs.archives-ouvertes.fr/halshs-02888186)  
 Daniel Bálogh et Arlo Griffiths, *Dharma Transliteration Guide*, 2019:  [lien](https://hal.archives-ouvertes.fr/halshs-02272407v3)
 
-### Codes, templates et schéma du projet DHARMA
+### Codes, templates et schémas du projet DHARMA
 Tout est accessible sur le repository gitHub [Project-documentation](https://github.com/erc-dharma/project-documentation).  
