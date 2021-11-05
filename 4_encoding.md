@@ -48,7 +48,7 @@ type	(type) précise le rôle de cette subdivision du titre. Les valeurs suggér
 - `<imprimatur>` (imprimatur) contient une mention formalisée autorisant la publication d’un ouvrage, parfois exigée sur une page de titre ou à son verso.
 - `<docEdition>` (édition du document) contient une mention d’édition telle qu’elle figure sur la page de titre d’un document.
 - `<docImprint>` (mention d'impression) contient la mention d'impression de l'éditeur (lieu et date de publication, nom de l’éditeur), telle qu’elle est généralement donnée au bas de la page de titre.
-- `<docDate>` (date du document) contient la date d’un document telle qu’elle est (généralement ) donnée sur une page de titre.
+- `<docDate>` (date du document) contient la date d’un document telle qu’elle est (généralement) donnée sur une page de titre.
 - `<graphic>` (graphic) indique l'emplacement d'une image, d'une illustration ou d'un schéma intégrés.
 
 ## Transcrire sa source
@@ -83,7 +83,7 @@ type	(type) précise le rôle de cette subdivision du titre. Les valeurs suggér
 `<del>` (suppression) contient une lettre, un mot ou un passage supprimé, marqué comme supprimé, sinon indiqué comme superflu ou erroné dans le texte par un auteur, un copiste, un annotateur ou un correcteur.
 - la mise en forme avec l'attribut `@rend`
 
-#### Combiner una ajout et une suppression sur un même segment de texte
+#### Combiner un ajout et une suppression sur un même segment de texte
 `<subst>` ( substitution) regroupe une ou plusieurs parties de texte supprimées et une ou plusieurs parties de texte ajoutées, lorsque cette combinaison peut être considérée comme une intervention unique sur le texte.
 
 ```
@@ -209,14 +209,14 @@ Il est possible d'indiquer la manière typographique utilisé pour rendre un car
 ```
 <head rend="italic"><lb n="2"/>Le loup &amp; le chien.</head>
 ```
-Lorsqu'une indication typographique est nécessaire, mais que vous ne disposer pas d'élément pour l'indiquer, vous pouvez faire appel à l'élément générique `<hi>`. C'est cet élément que nous avons utilisé dans l'exemple de l'abrévitiation.
+Lorsqu'une indication typographique est nécessaire, mais que vous ne disposez pas d'élément pour l'indiquer, vous pouvez faire appel à l'élément générique `<hi>`. C'est cet élément que nous avons utilisé dans l'exemple de l'abréviation.
 ```
 <head>
   <lb n="1"/>Fable cinquiesme.
   <lb n="2"/><hi rend="italic">Le loup & le chien.</hi>
 </head>
 ```
- 
+
 ## Encoder des éléments en langue étrangère
 - `<foreign>` (étranger) reconnaît un mot ou une expression comme appartenant à une langue différente de celle du contexte
   - `@xml:lang` pour déclarer la langue. La valeur de l'attribut correspond le plus souvent à la norme ISO 639 qui se compose de plusieurs parties, ainsi le français peut se déclarer
@@ -224,13 +224,13 @@ Lorsqu'une indication typographique est nécessaire, mais que vous ne disposer p
     - `fra` 639-2/T et 639-3
     - `fre` 639-2/B
 Pour les variations régionales ou historiques, voir la norme [ISO 639-3](https://iso639-3.sil.org/)
-L'attribut `@xml:lang` fait partie de la classe `att.global` qui est disponible sur l'ensemble des éléments de la tei, au même titre que `@xml:id`, `@n`, `@xml:base` et `@xml:space`.
+L'attribut `@xml:lang` fait partie de la classe `att.global` qui est disponible sur l'ensemble des éléments de la TEI, au même titre que `@xml:id`, `@n`, `@xml:base` et `@xml:space`.
 
 ## Encoder une image
 ### Décrire les facsimilés
 Les facsimilés d'une édition peuvent se déclarer dans le `<teiHeader>` dans l'une des sous-sections de `<sourceDesc>`, ou peuvent aussi se déclarer entre le `<teiHeader>` et le `<text>` à l'aide de l'élément `<facsimile>`.
 - `<facsimile>` contient une représentation d'une source écrite quelconque sous la forme d'un ensemble d'images plutôt que sous la forme d'un texte transcrit ou encodé.
-- `<sourceDoc>` contains a transcription or other representation of a single source document potentially forming part of a dossier génétique or collection of sources.
+- `<sourceDoc>` contient une transcription ou une représentation d'une source seule faisant partie d'un dossier ou d'une collection de sources <!--a transcription or other representation of a single source document potentially forming part of a dossier génétique or collection of sources.-->
 ```
 <facsimile>
  <graphic url="LaFontaine_001.jpg"/>
@@ -240,13 +240,13 @@ Les facsimilés d'une édition peuvent se déclarer dans le `<teiHeader>` dans l
 </facsimile>
 ```
 ### Lier une partie du texte avec un facsimilé
-Il est possible de lier une division et une section de texte avec le facsimilé. Pour se faire, il suffit d'utiliser l'attribut `@facs` auquel on donne comme valeur soit le chemin vers l'image, soit le nom de l'image, selon les conventions établis par le projet. Dans les pratiques TEI, on retrouve souvent l'utilisation de cet attribut avec l'élément `<pb/>`.
+Il est possible de lier une division et une section de texte avec le facsimilé. Pour ce faire, il suffit d'utiliser l'attribut `@facs` auquel on donne comme valeur soit le chemin vers l'image, soit le nom de l'image, selon les conventions établies par le projet. Dans les pratiques TEI, on retrouve souvent l'utilisation de cet attribut avec l'élément `<pb/>`.
 ```
 <pb n="10" facs="../facsimiles/LaFontaine_002.jpg"/>
 ```
 
 ### Encoder une image
-Encoder une image peut se faire de plusieurs manières et avec plusieurs degrès d'information, notamment il est possible de renseigner les coordonnées de l'image sur le facsimilé, à l'aide des éléments `<surface>` et `<zone>`. Nous ne considérerons que des solutions simples dans le cadre de cette présentation.
+Encoder une image peut se faire de plusieurs manières et avec plusieurs degrés d'information, notamment il est possible de renseigner les coordonnées de l'image sur le facsimilé, à l'aide des éléments `<surface>` et `<zone>`. Nous ne considérerons que des solutions simples dans le cadre de cette présentation.
 ```
 <facsimile>
 <surface ulx="50" uly="20" lrx="400"
@@ -266,14 +266,14 @@ source: [TEI Guidelines](https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/re
 ## Éléments d'indexation
 ### Noms et personnes
 `<persName>` en spécifiant
-- une typologie avec l'attribut `@type` voire avec aussi `@subtype`
+- une typologie avec l'attribut `@type` voire aussi avec `@subtype`
 - une référence pour donner une uri avec l'attribut `@ref`
-- une normalisation du nom l'attribut `@key`
+- une normalisation du nom de l'attribut `@key`
 
 ### Lieux
 `<placeName>` en spécifiant
-- une typologie avec l'attribut `@type` voire avec aussi `@subtype`
+- une typologie avec l'attribut `@type` voire aussi avec `@subtype`
 - une référence pour donner une uri avec l'attribut `@ref`
-- une normalisation du nom l'attribut `@key`
+- une normalisation du nom de l'attribut `@key`
 
 `<geogName>` parfois pour des noms associés à une dimension géographique, comme une rivière ou une montagne par exemple.
