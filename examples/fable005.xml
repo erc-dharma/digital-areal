@@ -66,10 +66,10 @@
                     <lb n="4"/>A <pubPlace>Paris</pubPlace>,
                     <lb n="5"/>Chez <persName>Claude de Barbin</persName>, au <pubPlace>Palais sur le perron
                         <lb n="6"/>de la Sainte Chapelle</pubPlace>
-                    <lb n="7"/>
-                    <docDate>MDCLXVIII</docDate>
+                    
+                    <docDate><lb n="7"/>MDCLXVIII</docDate>
                 </docImprint>
-                <imprimatur rend="italic">Avec privilege du Roy.</imprimatur>
+                <imprimatur rend="italic"><lb n="8"/>Avec privilege du Roy.</imprimatur>
             </titlePage>
         </front>
         <body>
