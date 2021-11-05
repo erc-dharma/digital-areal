@@ -130,6 +130,7 @@ A l'inverse, si vous voulez signaler l'éditeur, responsable de l'intervention, 
 ```
 
 ## Abréviations
+Les abréviations
 ```
 17
  <choice>
@@ -201,6 +202,21 @@ Soit un doctype avec l'élément `<g>`.
 ```
 * * *
 
+### Formatter un caractère ou une chaîne de caractères
+- `<hi>` (mis en évidence) distingue un mot ou une expression comme graphiquement distincte du texte environnant, sans en donner la raison.
+- `@rend` (interprétation) indique comment l'élément en question a été rendu ou présenté dans le texte source
+Il est possible d'indiquer la manière typographique utilisé pour rendre un caractère, grâce à l'attribute `@rend`. Cet attribut peut s'utiliser sur l'ensemble des éléments étant membre de la classe att.global.rendition.
+```
+<head rend="italic"><lb n="2"/>Le loup &amp; le chien.</head>
+```
+Lorsqu'une indication typographique est nécessaire, mais que vous ne disposer pas d'élément pour l'indiquer, vous pouvez faire appel à l'élément générique `<hi>`. C'est cet élément que nous avons utilisé dans l'exemple de l'abrévitiation.
+```
+<head>
+  <lb n="1"/>Fable cinquiesme.
+  <lb n="2"/><hi rend="italic">Le loup & le chien.</hi>
+</head>
+```
+ 
 ## Encoder des éléments en langue étrangère
 - `<foreign>` (étranger) reconnaît un mot ou une expression comme appartenant à une langue différente de celle du contexte
   - `@xml:lang` pour déclarer la langue. La valeur de l'attribut correspond le plus souvent à la norme ISO 639 qui se compose de plusieurs parties, ainsi le français peut se déclarer
