@@ -66,10 +66,10 @@ function displayResult(xmlInput, xsltSheet) {
   if (typeof XSLTProcessor !== 'undefined') {
     var proc = new XSLTProcessor();
     proc.importStylesheet(xsltSheet);
-    document.appendChild(proc.transformToFragment(xmlInput, document));
+    document.append(proc.transformToFragment(xmlInput, document));
   }
   else if (typeof xmlInput.transformNode !== 'undefined') {
-    document.getElementById('example').innerHTML = xmlInput.transformNode(xsltSheet);
+    document.querySelector('example').innerHTML = xmlInput.transformNode(xsltSheet);
   }
 }
 
