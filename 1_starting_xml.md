@@ -213,6 +213,55 @@ Il existe plusieurs technologies: DTD, xml schema, Relax NG, Schematron.
 **Un projet d'édition numérique en TEI se doit d'avoir son schéma et sa documentation**
 * * *
 
+## Rapide point sur les espaces en XML
+En XML, quatre caractères sont considérés comme des espaces: le retour à la ligne, l'identation de tabulation,le passage à la ligne et l'espace classique.
+Dans les documents XML, vous retrouverez à la fois des espaces signifiants et des espaces insignifiants utilisés afin de rendre lisible le contenu. A l'absence d'un schéma, on considère par défaut tous les espaces comme ayant leur importance.
+La présence de plusieurs espaces entre le nom d'un élément et un attribut par exemple n'est pas un soucis
+```
+<title     type = "main" >
+```
+mais l'absence d'espace est faux.
+
+```
+<titletype = "main" >
+```
+
+ De même dans les contenus textuels, les espaces sont particulièrement important. En XML,
+```
+ <name>EmmanuelFrancis</name>
+```
+et
+```
+<name>Emmanuel Francis</name>
+```
+ne sont donc pas équivalents. Mais le même exemple avec les différents types d'espaces reconnus peuvent être considérés comme identiques.
+```
+<name>Emmanuel Francis</name>
+```
+```
+<name>Emmanuel
+Francis</name>
+```
+```
+<name>Emmanuel    Francis</name>
+```
+De nombreux processeurs XML sont en mesure de supprimer les espaces en avant et après le contenu textuel. Ainsi
+```
+<name>   Emmanuel Francis</name>
+```
+```
+<name>
+Emmanuel Francis</name>
+```
+```
+<name>
+Emmanuel
+Francis
+</name>
+```
+sont considérés comme des équivalents de  `<name>Emmanuel Francis</name>`.
+Néansmoins, il vaut mieux normaliser les espaces, si possible pour éviter les conflits au moment de la transformation, pour lesquels quelques explications sont données dans la partie 5 du site. 
+
 ## Vers un document XML bien formé et valide
 C'est deux notions sont essentielles pour obtenir un fichier exploitable.
 
