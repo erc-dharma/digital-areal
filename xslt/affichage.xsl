@@ -26,7 +26,7 @@
                     <xsl:apply-templates select="//tei:note | //tei:choice[child::tei:sic and child::tei:corr] | //tei:choice[child::tei:orig and child::tei:reg] | //tei:choice[child::tei:unclear]" mode="modals"/> 
                 </xsl:element>
                 <xsl:element name="footer">
-                    <xsl:attribute name="class">footer mt-auto py-3</xsl:attribute>
+                    <xsl:attribute name="class">footer mt-auto py-3 text-center</xsl:attribute>
                     <xsl:element name="div">
                         <xsl:value-of select="replace(//tei:fileDesc/tei:publicationStmt//tei:licence/tei:p[2], '\(c\)', '©')"/>
                     </xsl:element>
@@ -271,9 +271,9 @@
         <xsl:element name="div">
             <xsl:attribute name="class">row</xsl:attribute>
         <xsl:element name="div">
-            <xsl:attribute name="class">col-1</xsl:attribute>
+            <xsl:attribute name="class">col-1 font-weight-bold</xsl:attribute>
             <xsl:if test="@type">
-                <xsl:value-of select="@type"/>
+                <xsl:value-of select="concat(upper-case(substring(@type,1,1)), substring(@type, 2),' '[not(last())] )"/>
                 <xsl:text> </xsl:text>
             </xsl:if>
             <xsl:if test="@n">
@@ -338,8 +338,8 @@
         <xsl:element name="div">
             <xsl:attribute name="class">row</xsl:attribute>
             <xsl:element name="div">
-                <xsl:attribute name="class">col-1</xsl:attribute>
-                <xsl:text>page de titre</xsl:text>
+                <xsl:attribute name="class">col-1 font-weight-bold</xsl:attribute>
+                <xsl:text>Page de titre</xsl:text>
             </xsl:element>
             <xsl:element name="div">
                 <xsl:attribute name="class">col-5</xsl:attribute>
@@ -569,6 +569,30 @@
                 </xsl:attribute>
             </xsl:element>
             </xsl:for-each>
+    </xsl:template>
+    
+    <!--  P ! -->
+    <!--  persName ! -->
+    <xsl:template match="tei:persName">
+        <xsl:element name="span">
+            <xsl:attribute name="class">indexable</xsl:attribute>
+            <xsl:apply-templates/>
+        <xsl:element name="sup">
+             <xsl:text>👤</xsl:text>
+        </xsl:element>
+        </xsl:element>
+    </xsl:template>
+    
+    <!--  placeName ! -->
+    <xsl:template match="tei:placeName">
+        <xsl:element name="span">
+            <xsl:attribute name="class">indexable</xsl:attribute>
+        <xsl:apply-templates/>
+        <xsl:element name="sup">
+            <xsl:attribute name="class">indexable</xsl:attribute>
+        <xsl:text>🧭</xsl:text>
+        </xsl:element>
+        </xsl:element>
     </xsl:template>
     <!--  Q ! -->
     <!--  q ! -->

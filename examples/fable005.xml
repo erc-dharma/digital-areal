@@ -79,6 +79,9 @@
                     <fw place="top-left" type="pageNum">10</fw>
                     <fw place="top-center" type="head">Fables choisies.</fw>
                     <head>
+                        <graphic url="../facsimiles/frise.png"/>
+                    </head>
+                    <head>
                         <lb n="1"/>Fable cinquiesme.</head>
                     <head>
                         <lb n="2"/>Le loup &amp; le chien.</head>
@@ -177,6 +180,10 @@
                             <lb n="45"/>Et ne voudrais pas même à ce prix un tresor.</l>
                         <l n="41">
                             <lb n="46"/>Cela dit, Maistre Loup s'enfuit, et court encor.</l>
+                        <figure>
+                            <graphic url="../facsimiles/chevron.png"/>
+                            <desc>Chevron</desc>
+                        </figure>
                     </lg>
                 </div>
             </div>

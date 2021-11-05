@@ -121,3 +121,7 @@
   padding: 30px;
   margin-bottom: 50px;
 }        
+
+.indexable:hover {
+  background-color: yellow;
+}
