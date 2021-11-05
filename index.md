@@ -1,8 +1,9 @@
 # Atelier TEI
-Action Nationale de Formation "Digital Areal" 7-10 novembre 2021, Fréjus  
-Présentation par Emmanuel Francis (CNRS-EHESS, CEIAS) et Axelle Janiak (CNRS-EHESS, CEIAS).
+Action Nationale de Formation "Digital Areal" 7-10 novembre 2021, Fréjus.
+Présentation par Emmanuel Francis (CNRS-EHESS, CEIAS) et Axelle Janiak (CNRS-EHESS, CEIASingénieure pour le projet DHARMA)
+Site réalisé par Axelle Janiak, en collaboration avec Adeline Levivier (EFEO, ingénieure pour le projet DHARMA).
 
-Pour nous contacter: [manufrancis@gmail.com](manufrancis@gmail.com) et [axelle.janiak@ehess.fr](axelle.janiak@ehess.fr])
+Pour nous contacter: [manufrancis@gmail.com](manufrancis@gmail.com), [adeline.levivier@efeo.net](adeline.levivier@efeo.net) et [axelle.janiak@ehess.fr](axelle.janiak@ehess.fr]).
 
 ## TO DO pour finaliser l'ensemble
 - Relire pour corriger les coquilles
@@ -16,7 +17,6 @@ Pour nous contacter: [manufrancis@gmail.com](manufrancis@gmail.com) et [axelle.j
 - Le dossier `templates` propose des templates Epidoc et TEI pour aider à débuter les encodages, ainsi qu'un template d'encodage plus développé utilisé par DHARMA pour les inscritptions.
 - Le dossier `XSLT` contient une XSLT pour numéroter les vers de la fable et une pour le transformer en html.
 - Les autres éléments sont utilisés afin de générer la page gitHub, à l'aide du thème Cayman et de Jekyll.
-
 **L'ensemble est disponible en licence CC-BY, grâce au financement de l'ERC du projet DHARMA.**
 
 ## Déroulé du cours
