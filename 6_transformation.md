@@ -1,4 +1,4 @@
-# Transformer un XML-TEI en une page web
+# Transformer un fichier XML-TEI 
 
 La transformation d'un fichier XML-TEI s'effectue majoritairement par XSLT 2.0, mais peut aussi se faire par XQuery, si l'on travaille avec une base de données XML.
 

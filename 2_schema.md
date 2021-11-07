@@ -67,7 +67,131 @@ Un schéma définit un modèle de documents que l'on peut ensuite utilisé pour 
 Pour un projet, on travailler avec un ou plusieurs schémas; par exemple, en RelaxNG pour définir les éléments et les attributs, mais avec les types XSD et des contraintes Schematron.
 Dans le repository, vous avez des exemples de schémas faits pour DHARMA:
 - RelaxNG en format XML, avec des lignes de schématrons
-- Schématron autonome avec des ajouts de Schematron Quick Fix.
+```
+<define name="tei_gap">
+   <element name="gap">
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates a point where material has been omitted in a transcription, whether for editorial reasons described in the TEI header, as part of sampling practice, or because the material is illegible, invisible, or inaudible. [3.4.3. Additions, Deletions, and Omissions]</a:documentation>
+      <zeroOrMore>
+         <choice>
+            <ref name="tei_model.descLike"/>
+            <ref name="tei_model.certLike"/>
+         </choice>
+      </zeroOrMore>
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+               id="dharma-gap-gap-constraint-rule-13">
+         <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                   xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                   context="tei:gap">
+            <sch:report test="@quantity and @extent">gap may have @quantity (a figure) or
+                         @extent (a descriptive text value) but not both</sch:report>
+            <sch:report test="@quantity and not(@unit)">If gap has @quantity then @unit is
+                         required</sch:report>
+            <sch:report test="not(@reason='ellipsis') and ancestor::tei:supplied[not(@reason='undefined')]">gap may not appear within supplied text</sch:report>
+            <sch:report test="@precision and not(@quantity)">@precision can be use only with
+                         @quantity</sch:report>
+            <sch:report test="ancestor::tei:div[@type='aparatus'] and not(@reason)">Only @reason
+                         is mandatory in
+                         div[@type='translation']</sch:report>
+         </sch:rule>
+         <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                   xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                   context="tei:gap[@reason='ellipsis']">
+            <sch:report test="not(ancestor::tei:div[@type='apparatus'] or ancestor::tei:div[@type='translation'])"> The element gap with @reason='ellipsis' can only be used inside the
+                         apparatus or in translation.</sch:report>
+         </sch:rule>
+         <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                   xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                   context="tei:gap[@unit='component']">
+            <sch:assert test="parent::tei:seg[@type='component']">Gap with the attribute
+                         @unit="component" can only be used inside seg with the
+                         @type="component". </sch:assert>
+         </sch:rule>
+         <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                   xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                   context="tei:gap[@unit='line' and @quantity] ">
+            <sch:assert test="@precision='low' or child::tei:certainty">The element gap with
+                         @quantity and @unit="line" expect either the use of @precision="low" or
+                         the element certainty.</sch:assert>
+         </sch:rule>
+      </pattern>
+      <ref name="tei_att.dimensions.attribute.quantity"/>
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="precision"
+                    a:defaultValue="low">
+            <a:documentation/>
+            <choice>
+               <value>low</value>
+               <a:documentation/>
+            </choice>
+         </attribute>
+      </optional>
+      <optional>
+         <attribute name="unit">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">names the unit used for the measurement</a:documentation>
+            <choice>
+               <value>character</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>component</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>line</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>page</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>plate</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>folio</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            </choice>
+         </attribute>
+      </optional>
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="extent"
+                    a:defaultValue="unknown">
+            <a:documentation>indicates the size of the object concerned using a project-specific vocabulary combining quantity and units in a single string of words.</a:documentation>
+            <choice>
+               <value>unknown</value>
+               <a:documentation/>
+            </choice>
+         </attribute>
+      </optional>
+      <attribute name="reason">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives the reason for omission</a:documentation>
+         <choice>
+            <value>lost</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>illegible</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>omitted</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>ellipsis</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <value>undefined</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         </choice>
+      </attribute>
+      <empty/>
+   </element>
+</define>
+```
+- Schématron autonome avec des ajouts de Schematron Quick Fix
+```
+<sch:pattern>
+    <sch:rule context="t:bibl[parent::t:listBibl[@type='primary']]">
+        <sch:assert test="./@n" sqf:fix="add-siglum">@n mandatory in
+            the primary bibliography to declare
+            sigla</sch:assert>
+
+        <sqf:fix id="add-siglum">
+            <sqf:description>
+                <sqf:title>Add @n for the siglum</sqf:title>
+            </sqf:description>
+            <sqf:add node-type="attribute" target="n"/>
+        </sqf:fix>
+    </sch:rule>
+</sch:pattern>
+```
 
 ## ODD
 Lorsque l'on travaille avec la TEI, nous sommes rapidement confronté à l'ODD: *One Document Does it all*.  Il s'agit d'un document qui centralise la documentation, le schéma de validation d'un projet, et parfois les règles de transformation et à partir duquel on génére ou regénerer plusieurs formats aussi bien pour la documentation (en xhtml, pdf, odt, epub, docx ...) que pour les schémas (RelaxNG XML ou compact, XML Schema ou DTD).
