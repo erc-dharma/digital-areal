@@ -67,7 +67,7 @@ Nous avons déjà évoqué plusieur fois les schémas et leur intérêt. Leur mo
 Pour un projet, on travailler avec un ou plusieurs schémas; par exemple, en RelaxNG pour définir les éléments et les attributs, mais avec les types XSD et des contraintes Schematron.
 Dans le repository, vous avez des exemples de schémas faits pour DHARMA:
 - RelaxNG en format XML, avec des lignes de schématrons
-- Schématron autonome avec des ajouts de Schematron Quick Fix. 
+- Schématron autonome avec des ajouts de Schematron Quick Fix.
 
 ## Penser son schéma
 Fabriquer son schéma revient à établir une modélisation particulière du modèle TEI. Il doit être conforme à ce modèle de départ, tout en étant adapté à votre corpus et à ses objectis.
@@ -100,4 +100,4 @@ NB: Cet ODD peut se présenter avec une extension de fichier `.odd`, mais le plu
 ### Créer un ODD
 Il est assez rare que l'on crée un fichier ODD à la main et *ex nihilo*. Quelques outils ont été mis en place pour faciliter son écriture:
 -  [Roma](https://roma.tei-c.org/), un outil maintenu par la TEI pour faire des schémas et des documentations en différents formats. Il est recommandé de faire une sauvegarde ODD, car l'outil ne prend que ce format en entrée, et est donc nécessaire pour travailler ces schémas en plusieurs séances de travail ou juste pour faire des reprises.  
--  Utiliser les feuilles de style **oddbyexample** pour créer un fichier ODD
+-  Utiliser les feuilles de style [oddbyexample](https://github.com/TEIC/Stylesheets/blob/dev/tools/oddbyexample.xsl) pour créer un fichier ODD
