@@ -80,6 +80,16 @@ Les classes sont identifiables par le préfixe `att.` pour les attributs et pa
 ### Les macros  
 Les macros sont des raccourcis qui permettent de spécifier le contenu, en particulier pour le contenu d'un élément ou pour les valeurs d'un attribut. Elles sont employées lors de la création des schémas. Elles débutent par le préfixe `macro.`.
 
+### TEI Conformance
+La notion de  *TEI Conformance* correspond à un ensemble de règles et de contraintes devant permettre l'échange et le traitement des fichiers dans un cadre commun. Ce n'est pas une mesure ou un jugement des mérites académiques d'un document.  Il est définit par la TEI comme étant:
+- XML bien-formé
+- XML valide par rapport à un schéma, qui est un dérivé des *Guidelines TEI*.
+- conforme au modèle abstrait de la TEI
+- utilisation conforme des espaces de noms
+- documentation pr la biais d'un ODD, lui conforme aux attentes fixées par la TEI.
+
+Cela signifie qu'il ne faut adhérer aux définitions des éléments TEI, afin de ne pas altérer leur dimension sémantique, et qu'il vaut mieux éviter d'être plus large dans l'appréciation d'un élément que la TEI. Il est plutôt recommandé d'être plus restrictif, ou au moins équivalent, afin de ne pas basculer dans une modification "sale" (*unclean modification*) de la TEI. Cela ne veut pas dire que ce choix est intrinsèquement mauvais, ou qu'il n'est pas nécessaire, mais qu'il empêche la validation contre le schéma de la TEI dans sa forme originelle.
+
 * * *
 NB: il doit y avoir aujourd'hui plus de 600 éléments disponibles dans le modèle TEI. Aucun projet ne les mobilise tous; c'est pourquoi le modèle théorique est souvent "réduit" aux seuls éléments nécessaires aux objectifs d'un projet. Cela peut aussi s'accompagner de la création d'éléments propres à un projet, lorsque la TEI n'offre pas de solution, ou que l'on ne les trouve pas satisfaisantes.
 Un exemple: le [projet Menota](https://www.menota.org/HB3_index.xml). Les éléments créés fonctionnent avec l'espace de nom `me:`
@@ -92,7 +102,7 @@ Un exemple: le [projet Menota](https://www.menota.org/HB3_index.xml). Les élém
 La modélisation est une : « opération par laquelle on établit le modèle d'un système complexe, afin d'étudier plus commodément et de mesurer les effets sur ce système des variations de tel ou tel de ses éléments composants » Source: J. Giraud, P. Pamart, J. Riverain, *Les nouveaux mots « dans le vent »*, Paris, France, 1974.
 * * *
 
-## Epidoc, une personnalisation de la TEI
+## Epidoc, une modélisation de la TEI
 Epidoc est un projet collaboratif qui a vu le jour en 2000 à l'initiative de Tom Elliot et qui vise à établir des normes d'encodage en TEI pour les documents anciens. L'idée initiale était d'établir un standard afin de favoriser l'interopérabilité et la constance des encodages entre les documents anciens afin de permettre des regroupements de corpus issus de plusieurs projets.
 Cette personnalisation offre une documentation assez complète avec des schémas de validation et des feuilles de style pour les transformations.
 Actuellement, Epidoc migre vers la version 9.3 et l'ensemble de son contenu est accessible en open-source : (https://epidoc.stoa.org/gl/latest/index.html).
@@ -107,4 +117,4 @@ Actuellement, Epidoc migre vers la version 9.3 et l'ensemble de son contenu est 
 - L'XML-TEI permet de traduire la dimension sémantique d'un document et de la rendre compréhensible à un ordinateur.
 - Distingue la mise en forme du document qui correspond à l'affichage et la structuration du texte lui-même.
 - Autorise les traitements et des exploitations des informations encodées.
-- Offre un format pérenne, stable et bien documenté, avec une importante communauté d'utilisateurs. 
+- Offre un format pérenne, stable et bien documenté, avec une importante communauté d'utilisateurs.

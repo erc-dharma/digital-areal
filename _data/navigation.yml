@@ -5,17 +5,20 @@
 - title: Les bases de l'XML
   url: /1_starting_xml
 
+- title: Comprendre les schémas
+  url: /2_schema
+
 - title: Commencer avec la TEI
-  url: /2_starting_TEI
+  url: /3_starting_TEI
 
 - title: Métadonnées et teiHeader
-  url: /3_metadata
+  url: /4_metadata
 
 - title: Encoder une édition
-  url: /4_encoding
+  url: /5_encoding
 
 - title: Générer un affichage
-  url: /5_transformation
+  url: /6_transformation
 
 - title: Un exemple
   url: /fable_example

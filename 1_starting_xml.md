@@ -277,7 +277,7 @@ Francis
 </name>
 ```
 sont considérés comme des équivalents de  `<name>Emmanuel Francis</name>`.
-Néanmoins, il vaut mieux normaliser les espaces, si possible pour éviter les conflits et les erreurs au moment de la transformation, pour lesquels quelques explications sont données dans la partie (transformation)[https://erc-dharma.github.io/digital-areal/5_transformation] du site.
+Néanmoins, il vaut mieux normaliser les espaces, si possible pour éviter les conflits et les erreurs au moment de la transformation, pour lesquels quelques explications sont données dans la partie (transformation)[https://erc-dharma.github.io/digital-areal/6_transformation] du site.
 
 ## Vers un document XML bien formé et valide
 C'est deux notions sont essentielles pour obtenir un fichier exploitable.
@@ -300,6 +300,10 @@ Un document valide est un document en conformité avec une grammaire préétabli
 Pour avoir un document valide, il faut qu'un modèle soit déclaré. Dans le cas de la TEI, cela signifie qu'une référence doit être faite à un schéma:
 - il est bien formé
 - il est conforme au schéma auquel il fait référence (DTD ou autre)
+
+* * *
+NB: Un fichier XML bien-formé et valide ne veut pas pour autant dire que le fichier ne contient pas d'erreurs. Cela veut dire qu'il est au moins conforme aux règles de syntaxe de l'XML et qu'il suit l'ensemble des règles exprimées dans le schéma. Il peut donc y avoir du contenu que vous avez oublié de tester.
+* * *
 
 ## Conclusion
 1- L'XML est une métalangue qui repose sur le balisage sémantique et structuré du contenu.  
