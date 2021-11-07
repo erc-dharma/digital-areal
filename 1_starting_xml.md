@@ -8,7 +8,7 @@ exemple d'*italique* en markdown
 ```
 
 ## Définition
-XML est un métalangage qui ne propose pas de balise prédéfinie, mais met en place un ensemble de règles pour déterminer si un fichier est bien formé ou s'il est valide. Il permet de définir son propre jeu de balises.
+XML est un métalangage qui repose principalement sur du texte, standardisé par une norme de W3C, c’est-à-dire qu’il est construit avec des characters ASCII (American Standard Code for Information Interchange) ou en plein texte. Il ne propose pas de balise prédéfinie, mais met en place un ensemble de règles pour déterminer si un fichier est bien formé ou s'il est valide. Il permet de définir son propre jeu de balises.
 
 ```
 <monExemple>
@@ -260,7 +260,7 @@ Francis
 </name>
 ```
 sont considérés comme des équivalents de  `<name>Emmanuel Francis</name>`.
-Néansmoins, il vaut mieux normaliser les espaces, si possible pour éviter les conflits au moment de la transformation, pour lesquels quelques explications sont données dans la partie 5 du site. 
+Néansmoins, il vaut mieux normaliser les espaces, si possible pour éviter les conflits au moment de la transformation, pour lesquels quelques explications sont données dans la partie 5 du site.
 
 ## Vers un document XML bien formé et valide
 C'est deux notions sont essentielles pour obtenir un fichier exploitable.

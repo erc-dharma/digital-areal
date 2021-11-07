@@ -1,10 +1,13 @@
 # Rapide introduction de la TEI
 
-- 1987, naissance de la *Text Encoding Initiative* par trois sociétés savantes :
+La TEI est un standard de partages de texte qui repose sur une stratégie d’encodage définie et constante, déclarée dans un schéma. Elle utilise, depuis la versio P5, l'XML, qui vient remplacer le SGML. Son principe fondateur est de facilité les échanges de textes entre les différents producteurs de sources textuelles, dans le cadre universitaire et de recherches.   
+La TEI est une structuration des éléments sémantiques d'un texte et non une représentation typographique de celui-ci. Il permet donc de générer des fichiers dans des formats différents, mais aussi de faire plusieurs visualisations du même fichier.  
+
+- 1987, création de la *Text Encoding Initiative* par trois sociétés savantes :
 **Association for Computers and the Humanities**, **Association for Literary and
 Linguistic Computing** et **Association for Computational Linguistics**
 - 1990, TEI Proposal 1 (TEI P1), *Guidelines for the Encoding and Interchange of
-Machine-Readable Texts*, sous la direction de Michael Sperberg-McQueen et Lou Burnard,
+Machine-Readable Texts*, sous la direction de Michael Sperberg-McQueen et Lou Burnard
 - 1992-1993, TEI P2, phase d'expansion
 - 1994, TEI P3, considérée comme la première version complète
 - 2000, naissance du **TEI Consortium**
@@ -39,12 +42,14 @@ the texts.
 ```
 
 ## TEI Consortium (2000)
-Le Consortium est une fondation à but non lucratif, dont le financement se fait par les contributions de ses membres. Il se compose notamment d'un bureau, d'un conseil technique, de membres institutionnels et des groupes de travail et de groupes d'intérêt.
-Son rôle principal est de maintenir les guidelines et de les faire évoluer selon les besoins des communautés d'utilisateurs.
+Le Consortium est une fondation à but non lucratif, dont le financement se fait par les contributions de ses membres. Il se compose notamment d'un bureau, d'un conseil technique, de membres institutionnels, de groupes de travail et de groupes d'intérêt.
+Son rôle principal est de maintenir les *Guidelines* et de les faire évoluer selon les besoins des communautés d'utilisateurs.
 
 ## Le modèle TEI
-Il s'agit d'un modèle abstrait de données, soit un ensemble de concepts ainsi que les différentes relations entre eux. Il faut donc distinguer ce modèle des implémentations techniques, qu'elles soient générales par l'importation de modules entiers comme celui du théâtre ou de la transcription, ou particulières avec une sélection d'éléments pour correspondre aux besoins d'un projet.
-Les modules correspondent aux chapitres des Guidelines. Ils définissent des composantes du modèle (éléments, classes, macros), les spécifications techniques et peuvent se concevoir comme des blocs que l'on conserve ou que l'on supprime notamment par rapport aux schémas.
+Il s'agit d'un modèle abstrait de données, soit un ensemble de concepts ainsi que les différentes relations entre eux. Il faut donc distinguer ce modèle de ses implémentations techniques, qu'elles soient générales par l'importation de modules entiers comme celui du théâtre ou de la transcription, ou particulières avec une sélection d'éléments pour correspondre aux besoins d'un projet.
+
+### Les modules
+Les modules correspondent aux chapitres des *Guidelines*. Ils définissent des composantes du modèle (éléments, classes, macros), les spécifications techniques et peuvent se concevoir comme des blocs que l'on conserve ou que l'on supprime notamment par rapport aux schémas.  
 
 **les obligatoires:**
 - tei (déclaration des classes, macros et types)
@@ -68,6 +73,13 @@ Les modules correspondent aux chapitres des Guidelines. Ils définissent des com
 - transcr (transcription) ;
 - verse (poésie).
 
+### Les classes
+Les classes organisent les éléments et les attributs du modèle TEI et permettent de fixer les propriétés et les règles d'héritage partagés par plusieurs éléments et attributs.   
+Les classes sont identifiables par le préfixe `att.` pour les attributs et par `model.` pour les modèles d'éléments.
+
+### Les macros  
+Les macros sont des raccourcis qui permettent de spécifier le contenu, en particulier pour le contenu d'un élément ou pour les valeurs d'un attribut. Elles sont employées lors de la création des schémas. Elles débutent par le préfixe `macro.`.
+
 * * *
 NB: il doit y avoir aujourd'hui plus de 600 éléments disponibles dans le modèle TEI. Aucun projet ne les mobilise tous; c'est pourquoi le modèle théorique est souvent "réduit" aux seuls éléments nécessaires aux objectifs d'un projet. Cela peut aussi s'accompagner de la création d'éléments propres à un projet, lorsque la TEI n'offre pas de solution, ou que l'on ne les trouve pas satisfaisantes.
 Un exemple: le [projet Menota](https://www.menota.org/HB3_index.xml). Les éléments créés fonctionnent avec l'espace de nom `me:`
@@ -83,7 +95,7 @@ La modélisation est une : « opération par laquelle on établit le modèle d'u
 ## Epidoc, une personnalisation de la TEI
 Epidoc est un projet collaboratif qui a vu le jour en 2000 à l'initiative de Tom Elliot et qui vise à établir des normes d'encodage en TEI pour les documents anciens. L'idée initiale était d'établir un standard afin de favoriser l'interopérabilité et la constance des encodages entre les documents anciens afin de permettre des regroupements de corpus issus de plusieurs projets.
 Cette personnalisation offre une documentation assez complète avec des schémas de validation et des feuilles de style pour les transformations.
-Actuellement, Epidoc migre vers la version 9.3 et l'ensemble du contenu est en open-source : (https://epidoc.stoa.org/gl/latest/index.html).
+Actuellement, Epidoc migre vers la version 9.3 et l'ensemble de son contenu est accessible en open-source : (https://epidoc.stoa.org/gl/latest/index.html).
 
 ## Quelques exemples de normes utilisant l'XML
 - EAD pour les descriptions archivistiques
@@ -95,3 +107,4 @@ Actuellement, Epidoc migre vers la version 9.3 et l'ensemble du contenu est en o
 - L'XML-TEI permet de traduire la dimension sémantique d'un document et de la rendre compréhensible à un ordinateur.
 - Distingue la mise en forme du document qui correspond à l'affichage et la structuration du texte lui-même.
 - Autorise les traitements et des exploitations des informations encodées.
+- Offre un format pérenne, stable et bien documenté, avec une importante communauté d'utilisateurs. 
