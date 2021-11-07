@@ -1,15 +1,15 @@
 # Encoder l'en-tête d'un fichier TEI avec Manu
 
-Les métadonnées sont toutes les informations qui décrivent le fichier et qui permettent ainsi de l'identifier de manière pérenne. Le teiHeader regroupe plusieurs informations de nature différente:
+Les métadonnées sont toutes les informations qui décrivent le fichier et qui permettent ainsi de l'identifier de manière pérenne. Le `<teiHeader>` regroupe plusieurs informations de nature différente:
 - description du fichier électronique
 - description de la source
 - description de contenu de la source - certains éléments relevant déjà du commentaire et de l'analyse scientifique.
 - description de l'encodage du contenu de la source  
 
-**L'une des grandes difficultés du teiHeader est de discerné les éléments qui relèvent de la source et les éléments qui documentent le fichier électronique lui-même, et de trouver l'équilibre entre la prose pour l'exploitation humaine et la structuration pour l'exploitation machine**.   
+**L'une des grandes difficultés du `<teiHeader>` est de discerné les éléments qui relèvent de la source et les éléments qui documentent le fichier électronique lui-même, et de trouver l'équilibre entre la prose pour l'exploitation humaine et la structuration pour l'exploitation machine**.   
 
 * * *
-NB : Leur dénomination peut vous donner des éléments d'information sur leur usage et/ou leur contenu .   
+NB : La dénomation des éléments peut vous donner des informations sur leur usage et/ou leur contenu .   
 Parmi les 3 suffixes présents dans le teiHeader:
 - `-Stmt` : appelle un contenu structuré en sous-éléments
 - `-Decl` : une série de déclarations, associant structuration en sous-éléments et description en
@@ -18,7 +18,7 @@ prose
 * * *
 
 ## fileDesc
-Élément obligatoire, il contient la notice bibliographique complète du fichier électronique. Son modèle copie les standards établis pour le catalogage.
+Élément obligatoire, le `<fileDesc>` contient la notice bibliographique complète du fichier électronique. Son modèle copie les standards établis pour le catalogage.
 
 ### titleStmt
 Le `<titleStmt>` groupe les informations relatives au titre et l'ensemble des personnes ou institutions impliquées dans la production du fichier.
@@ -31,7 +31,7 @@ Le `<titleStmt>` groupe les informations relatives au titre et l'ensemble des pe
  </titleStmt>
 ```
 
-Les rôles de chacun peuvent être indiqués de manière générale en utilisant les éléments respStmt et resp, ou bien en mobilisant des éléments plus précis. Il n'y a pas de limites à la mention de responsabilité, mais il est recommandé de citer au moins l'auteur de l'œuvre, lorsqu'il est connu, et le créateur du fichier.
+Les rôles de chacun peuvent être indiqués de manière générale en utilisant les éléments `<respStmt>` et `<resp>`, ou bien en mobilisant des éléments plus précis. Il n'y a pas de limites à la mention de responsabilité, mais il est recommandé de citer au moins l'auteur de l'œuvre, lorsqu'il est connu, et le créateur du fichier.
 - `<author>` (auteur) dans une référence bibliographique contient le nom de la (ou les) personne(s) physique(s) ou du collectif, auteur(s) d'une oeuvre ; par exemple dans la même forme que celle utilisée par une référence bibliographique reconnue.
 - `<editor>` mention de responsabilité secondaire pour un item bibliographique, par exemple le nom d'une personne, d'une institution ou d'un organisme (ou de plusieurs d'entre eux) comme éditeur scientifique, compilateur, traducteur, etc.
 - `<sponsor>` (commanditaire) indique le nom d’une institution ou d’un organisme partenaires.
@@ -87,7 +87,7 @@ Les rôles de chacun peuvent être indiqués de manière générale en utilisant
 ```
 
 ### editionStmt
-regroupe les informations relatives à l’édition d’un texte, ses changements ou ses révisions par exemple. Il est optionnel, mais est recommandé par la TEI.
+`<editionStmt>` regroupe les informations relatives à l’édition d’un texte, ses changements ou ses révisions par exemple. Il est optionnel, mais est recommandé par la TEI.
 
 - `<edition>` (édition) décrit les particularités de l’édition d’un texte.
 - `<respStmt>` (mention de responsabilité) indique la responsabilité quant au contenu intellectuel d'un texte, d'une édition, d'un enregistrement ou d'une publication en série, lorsque les éléments spécifiques relatifs aux auteurs, éditeurs, etc. ne suffisent pas ou ne s'appliquent pas.
@@ -112,7 +112,7 @@ regroupe les informations relatives à l’édition d’un texte, ses changement
 *source: [TEI Guidelines](https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/HD.html#HD22)*
 
 ### extent
-décrit la taille approximative d’un texte stocké sur son support, numérique ou non numérique, exprimé dans une unité quelconque appropriée. L'encodage de ses données est tout à fait optionnel.
+`<extent>` décrit la taille approximative d’un texte stocké sur son support, numérique ou non numérique, exprimé dans une unité quelconque appropriée. L'encodage de ses données est tout à fait optionnel.
 ```
 <extent>between 1 and
  2 Mb</extent>
@@ -125,7 +125,7 @@ décrit la taille approximative d’un texte stocké sur son support, numérique
 Il est possible de structurer davantage le contenu de l'élément `<extent>`, mais ce n'est pas une pratique mobilisée par beaucoup de projets.
 
 ### publicationStmt
-Cette section regroupe des informations concernant la publication ou la diffusion d’un texte électronique ou autre. Bien que non imposé par le schéma, **un document conforme à la TEI doit donner des informations sur le lieu de publication, l'adresse, l'identifiant, les droits de diffusion et la date dans cet ordre, après le nom de l'éditeur, du distributeur, ou de l'autorité concernée**.
+Cette section regroupe des informations concernant la publication ou la diffusion d’un texte électronique. Bien que non imposé par le schéma, **un document conforme à la TEI doit donner des informations sur le lieu de publication, l'adresse, l'identifiant, les droits de diffusion et la date, et dans cet ordre, après le nom de l'éditeur, du distributeur, ou de l'autorité concernée**.
 - `<publisher>` (éditeur) donne le nom de l'organisme responsable de la publication ou de la distribution d'un élément de la bibliographie.
 - `<distributor>` (diffuseur) donne le nom d’une personne ou d’un organisme responsable de la diffusion d’un texte.
 - `<authority>` (responsable de la publication.) donne le nom de la personne ou de l'organisme responsable de la publication d’un fichier électronique, autre qu’un éditeur ou un distributeur.
@@ -154,16 +154,16 @@ Cette section regroupe des informations concernant la publication ou la diffusio
 ```
 
 ### serieStmt
-regroupe toute information relative à la collection à laquelle appartient une publication. C'est un élément que l'on retrouve assez souvent en prose, plutôt que sous une forme structurée.
+`<seriesStmt>` regroupe toute information relative à la collection à laquelle appartient une publication. C'est un élément que l'on retrouve assez souvent en prose, plutôt que sous une forme structurée.
 - `<seriesStmt>` (mention de collection) regroupe toute information relative à la collection (si elle existe) à laquelle appartient une publication.
 Il mobilise des éléments que nous avons déjà évoqués: `<title>`, `<idno>`, `<respStmt>`, `<resp>` et `<name>`.
 
 ### notesStmt
-rassemble toutes les notes fournissant des informations sur un texte, en plus des informations mentionnées dans d'autres parties de la description bibliographique. Il se structure par un ou plusieurs éléments `<note>`, chaque note correspondant à un unique sujet.
+`<notesStmt>` rassemble toutes les notes fournissant des informations sur un texte, en plus des informations mentionnées dans d'autres parties de la description bibliographique. Il se structure par un ou plusieurs éléments `<note>`, chaque note correspondant à un unique sujet.
 On utilise cet élément, le plus souvent, lorsque l'on ne sait pas où mettre l'information.
 
 ### sourceDesc
-Partie obligatoire du `<teiHeader>`, elle décrit la source à partir de laquelle un texte électronique a été dérivé ou produit. On peut y trouver une description bibliographique pour un texte numérisé, une liste des témoins dans le cadre d'une édition critique <!--d'un manuscrit, car je ne suis pas sûre que tout le monde sache ce qu'est une édition critique--> et ainsi de suite.
+Partie obligatoire du `<teiHeader>`, `<sourceDesc>` décrit la source à partir de laquelle un texte électronique a été dérivé ou produit. On peut y trouver une description bibliographique pour un texte numérisé, une liste des témoins dans le cadre d'une édition critique de plusieurs manuscrits et ainsi de suite.
 
 Pour être valide, le `<sourceDesc>` doit contenir l'un des éléments suivants:
 - `<p>` (paragraphe)
@@ -425,7 +425,7 @@ Il contient des éléments non bibliographiques sur le texte. Il peut contenir u
 ```
 
 ## revisionDesc
-Présente une succession d'éléments `<change>`, par ordre antéchronologique, qui documentent les différentes interventions faites dans les fichiers, et qui peuvent être groupés par `<list>` ou par `<listChange>`. Fonctionne souvent avec les attributs `@who` et `@when`, ou avec les sous-éléments `<name>` et `<date>`.
+Présente une succession d'éléments `<change>`, par ordre antéchronologique, qui documentent les différentes interventions faites dans les fichiers, et qui peuvent être groupés par `<list>` ou par `<listChange>`. Il mobilise souvent avec les attributs `@who` et `@when`, ou les éléments `<name>` et `<date>`.
 
 ```
 <revisionDesc>

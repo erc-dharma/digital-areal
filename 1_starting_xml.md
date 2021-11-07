@@ -8,7 +8,7 @@ exemple d'*italique* en markdown
 ```
 
 ## Définition
-XML est un métalangage qui repose principalement sur du texte, standardisé par une norme de W3C, c’est-à-dire qu’il est construit avec des characters ASCII (American Standard Code for Information Interchange) ou en plein texte. Il ne propose pas de balise prédéfinie, mais met en place un ensemble de règles pour déterminer si un fichier est bien formé ou s'il est valide. Il permet de définir son propre jeu de balises.
+XML est un métalangage, standardisé par une norme de W3C, qui repose principalement sur du texte, c’est-à-dire qu’il est construit avec des characters ASCII (*American Standard Code for Information Interchange*). Il ne propose pas de balise prédéfinie, mais met en place un ensemble de règles déterminant si un fichier est bien formé (*well-formed*) et valide. Il permet ainsi de définir son propre jeu de balises.
 
 ```
 <monExemple>
@@ -26,20 +26,21 @@ Mais ce n'est pas un langage de programmation, ni de gestion de bases de donnée
 - Il est lisible par l'humain et l'ordinateur
 - Il a de multiples usages: mise en forme, exploitation et réutilisation.
 - Il dispose d'un environnement de travail et de technologie, stable et développé
-  - feuilles de styles: CSS, XSL-FO
-  - localiser et identifier des parties du document: Xpath
-  - lier des parties de document: Xlink
-  - combiner plusieurs documents: XInclude
-  - interroger les documents comme dans une base de données: XQuery
-  - transformations: XSLT
+  - feuilles de styles: **CSS**, **XSL-FO**
+  - localiser et identifier des parties du document: **Xpath**
+  - lier des parties de document: **Xlink**
+  - combiner plusieurs documents: **XInclude**
+  - interroger les documents comme dans une base de données: **XQuery**
+  - transformations: **XSLT**
 
 ## Les éléments
 ### La syntaxe
 Un élément se signale par des chevrons et se compose de deux parties :   
-- la première partie de l'élément se forme : **`<` + nom + `>`**  
-- la partie qui vient le terminer : **`<` + `/` + nom + `>`**  
+- la première partie de l'élément (*balise ouvrante*) se forme : **`<` + nom + `>`**  
+- la partie qui vient le terminer (*balise fermante*) : **`<` + `/` + nom + `>`**  
+Les noms d'éléments doivent toujours se limiter à des caractères latins basiques définis par l'ASCII, soit des caractères alphnumériques. Les seuls caractères de ponctuation autorisés sont le point `.`, le tiret `-` et l'*underscore* `_`. Ils peuvent être en minuscules ou en majuscules. Le nom doit être identique dans les deux parties de la balise, d'autant qu'il est sensible à la case.
 
-Un élément peut contenir du texte (PCDATA)
+Un élément peut contenir du texte (*PCDATA*)
 ```
 <jour>Lundi</jour>
 ```
@@ -51,8 +52,8 @@ Du contenu mixte
   <nom>Dupont</nom>
 </personne>
 ```
-
-ou peut-être vide
+Tout ce qui en compris entre les deux parties de la balise forme le contenu de celle-ci.   
+Un élément peut aussi être vide.
 ```
 <pb/>
 ```
@@ -61,46 +62,55 @@ Un élément vide fusionne les deux parties de la balise en une seule: : **`<` +
 ### Quelques règles d'usage
 Les éléments ne peuvent pas s'entrecroiser ou se chevaucher. Les éléments doivent être fermés afin de respecter l'arborescence.
 
-**XML bien formé**:
-```
-<personne>
-  <prenom>Jean</prenom>
-  <nom>Dupont</nom>
-</personne>
-```
 **XML mal formé**:
 ```
 <personne>
   <nom>Dupont</personne>
   </nom>
 ```
+
+**XML bien formé**:
+```
+<personne>
+  <nom>Dupont</nom>
+</personne>
+```
+
 Si deux éléments ont un contenu commun, alors l'un doit être inclus dans l'autre.
-**XML mal formé**: <!--est ce qu'il ne faudrait pas aussi l'exemple bien formé pour que ce soit clair?-->
+**XML mal formé**:
 ```
 <texte>
  <paragraph>Un premier paragraphe avec un exemple d'<gras>xml</paragraph>
  <paragraph>Mal formé</gras> qui se poursuit sur le second</paragraph>
 </texte>
 ```
+**XML bien formé**:
+```
+<texte>
+ <paragraph>Un premier paragraphe avec un exemple d'<gras>xml</gras></paragraph>
+ <paragraph><gras>Bien formé</gras> qui se poursuit sur le second</paragraph>
+</texte>
+```
 Parfois, il est nécessaire de segmenter certains éléments pour respecter la hiérarchie de la structure.
 
 ## Les attributs
-Les attributs se mettent dans la première partie de la balise et se distinguent du nom de la balise par l'ajout d'un **espace**, <!--son nom--> suivi par un signe égal `"`. Sa valeur est donnée entre guillements, qui peuvent être simple ou double, même si les conventions favorisent le double guillement droit `"` : **attribut + `=`+`"` + valeur +`"`**
+Les attributs se mettent dans la première partie de la balise (*balise ouvrante*) et se distinguent du nom de la balise par l'ajout d'un **espace**, puis le nom de l'attribut suivi par un signe égal `=`. Sa valeur est donnée entre guillemets. Ils peuvent être simple ou double, même si les conventions favorisent le double guillemet droit `"` : **attribut + `=`+`"` + valeur +`"`**
+Un attribut fonctionne toujours par paire: le nom et la valeur, qui doit au moins correspondre à un caractère.
 ```
 <nom type="lieu">Fréjus</lieu>
 <nom type='lieu'>Fréjus</lieu>
 ```
 
-Il n'y a pas de limites au nombre d'attributs. Il faut ajouter un **espace** entre chaque attribut.
+Il n'y a pas de limites au nombre d'attributs, mais il est nécessaire d'ajouter un **espace** entre chaque attribut pour les séparer.
 ```
 <nom type="lieu" subtype="reel">Fréjus</lieu>
 <nom type="lieu" subtype="fictif">Atlantide</lieu>
 ```
- ni même de limites au nombre de valeurs que peut contenir un attribut, on les distingue par un **espace**.
+Il n'y a pas non plus de limites au nombre de valeurs que peut contenir un attribut, on les distingue aussi par un **espace**.
  ```
 <hi rend="souligne gras italique">mon texte à mettre en forme</hi>
  ```
-Il n'y a pas d'ordre nécessaire dans les attributs lorsqu'il y en a plusieurs, ni dans les valeurs d'attributs.
+Il n'y a pas d'ordre nécessaire entre les attributs lorsqu'il y en a plusieurs, ni dans les valeurs d'attributs.
 
 ## Règles d'héritage
 Un document XML se présente sous la forme d'une arborescence. Tout le corps du document doit être compris dans le contenu d'un unique élément appelé élément **racine**. En TEI, il s'agit de la racine/balise: `<TEI>`.
@@ -125,9 +135,14 @@ Exemple de l'arbre XML minimal d'Epidoc:
 ![Liens de parenté en XML](/assets/images/parente.png)
 *[source](https://www.irif.fr/~carton/Enseignement/XML/Cours/support.html#idm140605729164112)*
 
-Dans l'exemple ci-dessus, le contenu de l'élément self s'étend de la balise ouvrante <child1> jusqu'à la balise de fin </child3>. Ce contenu comprend tous les éléments child1, child2 et child3 ainsi que les éléments desc1, desc2, desc3 et desc4. Tous les éléments qu'il contient sont appelés *descendants* de l'élément self.
-Parmi ces *descendants*, les éléments child1, child2 et child3 qui sont directement inclus dans self sans élément intermédiaire sont appelés les *enfants* de l'élément self. Inversement, l'élément *parent* qui contient directement self est appelé le *parent* de l'élément self. Les autres éléments qui contiennent l'élément self sont appelés les *ancêtres* de l'élément self. Les autres *enfants* sibling1, sibling2 et sibling3 de l'élément *parent* sont appelés les *frères* de l'élément self.
+Dans l'exemple ci-dessus, le contenu de l'élément `<self>` s'étend de la balise ouvrante `<child1>` jusqu'à la balise de fin `</child3>`. Il comprend tous les éléments `<child1>`, `<child2>` et `<child3>` ainsi que les éléments `<desc1>`, `<desc2>`, `<desc3>` et `<desc4>`. Tous les éléments qu'il contient sont appelés *descendants* de l'élément self.
+Parmi ces *descendants*, les éléments child1, `<child1>`, `<child2>` et `<child3>`qui sont directement inclus dans `<self>` sans élément intermédiaire sont appelés les *enfants* de l'élément `<self>`. Inversement, l'élément *parent* qui contient directement `<self>` est appelé le *parent* de l'élément `<self>`. Les autres éléments qui contiennent l'élément `<self>` sont appelés les *ancêtres* de l'élément `<self>`. Les autres *enfants* `<sibling1>`, `<sibling2>` et `<sibling3>` de l'élément *parent* sont appelés les *frères* de l'élément `<self>`.
 
+Les attributs déclarés sur les éléments *ancêtres* ou *parents* sont transmis aux éléments *enfants*, ainsi qu'à tous les *descendants*. Ainsi l'attribut `@xml:lang` s'appplique à tous les éléments contenus par `<parent>`. Cela signifie que tous ont du contenu en anglais, sauf l'élément `<desc2>` qui porte son propre attribut `@xml:lang` et qui par conséquent remplace l'anglais par le français.
+
+* * *
+NB: Ces principes d'héritages des attributs par les *descendants** d'un élément permettent d'éviter les répétitions des attributs et de leur valeur. Néanmoins, il faut faire attention qu'un élément n'hérite pas de caractèristiques que nous ne souhaitons pas lui attribuer.
+* * *
 
 ## Faire des commentaires dans un fichier XML
 Il est possible d'ajouter des commentaires dans votre fichier.
@@ -162,12 +177,24 @@ En XML, il y a 5 éléments avec des valeurs prédéfinies qui s'échappent en d
 Un fichier XML, TEI ou non, débute toujours par la déclaration XML. Elle se signale par des chevrons et des points d'interrogation. Tout de suite après le point d'interrogation du début doit se trouver xml (en minuscules). Elle peut se composer de plusieurs mentions qui reprennent la syntaxe des attributs.
 - la déclaration de la version: `version="1.0"` (mention obligatoire)
 - la déclaration de l'encodage des caractères: `encoding="utf-8"` (recommandée)
-- enfin, standalone pour signaler la localisation du schéma.  Avec `standalone="yes"` vous mentionnez que la DTD <!--peut-être mettre la définition de DTD--> se trouve dans le fichier actuel. Avec `standalone="no"` vous faites savoir que la DTD se trouve dans un fichier séparé. Dans ce cas, vous devez mentionner la source à l'aide de la déclaration de type de document. (Rarement utilisé)
+- enfin, `@standalone` pour signaler la localisation du schéma, c'est-à-dire s'il existe des déclarations externes qui affectent le document ou si le fichier fonctionne de manière autonome. Avec `standalone="yes"` vous mentionnez que la DTD (*Document Type Definition*) se trouve dans le fichier actuel. Avec `standalone="no"` vous faites savoir que la DTD se trouve dans un fichier séparé. Dans ce cas, vous devez mentionner la source à l'aide de la déclaration de type de document. (Rarement utilisé)
 
 Si vous utilisez tous ces attributs, il y a un ordre à respecter. Il s'agit d'un des rares cas en XML pour lequel l'ordre des attributs à de l'importance pour le système.
 ```
 <?xml version="1.0" encoding="utf-8"?>
 ```
+
+Exemple avec une DTD interne
+```
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE Bonjour [
+  <!ELEMENT Bonjour (#PCDATA)>
+]>
+<Bonjour>Salut Jupiter!</Bonjour>
+```
+
+**Notez que la déclaration XML ne contient pas de barre oblique pour fermer la balise.**
 
 ## Instructions de traitement
 Les instructions de traitement sont des lignes à destination du logiciel/éditeur de codes. Elles s'écrivent sur le même modèle que la déclaration xml avec des chevrons suivis par des points d'interrogation.   
@@ -180,20 +207,9 @@ Exemple de la déclaration des schémas pour les inscriptions dans le projet DHA
 <?xml-model href="https://raw.githubusercontent.com/erc-dharma/project-documentation/master/schema/latest/DHARMA_SQF.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 ```
 
-Exemple avec une DTD interne
-```
-
-<?xml version="1.0"?>
-<!DOCTYPE Bonjour [
-  <!ELEMENT Bonjour (#PCDATA)>
-]>
-<Bonjour>Salut Jupiter!</Bonjour>
-```
-
 Exemple avec une feuille de style XSLT
 ```
-<?xml-stylesheet href="transformation.xsl"
-   type="text/xsl"?>
+<?xml-stylesheet href="transformation.xsl" type="text/xsl"?>
 ```
 
 Exemple avec une feuille de style CSS
@@ -201,11 +217,11 @@ Exemple avec une feuille de style CSS
 <?xml-stylesheet href="style.css" type="text/css"?>
 ```
 
-Plusieurs attributs sont possibles. Il faut au moins l'attribut `@href` qui peut contenir:
-- une url
-- un chemin relatif entre votre xml et le fichier (par rapport à votre position dans l'ordinateur)
-- un chemin absolu entre votre xml et le fichier (par rapport à la racine de l'ordinateur)
-Selon la technologie mobilisée, il peut-être nécessaire de déclarer une uri pour l'identifier. C'est le cas avec les schémas et l'attribut `@schematypens` notamment.
+Plusieurs attributs sont possibles. Il faut au moins l'attribut `@href`. Celui-ci peut contenir:
+- une URL
+- le chemin relatif entre votre xml et le fichier (par rapport à votre position dans l'ordinateur)
+- le chemin absolu depuis la racine de l'ordinateur vers le fichier (par rapport à la racine de l'ordinateur)
+Selon la technologie mobilisée, il peut-être nécessaire de déclarer une URI pour l'identifier. C'est le cas avec les schémas et l'attribut `@schematypens` notamment.
 
 * * *
 NB: Les schémas permettent de valider l'encodage de votre fichier selon les règles spécifiques que vous avez fixées pour votre projet.
@@ -214,9 +230,10 @@ Il existe plusieurs technologies: DTD, xml schema, Relax NG, Schematron.
 * * *
 
 ## Rapide point sur les espaces en XML
-En XML, quatre caractères sont considérés comme des espaces: le retour à la ligne, l'identation de tabulation,le passage à la ligne et l'espace classique.
-Dans les documents XML, vous retrouverez à la fois des espaces signifiants et des espaces insignifiants utilisés afin de rendre lisible le contenu. A l'absence d'un schéma, on considère par défaut tous les espaces comme ayant leur importance.
-La présence de plusieurs espaces entre le nom d'un élément et un attribut par exemple n'est pas un soucis
+En XML, quatre caractères sont considérés comme des espaces: le retour à la ligne, l'indentation de tabulation, le passage à la ligne et l'espace classique.
+Dans les documents XML, vous retrouverez à la fois des *espaces signifiants* et des *espaces insignifiants* utilisés afin de rendre le contenu plus lisible. En l'absence d'un schéma, on considère par défaut tous les espaces comme ayant leur importance.
+La présence de plusieurs espaces entre le nom d'un élément et un attribut par exemple n'est pas un soucis:
+
 ```
 <title     type = "main" >
 ```
@@ -260,7 +277,7 @@ Francis
 </name>
 ```
 sont considérés comme des équivalents de  `<name>Emmanuel Francis</name>`.
-Néansmoins, il vaut mieux normaliser les espaces, si possible pour éviter les conflits au moment de la transformation, pour lesquels quelques explications sont données dans la partie 5 du site.
+Néanmoins, il vaut mieux normaliser les espaces, si possible pour éviter les conflits et les erreurs au moment de la transformation, pour lesquels quelques explications sont données dans la partie (transformation)[https://erc-dharma.github.io/digital-areal/5_transformation] du site.
 
 ## Vers un document XML bien formé et valide
 C'est deux notions sont essentielles pour obtenir un fichier exploitable.
@@ -275,7 +292,7 @@ Pour avoir un document XML bien formé, il faut qu'il respecte tous les précept
 - les deux parties de la balise ont toutes les deux le même nom;
 - les éléments vides sont bien fermés par le `/`;
 - un attribut apparaît uniquement dans la balise ouvrante et une seule fois dans cette balise ;
-- les valeurs des attributs sont entre guillemets ou apostrophes ;
+- les valeurs des attributs sont entre guillemets (simple ou double) ;
 - les caractères spéciaux sont échappés ;
 
 ### Vers un XML valide

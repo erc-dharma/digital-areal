@@ -161,12 +161,17 @@ Pour traiter les allographes présents dans la fable, plusieurs solutions sont p
 </choice>
 ```
 
-2- On peut aussi déclarer le caractère spécial dans un doctype. On lui donne un nom auquel on associe un encodage <!--si je ne me trompe pas, le doctype tient de la DTD non? du coup ça me parait pas ultra clair pour des non spécialistes, vu qu'on est plus dans la simple balise ou attribut-->
+2- On peut aussi déclarer le caractère spécial dans une DTD réduite. Pour associer un encodage à un nom que l'on utilisera comme un raccourci. Cette déclaration doit se faire après la déclaration XML et les instructions de traitement, mais avant l'élément racine `<TEI>`.
 ```
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <!DOCTYPE TEI [
  <!ENTITY s-long
 '<choice><reg>s</reg><orig>&#383;</orig></choice>' >
 ]>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
 ```
 On peut alors mobiliser `<choice><reg>s</reg><orig>&#383;</orig></choice>` en utilisant le nom donné, combiné avec la syntaxe des caractères XML spéciaux, soit `&s-long;`.
 ```
@@ -195,11 +200,11 @@ Pour l'utiliser, l'encodage combine l'élément avec un attribut de référence 
 <g ref="#s-long">s</g>
 ```
 * * *
-NB: pour se simplifier la vie, nous pouvons aussi combiner les propositions faites si dessus.
-Soit un doctype avec l'élément `<g>`.
+NB: Nous pouvons  combiner les propositions faites si dessus, soit une DDT avec l'élément `<g>`.
 ```
 <!ENTITY s-long '<g ref="#s-long">s</g>' >
 ```
+Si la TEI recommande de déclarer et préciser de nombreux choix d'encodage à l'aide d'éléments du `<teiHeader>`, force est de reconnaître que de nombreux projets et utilisateurs en font l'impasse. C'est pourquoi, vous retrouverez souvent l'attribut `<g>` sans aucune déclaration sous `<charDecl>` dans le `<teiHeader>`.
 * * *
 
 ### Formatter un caractère ou une chaîne de caractères
