@@ -1,4 +1,4 @@
-# Introduction aux schémas
+# Introduction aux schémas et au modèle TEI
 
 Si ce chapitre essaie de présenter toutes les principes à l'œuvre dans la création d'un schéma et leur fonctionnement général, il n'entre pas dans les détails concrets de leur création ni même de la syntaxe de leurs langages. Il a été envisagé pour comprendre les principes de la validation et comme une entrée vers le modèle général de la tei, un détour, certes abstrait, mais à notre avis nécessaire pour s'engager dans la voie de la TEI.
 
