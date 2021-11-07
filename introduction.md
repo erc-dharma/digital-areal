@@ -45,63 +45,6 @@ the texts.
 Le Consortium est une fondation à but non lucratif, dont le financement se fait par les contributions de ses membres. Il se compose notamment d'un bureau, d'un conseil technique, de membres institutionnels, de groupes de travail et de groupes d'intérêt.
 Son rôle principal est de maintenir les *Guidelines* et de les faire évoluer selon les besoins des communautés d'utilisateurs.
 
-## Le modèle TEI
-Il s'agit d'un modèle abstrait de données, soit un ensemble de concepts ainsi que les différentes relations entre eux. Il faut donc distinguer ce modèle de ses implémentations techniques, qu'elles soient générales par l'importation de modules entiers comme celui du théâtre ou de la transcription, ou particulières avec une sélection d'éléments pour correspondre aux besoins d'un projet.
-
-### Les modules
-Les modules correspondent aux chapitres des *Guidelines*. Ils définissent des composantes du modèle (éléments, classes, macros), les spécifications techniques et peuvent se concevoir comme des blocs que l'on conserve ou que l'on supprime notamment par rapport aux schémas.  
-
-**les obligatoires:**
-- tei (déclaration des classes, macros et types)
-- textstructure (éléments de la structure du fichier)
-- core (ensemble des éléments considérés comme basiques et communs à tous les encodages)
-- header (métadonnées)
-
-**les spécialisés:**
-- analysis (analyse linguistique);
-- certainty (certitude et responsabilité) ;
-- corpus (corpus) ;
-- drama (théâtre) ;
-- figures (tableaux, figures et formules) ;
-- gaiji (caractères non standard) ;
-- iso-fs (structures de traits) ;
-- linking (liens, segmentation, alignements) ;
-- msdescription (description des manuscrits) ;
-- namesdates (noms, dates, lieux) ;
-- nets (graphes, réseaux, arbres) ;
-- textcrit (apparat critique) ;
-- transcr (transcription) ;
-- verse (poésie).
-
-### Les classes
-Les classes organisent les éléments et les attributs du modèle TEI et permettent de fixer les propriétés et les règles d'héritage partagés par plusieurs éléments et attributs.   
-Les classes sont identifiables par le préfixe `att.` pour les attributs et par `model.` pour les modèles d'éléments.
-
-### Les macros  
-Les macros sont des raccourcis qui permettent de spécifier le contenu, en particulier pour le contenu d'un élément ou pour les valeurs d'un attribut. Elles sont employées lors de la création des schémas. Elles débutent par le préfixe `macro.`.
-
-### TEI Conformance
-La notion de  *TEI Conformance* correspond à un ensemble de règles et de contraintes devant permettre l'échange et le traitement des fichiers dans un cadre commun. Ce n'est pas une mesure ou un jugement des mérites académiques d'un document.  Il est définit par la TEI comme étant:
-- XML bien-formé
-- XML valide par rapport à un schéma, qui est un dérivé des *Guidelines TEI*.
-- conforme au modèle abstrait de la TEI
-- utilisation conforme des espaces de noms
-- documentation pr la biais d'un ODD, lui conforme aux attentes fixées par la TEI.
-
-Cela signifie qu'il ne faut adhérer aux définitions des éléments TEI, afin de ne pas altérer leur dimension sémantique, et qu'il vaut mieux éviter d'être plus large dans l'appréciation d'un élément que la TEI. Il est plutôt recommandé d'être plus restrictif, ou au moins équivalent, afin de ne pas basculer dans une modification "sale" (*unclean modification*) de la TEI. Cela ne veut pas dire que ce choix est intrinsèquement mauvais, ou qu'il n'est pas nécessaire, mais qu'il empêche la validation contre le schéma de la TEI dans sa forme originelle.
-
-* * *
-NB: il doit y avoir aujourd'hui plus de 600 éléments disponibles dans le modèle TEI. Aucun projet ne les mobilise tous; c'est pourquoi le modèle théorique est souvent "réduit" aux seuls éléments nécessaires aux objectifs d'un projet. Cela peut aussi s'accompagner de la création d'éléments propres à un projet, lorsque la TEI n'offre pas de solution, ou que l'on ne les trouve pas satisfaisantes.
-Un exemple: le [projet Menota](https://www.menota.org/HB3_index.xml). Les éléments créés fonctionnent avec l'espace de nom `me:`
-  - `<me:all>` pour encoder les allitérations dans un vers
-  - `<me:ass>`	pour encoder les changements de rythmes dans un vers
-  - `<me:textSpan/>` pour encoder des structures qui se chevauchent
-    - `@me:category` pour qualifier le type de l'élément problématique par rapport à la structure. La liste des valeurs d'attributs est fermée.
-
-**C'est pourquoi un travail de modélisation est nécessaire lorsque l'on établit un modèle TEI pour un ou des corpus.**
-La modélisation est une : « opération par laquelle on établit le modèle d'un système complexe, afin d'étudier plus commodément et de mesurer les effets sur ce système des variations de tel ou tel de ses éléments composants » Source: J. Giraud, P. Pamart, J. Riverain, *Les nouveaux mots « dans le vent »*, Paris, France, 1974.
-* * *
-
 ## Epidoc, une modélisation de la TEI
 Epidoc est un projet collaboratif qui a vu le jour en 2000 à l'initiative de Tom Elliot et qui vise à établir des normes d'encodage en TEI pour les documents anciens. L'idée initiale était d'établir un standard afin de favoriser l'interopérabilité et la constance des encodages entre les documents anciens afin de permettre des regroupements de corpus issus de plusieurs projets.
 Cette personnalisation offre une documentation assez complète avec des schémas de validation et des feuilles de style pour les transformations.
