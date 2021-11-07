@@ -1,12 +1,9 @@
 # Atelier TEI
 Action Nationale de Formation "Digital Areal", 7-10 novembre 2021, Fréjus.
 Atelier animé par Emmanuel Francis (CNRS-EHESS, CEIAS) et Axelle Janiak (CNRS-EHESS, CEIAS, ingénieure pour le projet DHARMA).  
-Site réalisé par Axelle Janiak, en collaboration avec Adeline Levivier (EFEO, ingénieure pour le projet DHARMA).
+Cours et site réalisé par Axelle Janiak, en collaboration avec Adeline Levivier (EFEO, ingénieure pour le projet DHARMA).
 
 Pour nous contacter: [manufrancis@gmail.com](manufrancis@gmail.com), [adeline.levivier@efeo.net](adeline.levivier@efeo.net) et [axelle.janiak@ehess.fr](axelle.janiak@ehess.fr]).
-
-## TO DO pour finaliser l'ensemble
-- Relire pour corriger les coquilles
 
 ## Contenu de ce repository
 - Les pages de cours en format markdown
@@ -16,7 +13,7 @@ Pour nous contacter: [manufrancis@gmail.com](manufrancis@gmail.com), [adeline.le
 - Le dossier `schema` met à disposition des schémas de validation pour Epidoc, TEI all et des exemples de schéma utilisés par DHARMA (RelaxNG et schematron).
 - Le dossier `templates` propose des templates Epidoc et TEI pour aider à débuter les encodages, ainsi qu'un template d'encodage plus développé utilisé par DHARMA pour les inscritptions.
 - Le dossier `XSLT` contient une XSLT pour numéroter les vers de la fable et une pour le transformer en html.
-- Les autres éléments sont utilisés afin de générer la page gitHub, à l'aide du thème Cayman et de Jekyll.
+- Les autres éléments sont utilisés afin de générer la page gitHub, à l'aide du thème Cayman et de Jekyll.  
 **L'ensemble est disponible en licence CC-BY, grâce au financement de l'ERC du projet DHARMA.**
 
 ## Déroulé du cours
@@ -27,7 +24,9 @@ Il est nécessaire d'avoir un éditeur de texte:
 - soit Oxygen version d’essai (1 mois). https://www.oxygenxml.com/xml_editor/download_oxygenxml_editor.html
 - soit Atom (éditeur de texte open-source) https://atom.io/ et installation du module de validation (https://atom.io/packages/linter-autocomplete-jing)
 - soit votre éditeur habituel/préféré, si vous en avez un
-- NB: Notepad ++ ou textEdit fonctionnent, mais vous n’aurez aucune aide pour la saisie et pour valider les encodages.
+* * *
+NB: Notepad ++ ou textEdit fonctionnent, mais vous n’aurez aucune aide pour la saisie et pour valider les encodages.
+* * *
 
 ## Bibliographie
 ### Tutoriels et introductions
@@ -35,7 +34,10 @@ Il est nécessaire d'avoir un éditeur de texte:
 Melissa Terras, Edward Vanhoutte, and Ron Van den Branden. *TEI by Example*. Online course: [lien](https://teibyexample.org/)  
 Lou  Burnard, *What is the Text Encoding Initiative? How to add intelligent markup to digital resources*. Nouvelle édition [en ligne]. Marseille : OpenEdition Press, 2014: [lien](http://books.openedition.org/oep/426 )  
 Marjorie Burghart, *Editer des sources historiques en ligne grâce à XML – Un guide pratique*. Lyon, 2010: [lien](http://mutec.huma-num.fr/sites/www.mutec-shs.fr/files/Guide%20Editer%20des%20sources%20historiques%20%20gr%C3%A2ce%20a%20XML.pdf)  
-Marjorie Burghart, James Cummings & Elena Pierazzo, *Digital Editing of Medieval Manuscripts : A Textbook*. Online course: [lien](https://www.digitalmanuscripts.eu/?page_id=648)
+Marjorie Burghart, James Cummings & Elena Pierazzo, *Digital Editing of Medieval Manuscripts : A Textbook*. Online course: [lien](https://www.digitalmanuscripts.eu/?page_id=648)  
+Jean-Baptiste Camps, *Structuration des données et des documents : balisage XML*. Paris, 2018: [lien](https://halshs.archives-ouvertes.fr/cel-01706530)  
+Olivier Carton, *L'essentiel de XML*, cours pour l'université Paris-Diderot. Paris, 2015: [lien](https://www.irif.fr/~carton/Enseignement/XML/Cours/index.html)  
+W3C School, *XML Tutorial*. [lien](https://www.w3schools.com/xml/)
 
 ### Guides d'encodage
 *TEI Guidelines*: [lien](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html)  
