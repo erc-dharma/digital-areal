@@ -1,6 +1,6 @@
 # Atelier TEI
-Action Nationale de Formation "Digital Areal" 7-10 novembre 2021, Fréjus.
-Présentation par Emmanuel Francis (CNRS-EHESS, CEIAS) et Axelle Janiak (CNRS-EHESS, CEIASingénieure pour le projet DHARMA).  
+Action Nationale de Formation "Digital Areal", 7-10 novembre 2021, Fréjus.
+Atelier animé par Emmanuel Francis (CNRS-EHESS, CEIAS) et Axelle Janiak (CNRS-EHESS, CEIAS, ingénieure pour le projet DHARMA).  
 Site réalisé par Axelle Janiak, en collaboration avec Adeline Levivier (EFEO, ingénieure pour le projet DHARMA).
 
 Pour nous contacter: [manufrancis@gmail.com](manufrancis@gmail.com), [adeline.levivier@efeo.net](adeline.levivier@efeo.net) et [axelle.janiak@ehess.fr](axelle.janiak@ehess.fr]).

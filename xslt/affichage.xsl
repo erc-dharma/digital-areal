@@ -4,15 +4,15 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs tei"
     version="2.0">
-    
+
     <!-- Written by Axelle Janiak for ERC-DHARMA, 2021-11 -->
     <xsl:output method="html" indent="no"/>
-    
+
     <!-- Identity template -->
     <xsl:template match="@* | text() | comment()" mode="copy">
         <xsl:copy/>
     </xsl:template>
-    
+
     <xsl:template match="/tei:TEI">
         <xsl:element name="html">
             <xsl:call-template name="fable-head"/>
@@ -22,8 +22,8 @@
                 <xsl:call-template name="table"/>
                 <xsl:element name="div">
                     <xsl:attribute name="class">container</xsl:attribute>
-                    <xsl:apply-templates select="./tei:text"/>   
-                    <xsl:apply-templates select="//tei:note | //tei:choice[child::tei:sic and child::tei:corr] | //tei:choice[child::tei:orig and child::tei:reg] | //tei:choice[child::tei:unclear]" mode="modals"/> 
+                    <xsl:apply-templates select="./tei:text"/>
+                    <xsl:apply-templates select="//tei:note | //tei:choice[child::tei:sic and child::tei:corr] | //tei:choice[child::tei:orig and child::tei:reg] | //tei:choice[child::tei:unclear]" mode="modals"/>
                 </xsl:element>
                 <xsl:element name="footer">
                     <xsl:attribute name="class">footer mt-auto py-3 text-center</xsl:attribute>
@@ -32,10 +32,10 @@
                     </xsl:element>
                 </xsl:element>
                 <xsl:call-template name="fable-script"/>
-            </xsl:element>  
+            </xsl:element>
         </xsl:element>
     </xsl:template>
-    
+
     <!--  add ! -->
     <xsl:template match="tei:add">
         <xsl:element name="a">
@@ -64,13 +64,13 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!-- back -->
     <xsl:template match="tei:back">
         <xsl:element name="h1">Front</xsl:element>
         <xsl:apply-templates/>
     </xsl:template>
-    
+
     <!-- byline -->
     <xsl:template match="tei:byline">
         <xsl:element name="span">
@@ -78,7 +78,7 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!--  C ! -->
     <!-- c -->
     <xsl:template match="tei:c">
@@ -87,7 +87,7 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!--  choice ! -->
     <xsl:template match="tei:choice[child::tei:orig and child::tei:reg]">
         <xsl:variable name="app-num">
@@ -122,7 +122,7 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
-    
+
     <xsl:template match="tei:choice[child::tei:orig and child::tei:reg]" mode="modals">
         <xsl:variable name="apparatus">
             <xsl:element name="span">
@@ -140,14 +140,14 @@
             <xsl:copy-of select="$apparatus"/>
         </span>
     </xsl:template>
-    
+
     <xsl:template match="tei:choice[child::tei:sic and child::tei:corr]">
         <xsl:param name="location"/>
         <xsl:variable name="app-num">
             <xsl:value-of select="name()"/>
             <xsl:number level="any" format="0001"/>
         </xsl:variable>
-        <xsl:element name="span"> 
+        <xsl:element name="span">
             <xsl:attribute name="class">corr</xsl:attribute>
             <xsl:apply-templates select="tei:corr"/>
         </xsl:element>
@@ -175,7 +175,7 @@
                 </xsl:element>
             </xsl:element>
     </xsl:template>
-    
+
     <xsl:template match="tei:choice[child::tei:sic and child::tei:corr]" mode="modals">
         <xsl:variable name="apparatus">
             <xsl:element name="span">
@@ -198,7 +198,7 @@
             <xsl:copy-of select="$apparatus"/>
         </span>
     </xsl:template>
-    
+
     <!-- choice with two unclears -->
     <xsl:template match="tei:choice[child::tei:unclear]">
         <xsl:param name="location"/>
@@ -206,7 +206,7 @@
             <xsl:value-of select="name()"/>
             <xsl:number level="any" format="0001"/>
         </xsl:variable>
-        <xsl:element name="span"> 
+        <xsl:element name="span">
             <xsl:attribute name="class">unclear</xsl:attribute>
             <xsl:apply-templates select="child::tei:unclear[1]"/>
         </xsl:element>
@@ -234,7 +234,7 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
-    
+
     <xsl:template match="tei:choice[child::tei:unclear]" mode="modals">
         <xsl:variable name="apparatus">
             <xsl:element name="span">
@@ -252,7 +252,7 @@
             <xsl:copy-of select="$apparatus"/>
         </span>
     </xsl:template>
-    
+
     <!--  del ! -->
     <xsl:template match="tei:del">
         <xsl:element name="a">
@@ -266,7 +266,7 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
-    
+
     <!-- div -->
     <xsl:template match="tei:div[@type='fable']">
         <xsl:element name="div">
@@ -294,7 +294,7 @@
             <xsl:element name="hr"/>
         </xsl:if>
     </xsl:template>
-    
+
     <!-- docAuthor -->
     <xsl:template match="tei:docAuthor">
         <xsl:element name="span">
@@ -302,7 +302,7 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!-- docDate -->
     <xsl:template match="tei:docDate">
         <xsl:element name="span">
@@ -310,7 +310,7 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!-- docImprint -->
     <xsl:template match="tei:docImprint">
         <xsl:element name="span">
@@ -318,7 +318,7 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!--  F ! -->
     <!-- figure -->
     <xsl:template match="tei:figure">
@@ -332,7 +332,7 @@
             </xsl:if>
         </xsl:element>
     </xsl:template>
-    
+
     <!--  foreign ! -->
     <xsl:template match="tei:foreign">
         <xsl:element name="span">
@@ -344,7 +344,7 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!-- front -->
     <xsl:template match="tei:front">
         <xsl:element name="div">
@@ -380,7 +380,7 @@
         </xsl:element>
         <xsl:element name="hr"/>
     </xsl:template>
-    
+
     <!--  fw ! -->
     <xsl:template match="tei:fw">
         <xsl:element name="p">
@@ -409,7 +409,7 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!--  G !  -->
     <!-- g -->
     <xsl:template match="tei:g">
@@ -418,7 +418,7 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!-- gap  -->
     <xsl:template match="tei:gap">
         <xsl:choose>
@@ -427,7 +427,7 @@
             <xsl:otherwise>
                 <xsl:element name="span">
                     <xsl:attribute name="class">gap</xsl:attribute>
-                    <xsl:choose> 
+                    <xsl:choose>
                         <xsl:when test="@quantity and @unit">
                             <xsl:if test="@precision='low'">
                                 <xsl:text>ca. </xsl:text>
@@ -445,7 +445,7 @@
                                         <xsl:text>*</xsl:text>
                                     </xsl:when>
                                 </xsl:choose>
-                            </xsl:if> 
+                            </xsl:if>
                         </xsl:when>
                         <xsl:when test="@extent">
                             <xsl:text>...</xsl:text>
@@ -453,7 +453,7 @@
                         <xsl:otherwise>
                             <xsl:text>...</xsl:text>
                         </xsl:otherwise>
-                    </xsl:choose>         
+                    </xsl:choose>
                 </xsl:element>
             </xsl:otherwise>
         </xsl:choose>
@@ -480,10 +480,10 @@
                     <xsl:element name="span">
                     <xsl:text>Emplacement d'une image</xsl:text>
                     </xsl:element>
-                </xsl:otherwise>            
+                </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
+
     <!--  H ! -->
     <!--  head ! -->
     <xsl:template match="tei:head">
@@ -521,7 +521,7 @@
             </xsl:when>
         </xsl:choose>
     </xsl:template>
-    
+
     <!-- imprimatur -->
     <xsl:template match="tei:imprimatur">
         <xsl:element name="span">
@@ -529,7 +529,7 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!--  l ! -->
     <xsl:template match="tei:l">
         <xsl:element name="span">
@@ -544,7 +544,7 @@
         </xsl:element>
         <br/>
     </xsl:template>
-    
+
     <!-- lb-->
    <xsl:template match="tei:lb[ancestor-or-self::tei:front]">
        <!-- <xsl:element name="span">
@@ -553,7 +553,7 @@
         </xsl:element>-->
        <br/>
     </xsl:template>
-    
+
     <!--  lg ! -->
     <xsl:template match="tei:lg">
           <xsl:element name="div">
@@ -561,7 +561,7 @@
                     <xsl:apply-templates/>
             </xsl:element>
     </xsl:template>
-    
+
     <!--  List -->
     <xsl:template match="tei:list">
         <xsl:element name="ul">
@@ -571,11 +571,11 @@
                     <xsl:apply-templates/>
                 </xsl:element>
             </xsl:for-each>
-            
+
         </xsl:element>
     </xsl:template>
-    
-    <!--  pb ! -->    
+
+    <!--  pb ! -->
     <xsl:template name="facsimiles">
             <xsl:for-each select="//tei:pb">
                 <xsl:element name="img">
@@ -593,7 +593,7 @@
             </xsl:element>
             </xsl:for-each>
     </xsl:template>
-    
+
     <!--  P ! -->
     <!--  persName ! -->
     <xsl:template match="tei:persName">
@@ -605,7 +605,7 @@
         </xsl:element>
         </xsl:element>
     </xsl:template>
-    
+
     <!--  placeName ! -->
     <xsl:template match="tei:placeName">
         <xsl:element name="span">
@@ -634,7 +634,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
+
     <!--  quote ! -->
     <xsl:template match="tei:quote">
         <xsl:choose>
@@ -660,7 +660,7 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!--  sp ! -->
     <xsl:template match="tei:sp">
         <xsl:element name="div">
@@ -702,7 +702,7 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
-    
+
     <!--  case two: it is contained within a characters’ lines ! -->
     <xsl:template match="tei:sp//tei:stage">
         <xsl:element name="span">
@@ -712,13 +712,13 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!-- space ! -->
     <!-- transformation à mettre à jour -->
     <xsl:template match="tei:space">
          <xsl:text>_SPACE_</xsl:text>
     </xsl:template>
-    
+
     <!--  subst ! -->
     <xsl:template match="tei:subst">
         <xsl:element name="span">
@@ -771,7 +771,7 @@
             </xsl:choose>
         </xsl:element>
     </xsl:template>
-    
+
     <!--  surplus ! -->
     <xsl:template match="tei:surplus">
         <xsl:element name="span">
@@ -779,7 +779,7 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!--  teiHeader ! -->
     <xsl:template match="tei:teiHeader">
         <xsl:element name="div">
@@ -854,7 +854,7 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
-    
+
     <!--  term ! -->
     <xsl:template match="tei:term">
         <xsl:element name="span">
@@ -862,7 +862,7 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!--  title ! -->
     <xsl:template match="tei:title">
         <xsl:element name="span">
@@ -870,7 +870,7 @@
                     <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!-- titlePart ! -->
    <xsl:template match="tei:titlePart">
             <xsl:element name="span">
@@ -878,7 +878,7 @@
                 <xsl:apply-templates/>
             </xsl:element>
     </xsl:template>
-        
+
     <!--  U ! -->
     <!--  unclear -->
     <xsl:template match="tei:unclear[not(parent::tei:choice)]">
@@ -890,7 +890,7 @@
             </xsl:if>
         </xsl:element>
     </xsl:template>
-    
+
     <!--  W ! -->
     <xsl:template match="tei:w">
         <xsl:element name="span">
@@ -898,7 +898,7 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <!-- Templates nommés -->
     <!-- DHARMA html prolog -->
     <xsl:template name="fable-head">
@@ -917,8 +917,8 @@
             </title>
             <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-                <!-- Bootstrap CSS -->
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+                <!-- Bootstrap CSS local -->
+                <link rel="stylesheet" href="../assets/css/bootstrap.min.css"></link>
                 <link rel="stylesheet" href="../assets/css/fable-style.css"></link>
             </meta>
         </head>
@@ -926,18 +926,21 @@
 
     <!-- scripts  -->
     <xsl:template name="fable-script">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"/>
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"/>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"/>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"/> -->
+        <script src="../assets/js/jquery-3.6.0.min.js"></script>
+        <script src="../assets/js/popper.min.js"></script>
+        <script src="../assets/js/bootstrap.min.js"></script>
         <script src="../assets/js/loader.js"></script>
     </xsl:template>
-    
+
     <xsl:template name="tab-metadata">
         <xsl:element name="div">
             <xsl:attribute name="class">tab-pane fade</xsl:attribute>
             <xsl:attribute name="id">metadata</xsl:attribute>
             <xsl:attribute name="role">tabpanel</xsl:attribute>
-            <xsl:attribute name="aria-labelledby">metadata-tab</xsl:attribute> 
+            <xsl:attribute name="aria-labelledby">metadata-tab</xsl:attribute>
             <xsl:element name="h4">Métadonnées de l'édition</xsl:element>
             <xsl:element name="ul">
                 <xsl:element name="li">
@@ -952,7 +955,7 @@
                     <xsl:apply-templates select="//tei:title[@type='sub']"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:apply-templates select="//tei:titleStmt/tei:title"/> 
+                            <xsl:apply-templates select="//tei:titleStmt/tei:title"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:element>
@@ -971,7 +974,7 @@
                                     <xsl:when test="position()= 1">
                                         <xsl:element name="b">
                                             <xsl:text>Édition réalisée par </xsl:text>
-                                        </xsl:element>                                  
+                                        </xsl:element>
                                     </xsl:when>
                                     <xsl:when test="position()=last()">
                                         <xsl:text> &amp; </xsl:text>
@@ -989,7 +992,7 @@
                                     <xsl:when test="position()= 1">
                                         <xsl:element name="b">
                                             <xsl:text>Édition réalisée par </xsl:text>
-                                        </xsl:element>                                  
+                                        </xsl:element>
                                     </xsl:when>
                                     <xsl:when test="position()=last()">
                                         <xsl:text> &amp; </xsl:text>
@@ -1007,12 +1010,12 @@
                     <xsl:value-of select="replace(//tei:fileDesc/tei:publicationStmt//tei:licence/tei:p[2], '\(c\)', '©')"/>
                 </xsl:element>
             </xsl:element>
-            <xsl:if test="//tei:projectDesc/tei:p"> 
+            <xsl:if test="//tei:projectDesc/tei:p">
                 <xsl:apply-templates select="//tei:projectDesc/tei:p"/>
             </xsl:if>
         </xsl:element>
     </xsl:template>
-    
+
     <xsl:template name="tab-source">
         <xsl:element name="div">
             <xsl:attribute name="class">tab-pane active</xsl:attribute>
@@ -1055,7 +1058,7 @@
                                     <xsl:apply-templates select="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:publisher"/>
                                     <xsl:text>, </xsl:text>
                                     <xsl:apply-templates select="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:pubPlace"/>
-                                    
+
                                 </xsl:element>
                             </xsl:if>
                             <xsl:if test="//tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:date">
@@ -1068,12 +1071,12 @@
                                 </xsl:element>
                             </xsl:if>
                         </xsl:element>
-                    </xsl:element> 
+                    </xsl:element>
                 </xsl:if>
             </xsl:element>
         </xsl:element>
     </xsl:template>
-    
+
     <xsl:template name="table">
         <xsl:element name="div">
             <xsl:attribute name="class">row wrapper</xsl:attribute>
@@ -1096,7 +1099,7 @@
                             <xsl:attribute name="class">panel</xsl:attribute>
                             <xsl:text>Source</xsl:text>
                         </xsl:element>
-                    </xsl:element> 
+                    </xsl:element>
                 </xsl:element>
                 <xsl:element name="li">
                     <xsl:attribute name="class">nav-item</xsl:attribute>
@@ -1115,7 +1118,7 @@
                         </xsl:element>
                     </xsl:element>
                 </xsl:element>
-            </xsl:element>                     
+            </xsl:element>
             <xsl:element name="div">
                 <xsl:attribute name="class">tab-content</xsl:attribute>
                 <xsl:call-template name="tab-source"/>
@@ -1123,13 +1126,13 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
-    
+
     <xsl:template name="rendition">
         <xsl:choose>
             <xsl:when test="@rend='bold'">
                 <xsl:attribute name="class">font-weight-bold</xsl:attribute>
             </xsl:when>
-            <xsl:when test="@rend='italic'">                        
+            <xsl:when test="@rend='italic'">
                 <xsl:attribute name="class">font-italic</xsl:attribute>
             </xsl:when>
         </xsl:choose>
