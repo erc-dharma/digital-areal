@@ -97,14 +97,14 @@ Parfois, il est nécessaire de segmenter certains éléments pour respecter la h
 Les attributs se mettent dans la première partie de la balise (*balise ouvrante*) et se distinguent du nom de la balise par l'ajout d'un **espace**, puis le nom de l'attribut suivi par un signe égal `=`. Sa valeur est donnée entre guillemets. Ils peuvent être simple ou double, même si les conventions favorisent le double guillemet droit `"` : **attribut + `=`+`"` + valeur +`"`**
 Un attribut fonctionne toujours par paire: le nom et la valeur, qui doit au moins correspondre à un caractère.
 ```
-<nom type="lieu">Fréjus</lieu>
-<nom type='lieu'>Fréjus</lieu>
+<nom type="lieu">Fréjus</nom>
+<nom type='lieu'>Fréjus</nom>
 ```
 
 Il n'y a pas de limites au nombre d'attributs, mais il est nécessaire d'ajouter un **espace** entre chaque attribut pour les séparer.
 ```
-<nom type="lieu" subtype="reel">Fréjus</lieu>
-<nom type="lieu" subtype="fictif">Atlantide</lieu>
+<nom type="lieu" subtype="reel">Fréjus</nom>
+<nom type="lieu" subtype="fictif">Atlantide</nom>
 ```
 Il n'y a pas non plus de limites au nombre de valeurs que peut contenir un attribut, on les distingue aussi par un **espace**.
  ```
