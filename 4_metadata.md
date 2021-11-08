@@ -3,13 +3,13 @@
 Les métadonnées sont toutes les informations qui décrivent le fichier et qui permettent ainsi de l'identifier de manière pérenne. Le `<teiHeader>` regroupe plusieurs informations de nature différente:
 - description du fichier électronique
 - description de la source
-- description de contenu de la source - certains éléments relevant déjà du commentaire et de l'analyse scientifique.
+- description du contenu de la source - certains éléments relevant déjà du commentaire et de l'analyse scientifique.
 - description de l'encodage du contenu de la source  
 
-**L'une des grandes difficultés du `<teiHeader>` est de discerné les éléments qui relèvent de la source et les éléments qui documentent le fichier électronique lui-même, et de trouver l'équilibre entre la prose pour l'exploitation humaine et la structuration pour l'exploitation machine**.   
+**L'une des grandes difficultés du `<teiHeader>` est de discerner les éléments qui relèvent de la source et les éléments qui documentent le fichier électronique lui-même, et de trouver l'équilibre entre la prose pour l'exploitation humaine et la structuration pour l'exploitation par la machine**.   
 
 * * *
-NB : La dénomation des éléments peut vous donner des informations sur leur usage et/ou leur contenu .   
+NB : La dénomination des éléments peut vous donner des informations sur leur usage et/ou leur contenu .   
 Parmi les 3 suffixes présents dans le teiHeader:
 - `-Stmt` : appelle un contenu structuré en sous-éléments
 - `-Decl` : une série de déclarations, associant structuration en sous-éléments et description en
@@ -21,7 +21,7 @@ prose
 Élément obligatoire, le `<fileDesc>` contient la notice bibliographique complète du fichier électronique. Son modèle copie les standards établis pour le catalogage.
 
 ### titleStmt
-Le `<titleStmt>` groupe les informations relatives au titre et l'ensemble des personnes ou institutions impliquées dans la production du fichier.
+Le `<titleStmt>` regroupe les informations relatives au titre et l'ensemble des personnes ou institutions impliquées dans la production du fichier.
 - `<title>` (titre) contient le titre complet du fichier. Il peut être répété pour donner plusieurs titres, parfois en plusieurs langues, et typé avec un attribut pour distinguer le titre principal du sous-titre par exemple.
 ```
 <titleStmt>
@@ -34,7 +34,7 @@ Le `<titleStmt>` groupe les informations relatives au titre et l'ensemble des pe
 Les rôles de chacun peuvent être indiqués de manière générale en utilisant les éléments `<respStmt>` et `<resp>`, ou bien en mobilisant des éléments plus précis. Il n'y a pas de limites à la mention de responsabilité, mais il est recommandé de citer au moins l'auteur de l'œuvre, lorsqu'il est connu, et le créateur du fichier.
 - `<author>` (auteur) dans une référence bibliographique contient le nom de la (ou les) personne(s) physique(s) ou du collectif, auteur(s) d'une oeuvre ; par exemple dans la même forme que celle utilisée par une référence bibliographique reconnue.
 - `<editor>` mention de responsabilité secondaire pour un item bibliographique, par exemple le nom d'une personne, d'une institution ou d'un organisme (ou de plusieurs d'entre eux) comme éditeur scientifique, compilateur, traducteur, etc.
-- `<sponsor>` (commanditaire) indique le nom d’une institution ou d’un organisme partenaires.
+- `<sponsor>` (commanditaire) indique le nom d’une institution ou d’un organisme partenaire.
 - `<funder>` (financeur) désigne le nom d’une personne ou d’un organisme responsable du financement d’un projet ou d’un texte.
 - `<principal>` (chercheur principal) contient le nom du chercheur qui est principalement responsable de la création d’un texte électronique.
 - `<respStmt>` (mention de responsabilité) indique la responsabilité quant au contenu intellectuel d'un texte, d'une édition, d'un enregistrement ou d'une publication en série, lorsque les éléments spécifiques relatifs aux auteurs, éditeurs, etc. ne suffisent pas ou ne s'appliquent pas.
@@ -112,7 +112,7 @@ Les rôles de chacun peuvent être indiqués de manière générale en utilisant
 *source: [TEI Guidelines](https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/HD.html#HD22)*
 
 ### extent
-`<extent>` décrit la taille approximative d’un texte stocké sur son support, numérique ou non numérique, exprimé dans une unité quelconque appropriée. L'encodage de ses données est tout à fait optionnel.
+`<extent>` décrit la taille approximative d’un texte stocké sur son support, numérique ou non numérique, exprimé dans une unité quelconque appropriée. L'encodage de ces données est tout à fait optionnel.
 ```
 <extent>between 1 and
  2 Mb</extent>
@@ -125,15 +125,15 @@ Les rôles de chacun peuvent être indiqués de manière générale en utilisant
 Il est possible de structurer davantage le contenu de l'élément `<extent>`, mais ce n'est pas une pratique mobilisée par beaucoup de projets.
 
 ### publicationStmt
-Cette section regroupe des informations concernant la publication ou la diffusion d’un texte électronique. Bien que non imposé par le schéma, **un document conforme à la TEI doit donner des informations sur le lieu de publication, l'adresse, l'identifiant, les droits de diffusion et la date, et dans cet ordre, après le nom de l'éditeur, du distributeur, ou de l'autorité concernée**.
+Cette section regroupe des informations concernant la publication ou la diffusion d’un texte électronique. Bien que non imposé par le schéma, **un document conforme à la TEI doit donner des informations sur le lieu de publication, l'adresse, l'identifiant, les droits de diffusion et la date, et dans cet ordre, après le nom de l'éditeur, du distributeur ou de l'autorité concernée**.
 - `<publisher>` (éditeur) donne le nom de l'organisme responsable de la publication ou de la distribution d'un élément de la bibliographie.
 - `<distributor>` (diffuseur) donne le nom d’une personne ou d’un organisme responsable de la diffusion d’un texte.
 - `<authority>` (responsable de la publication.) donne le nom de la personne ou de l'organisme responsable de la publication d’un fichier électronique, autre qu’un éditeur ou un distributeur.
 - `<pubPlace>` (lieu de publication) contient le nom du lieu d'une publication.
-- `<address>` (address) contient une adresse postale ou d'un autre type, par exemple l'adresse d'un éditeur, d'un organisme ou d'une personne.
+- `<address>` (adresse) contient une adresse postale ou d'un autre type, par exemple l'adresse d'un éditeur, d'un organisme ou d'une personne.
 - `<idno>` (identifiant) donne un identifiant standardisé qui peut être utilisé pour identifier une référence bibliographique, une personne, un titre d'ouvrage ou une organisation.
   - `<@type>`	classe un numéro dans une catégorie <!--je mettrai plus précise la catégorie de système d'identification auquel le numéro fait référence ou un truc dans le genre-->, par exemple comme étant un numéro ISBN ou comme appartenant une autre série normalisée
-- `<availability>` (disponibilité) renseigne sur la disponibilité du texte, par exemple sur toutes restrictions quant à son usage ou sa diffusion, son copyright, etc.
+- `<availability>` (disponibilité) renseigne sur la disponibilité du texte, par exemple sur toutes les restrictions quant à son usage ou sa diffusion, son copyright, etc.
   - `<@status>`	(status) donne un code caractérisant la disponibilité actuelle d’un texte.
 - `<date>` (date) contient une date exprimée dans n'importe quel format.
 - `<licence>` contient des informations légales applicables au texte, notamment le contrat de licence définissant les droits d'utilisation.
@@ -171,7 +171,7 @@ Pour être valide, le `<sourceDesc>` doit contenir l'un des éléments suivants:
 - `<biblStruct>` (référence bibliographique structurée) contient une référence bibliographique dans laquelle seuls des sous-éléments bibliographiques apparaissent et cela, selon un ordre déterminé.
 - `<biblFull>` (référence bibliographique totalement structurée) contient une référence bibliographique totalement structurée : tous les composants de la description du fichier TEI y sont présents.
 - `<listBibl>` (liste de références bibliographiques) contient une liste de références bibliographiques de toute nature.   
-À minima on renseigne une référence bibliographique de la source éditée sous forme de prose avec `<p>`, un peu plus formel mais assez souple avec `<bibl>`, une version plus structurée avec `<biblStruct>` ou une version exhaustive avec `<biblFull>`. D'autres éléments sont possibles, mais sont moins courant, à l'exception de:
+À minima on renseigne une référence bibliographique de la source éditée sous forme de prose avec `<p>`, un peu plus formel mais assez souple avec `<bibl>`, une version plus structurée avec `<biblStruct>` ou une version exhaustive avec `<biblFull>`. D'autres éléments sont possibles, mais sont moins courants, à l'exception de:
 - `<msDesc>`	(description d'un manuscrit) contient la description d'un manuscrit individuel
 - `<listWit>`	(liste de témoins) donne une liste de définitions pour tous les témoignages cités dans un apparat critique, pouvant être groupées de façon hiérarchique.
 
@@ -185,7 +185,7 @@ Pour être valide, le `<sourceDesc>` doit contenir l'un des éléments suivants:
   - `<principal>`
   - `<sponsor>`
   - `<respStmt>`
-- informations sur l'édition:
+- Informations sur l'édition:
   - `<title>`
   - `<date>`
   - `<pubPlace>`
@@ -334,7 +334,7 @@ Parmi les éléments enfants de cette section du teiHeader, les plus utiles pour
     - `<quotation>` (citation)
     - `<hyphenation>` (césurage)
     - `<segmentation>` (segmentation)
-    - `<interpretation>` (Interprétation)
+    - `<interpretation>` (interprétation)
 
 ```
 <editorialDecl>
@@ -413,7 +413,7 @@ ce qui suppose un autre fichier, que nous avons appelé prefixDef.xml, pour cont
 ```
 
 ## profilDesc
-Il contient des éléments non bibliographiques sur le texte. Il peut contenir un résumé du texte, des informations sur les circonstances de création du fichier, la langue et ses variantes, une liste de mots-clés... Il offre quelques possibilités, mais la plus courante est la déclaration des langues avec les éléments `<langUsage>` et `<language>`.
+Il contient des éléments non bibliographiques sur le texte. Il peut contenir un résumé du texte, des informations sur les circonstances de création du fichier, la langue et ses variantes, une liste de mots-clés, etc. Il offre quelques possibilités, mais la plus courante est la déclaration des langues avec les éléments `<langUsage>` et `<language>`.
 
 ```
 <profileDesc>
@@ -425,7 +425,7 @@ Il contient des éléments non bibliographiques sur le texte. Il peut contenir u
 ```
 
 ## revisionDesc
-Présente une succession d'éléments `<change>`, par ordre antéchronologique, qui documentent les différentes interventions faites dans les fichiers, et qui peuvent être groupés par `<list>` ou par `<listChange>`. Il mobilise souvent avec les attributs `@who` et `@when`, ou les éléments `<name>` et `<date>`.
+Présente une succession d'éléments `<change>`, par ordre antéchronologique, qui documentent les différentes interventions faites dans les fichiers, et qui peuvent être groupés par `<list>` ou par `<listChange>`. Il est souvent mobilisé avec les attributs `@who` et `@when`, ou les éléments `<name>` et `<date>`.
 
 ```
 <revisionDesc>
