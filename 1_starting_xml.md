@@ -1,5 +1,5 @@
 # Commencer avec l'XML
-XML : eXtensible markup language. Il s'agit d'un language à balise, comme latex, l'html ou même le markdown.
+XML : eXtensible Markup Language. Il s'agit d'un language à balises, comme LaTeX, l'HTML ou même le Markdown.
 
 ```
 exemple d'\emph{italique} en laTex
@@ -8,7 +8,7 @@ exemple d'*italique* en markdown
 ```
 
 ## Définition
-XML est un métalangage, standardisé par une norme de W3C, qui repose principalement sur du texte, c’est-à-dire qu’il est construit avec des characters ASCII (*American Standard Code for Information Interchange*). Il ne propose pas de balise prédéfinie, mais met en place un ensemble de règles déterminant si un fichier est bien formé (*well-formed*) et valide. Il permet ainsi de définir son propre jeu de balises.
+XML est un métalangage, standardisé par une norme du W3C, qui repose principalement sur du texte, c’est-à-dire qu’il est construit avec des characters ASCII (*American Standard Code for Information Interchange*). Il ne propose pas de balises prédéfinies, mais met en place un ensemble de règles déterminant si un fichier est bien formé (*well-formed*) et valide. Il permet ainsi de définir son propre jeu de balises.
 
 ```
 <monExemple>
@@ -38,7 +38,7 @@ Mais ce n'est pas un langage de programmation, ni de gestion de bases de donnée
 Un élément se signale par des chevrons et se compose de deux parties :   
 - la première partie de l'élément (*balise ouvrante*) se forme : **`<` + nom + `>`**  
 - la partie qui vient le terminer (*balise fermante*) : **`<` + `/` + nom + `>`**  
-Les noms d'éléments doivent toujours se limiter à des caractères latins basiques définis par l'ASCII, soit des caractères alphnumériques. Les seuls caractères de ponctuation autorisés sont le point `.`, le tiret `-` et l'*underscore* `_`. Ils peuvent être en minuscules ou en majuscules. Le nom doit être identique dans les deux parties de la balise, d'autant qu'il est sensible à la case.
+Les noms d'éléments doivent toujours se limiter à des caractères latins basiques définis par l'ASCII, soit des caractères alphanumériques. Les seuls caractères de ponctuation autorisés sont le point `.`, le tiret `-` et l'*underscore* `_`. Ils peuvent être en minuscule ou en majuscule. Le nom doit être identique dans les deux parties de la balise, d'autant qu'il est sensible à la casse.
 
 Un élément peut contenir du texte (*PCDATA*)
 ```
@@ -135,13 +135,13 @@ Exemple de l'arbre XML minimal d'Epidoc:
 ![Liens de parenté en XML](/assets/images/parente.png)
 *[source](https://www.irif.fr/~carton/Enseignement/XML/Cours/support.html#idm140605729164112)*
 
-Dans l'exemple ci-dessus, le contenu de l'élément `<self>` s'étend de la balise ouvrante `<child1>` jusqu'à la balise de fin `</child3>`. Il comprend tous les éléments `<child1>`, `<child2>` et `<child3>` ainsi que les éléments `<desc1>`, `<desc2>`, `<desc3>` et `<desc4>`. Tous les éléments qu'il contient sont appelés *descendants* de l'élément self.
-Parmi ces *descendants*, les éléments child1, `<child1>`, `<child2>` et `<child3>`qui sont directement inclus dans `<self>` sans élément intermédiaire sont appelés les *enfants* de l'élément `<self>`. Inversement, l'élément *parent* qui contient directement `<self>` est appelé le *parent* de l'élément `<self>`. Les autres éléments qui contiennent l'élément `<self>` sont appelés les *ancêtres* de l'élément `<self>`. Les autres *enfants* `<sibling1>`, `<sibling2>` et `<sibling3>` de l'élément *parent* sont appelés les *frères* de l'élément `<self>`.
+Dans l'exemple ci-dessus, le contenu de l'élément `<self>` s'étend de la balise ouvrante `<child1>` jusqu'à la balise fermante `</child3>`. Il comprend tous les éléments `<child1>`, `<child2>` et `<child3>` ainsi que les éléments `<desc1>`, `<desc2>`, `<desc3>` et `<desc4>`. Tous les éléments qu'il contient sont appelés *descendants* de l'élément self.
+Parmi ces *descendants*, les éléments `<child1>`, `<child2>` et `<child3>`qui sont directement inclus dans `<self>` sans élément intermédiaire sont appelés les *enfants* de l'élément `<self>`. Inversement, l'élément *parent* qui contient directement `<self>` est appelé le *parent* de l'élément `<self>`. Les autres éléments qui contiennent l'élément `<self>` sont appelés les *ancêtres* de l'élément `<self>`. Les autres *enfants* `<sibling1>`, `<sibling2>` et `<sibling3>` de l'élément *parent* sont appelés les *frères* de l'élément `<self>`.
 
-Les attributs déclarés sur les éléments *ancêtres* ou *parents* sont transmis aux éléments *enfants*, ainsi qu'à tous les *descendants*. Ainsi l'attribut `@xml:lang` s'appplique à tous les éléments contenus par `<parent>`. Cela signifie que tous ont du contenu en anglais, sauf l'élément `<desc2>` qui porte son propre attribut `@xml:lang` et qui par conséquent remplace l'anglais par le français.
+Les attributs déclarés sur les éléments *ancêtres* ou *parents* sont transmis aux éléments *enfants*, ainsi qu'à tous les *descendants*. Ainsi l'attribut `@xml:lang` s'applique à tous les éléments contenus par `<parent>`. Cela signifie que tous ont du contenu en anglais, sauf l'élément `<desc2>` qui porte son propre attribut `@xml:lang` et qui par conséquent remplace l'anglais par le français.
 
 * * *
-NB: Ces principes d'héritages des attributs par les *descendants** d'un élément permettent d'éviter les répétitions des attributs et de leur valeur. Néanmoins, il faut faire attention qu'un élément n'hérite pas de caractèristiques que nous ne souhaitons pas lui attribuer.
+NB: Ces principes d'héritage des attributs par les *descendants** d'un élément permettent d'éviter les répétitions des attributs et de leur valeur. Néanmoins, il faut faire attention à ce qu'un élément n'hérite pas de caractéristiques que nous ne souhaitons pas lui attribuer.
 * * *
 
 ## Faire des commentaires dans un fichier XML
@@ -197,7 +197,7 @@ Exemple avec une DTD interne
 **Notez que la déclaration XML ne contient pas de barre oblique pour fermer la balise.**
 
 ## Instructions de traitement
-Les instructions de traitement sont des lignes à destination du logiciel/éditeur de codes. Elles s'écrivent sur le même modèle que la déclaration xml avec des chevrons suivis par des points d'interrogation.   
+Les instructions de traitement sont des lignes à destination du logiciel/éditeur de codes. Elles s'écrivent sur le même modèle que la déclaration XML avec des chevrons suivis par des points d'interrogation.   
 Les plus courantes permettent de déclarer le ou les schémas de validation ou encore une feuille de style de transformation.
 
 Exemple de la déclaration des schémas pour les inscriptions dans le projet DHARMA
@@ -219,20 +219,20 @@ Exemple avec une feuille de style CSS
 
 Plusieurs attributs sont possibles. Il faut au moins l'attribut `@href`. Celui-ci peut contenir:
 - une URL
-- le chemin relatif entre votre xml et le fichier (par rapport à votre position dans l'ordinateur)
+- le chemin relatif entre votre XML et le fichier (par rapport à votre position dans l'ordinateur)
 - le chemin absolu depuis la racine de l'ordinateur vers le fichier (par rapport à la racine de l'ordinateur)
 Selon la technologie mobilisée, il peut-être nécessaire de déclarer une URI pour l'identifier. C'est le cas avec les schémas et l'attribut `@schematypens` notamment.
 
 * * *
 NB: Les schémas permettent de valider l'encodage de votre fichier selon les règles spécifiques que vous avez fixées pour votre projet.
-Il existe plusieurs technologies: DTD, xml schema, Relax NG, Schematron.
+Il existe plusieurs technologies: DTD, XML Schema, Relax NG, Schematron.
 **Un projet d'édition numérique en TEI se doit d'avoir son schéma et sa documentation**
 * * *
 
 ## Rapide point sur les espaces en XML
 En XML, quatre caractères sont considérés comme des espaces: le retour à la ligne, l'indentation de tabulation, le passage à la ligne et l'espace classique.
 Dans les documents XML, vous retrouverez à la fois des *espaces signifiants* et des *espaces insignifiants* utilisés afin de rendre le contenu plus lisible. En l'absence d'un schéma, on considère par défaut tous les espaces comme ayant leur importance.
-La présence de plusieurs espaces entre le nom d'un élément et un attribut par exemple n'est pas un soucis:
+La présence de plusieurs espaces entre le nom d'un élément et un attribut par exemple ne pose pas de problème:
 
 ```
 <title     type = "main" >
@@ -243,7 +243,7 @@ mais l'absence d'espace est faux.
 <titletype = "main" >
 ```
 
- De même dans les contenus textuels, les espaces sont particulièrement important. En XML,
+ De même dans les contenus textuels, les espaces sont particulièrement importants. En XML,
 ```
  <name>EmmanuelFrancis</name>
 ```
@@ -262,7 +262,7 @@ Francis</name>
 ```
 <name>Emmanuel    Francis</name>
 ```
-De nombreux processeurs XML sont en mesure de supprimer les espaces en avant et après le contenu textuel. Ainsi
+De nombreux processeurs XML sont en mesure de supprimer les espaces positionnés avant et après le contenu textuel. Ainsi
 ```
 <name>   Emmanuel Francis</name>
 ```
@@ -280,7 +280,7 @@ sont considérés comme des équivalents de  `<name>Emmanuel Francis</name>`.
 Néanmoins, il vaut mieux normaliser les espaces, si possible pour éviter les conflits et les erreurs au moment de la transformation, pour lesquels quelques explications sont données dans la partie (transformation)[https://erc-dharma.github.io/digital-areal/6_transformation] du site.
 
 ## Vers un document XML bien formé et valide
-C'est deux notions sont essentielles pour obtenir un fichier exploitable.
+Ces deux notions sont essentielles pour obtenir un fichier exploitable.
 
 ### Vers un XML bien formé
 Pour avoir un document XML bien formé, il faut qu'il respecte tous les préceptes de la syntaxe XML:
@@ -302,10 +302,10 @@ Pour avoir un document valide, il faut qu'un modèle soit déclaré. Dans le cas
 - il est conforme au schéma auquel il fait référence (DTD ou autre)
 
 * * *
-NB: Un fichier XML bien-formé et valide ne veut pas pour autant dire que le fichier ne contient pas d'erreurs. Cela veut dire qu'il est au moins conforme aux règles de syntaxe de l'XML et qu'il suit l'ensemble des règles exprimées dans le schéma. Il peut donc y avoir du contenu que vous avez oublié de tester.
+NB: Un fichier XML bien formé et valide ne veut pas pour autant dire que le fichier ne contient pas d'erreurs. Cela veut dire qu'il est au moins conforme aux règles de syntaxe de l'XML et qu'il suit l'ensemble des règles exprimées dans le schéma. Il peut donc y avoir du contenu que vous avez oublié de tester.
 * * *
 
 ## Conclusion
 1- L'XML est une métalangue qui repose sur le balisage sémantique et structuré du contenu.  
-2- L'XML est un ensemble de règles qui détermine ce que doit être un document bien formé et valide. Il ne donne pas de vocabulaire caractérisé mais permet d'en créer.  
+2- L'XML est un ensemble de règles qui détermine ce que doit être un document bien formé et valide. Il ne donne pas de vocabulaire caractérisé, mais permet d'en créer.  
 3- Il peut s'appliquer à toutes sortes de données textuelles, mais il n'est pas pour autant la réponse à tout. Il faut songer dès l'élaboration de l'encodage aux attentes et enjeux pour l'utilisation finale et surtout à l'exploitation des données.
