@@ -162,10 +162,10 @@ NB: Il faut néanmoins faire attention à l'usage des commentaires, ils ont tend
 * * *
 
 ## Caractères spéciaux en XML  
-Certains caractères spéciaux ont besoin d'être échappés afin de ne pas se confondre avec les éléments formant la syntaxe du XML, comme les chevrons par exemple.  
-En XML, il y a 5 éléments avec des valeurs prédéfinies qui s'échappent en débutant avec une esperluette et en terminant avec un point-virgule: `&`+ nom+`;`.
+Certains caractères spéciaux ne peuvent être utilisés tels quels sous peine d'être confondus avec des éléments formant la syntaxe du XML, comme les chevrons par exemple. A leur place on utilise des substituts. 
+En XML, il y a ainsi 5 éléments avec des valeurs prédéfinies, qui débutent avec une esperluette et se termine avec un point-virgule: `&`+ nom+`;`.
 
-|nom|caractère|description|échappement|
+|nom|caractère|description|substitut|
 |:-----:|:-----:|:-----:|:-----:|
 |quot|"|Guillemet droit, délimiteur d'attribut en XML|`&quot;`|
 |amp|&|Esperluette (« et commercial »), délimiteur de référence en XML|`&amp;`|
