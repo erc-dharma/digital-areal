@@ -1,6 +1,6 @@
 # Encoder un texte avec Manu
 
-## Eléments généraux
+## Éléments généraux
 - `<p>` pour des paragraphes  
 - `<ab>` pour une unité de texte quelconque, de niveau "composant", faisant office de contenant anonyme pour une expression ou des éléments de niveau intermédiaire, analogue à un paragraphe mais sans sa portée sémantique
 - `<seg>` pour des subdivisions internes au paragraphe ou d'analyse
@@ -24,16 +24,16 @@
   - `<p>` ou `<lg>` le cas échéant pour ce qui est dit  
 
 ## Éléments pour la correspondance
-### Élements que l'on peut utiliser en début d'une division
+### Éléments que l'on peut utiliser en début d'une division
 - `<opener>`	(formule de début) regroupe la date, la mention de responsabilité, la formule de politesse et d'autres expressions de ce type dans un groupe préliminaire au début d’une division, en particulier au commencement d’une lettre.
 - `<signed>`	(signature) contient la dernière salutation, ajoutée à un avant-propos, à une dédicace ou à une autre division du texte.
-### Élements que l'on peut utiliser à la fin d'une division
-- `<closer>`	(formule finale) regroupe une formule de politesse, une indication d'une date et d'autres expressions semblables figurant comme expression à la fin d’une division, en particulier à la fin d’une lettre.
-- `<postscript>`	contient un post-scriptum, par exemple au bas d' une lettre.
+### Éléments que l'on peut utiliser à la fin d'une division
+- `<closer>`	(formule finale) regroupe une formule de politesse, une indication de date et d'autres expressions semblables figurant comme expression à la fin d’une division, en particulier à la fin d’une lettre.
+- `<postscript>`	contient un post-scriptum, par exemple au bas d'une lettre.
 - `<signed>`	(signature) contient la dernière salutation, ajoutée à un avant-propos, à une dédicace ou à une autre division du texte.
 - `<trailer>`	contient un titre de fin ou de bas de page à la fin d’une division du texte.
-### Élements que l'on peut utiliser en début et à la fin d'une division
-- `<dateline>`	(mention de date) contient une brève description des lieux, date, heure, etc. concernant la production d’une lettre, d’un article de journal ou d’un autre texte qui, placée au début ou à la fin, lui est associée comme en-tête ou annonce de fin.
+### Éléments que l'on peut utiliser en début et à la fin d'une division
+- `<dateline>`	(mention de date) contient une brève description des lieu, date, heure, etc. concernant la production d’une lettre, d’un article de journal ou d’un autre texte qui, placée au début ou à la fin, lui est associée comme en-tête ou annonce de fin.
 - `<salute>`	(formule de politesse) contient un dédicace ou une formule de salut qui précède un avant-propos ou autre division du texte; ou bien encore la formule de politesse qui conclut une lettre, une préface, etc.
 
 ## Éléments pour une page de titre
@@ -44,7 +44,7 @@ type	(type) précise le rôle de cette subdivision du titre. Les valeurs suggér
 - `<argument>` (argument) liste formelle ou description en texte libre des sujets traités dans une subdivision d’un texte
 - `<byline>` (mention de responsabilité) indique la responsabilité principale pour une œuvre donnée sur la page de titre ou au début ou à la fin de l’œuvre.
 - `<docAuthor>` (auteur du document) contient le nom de l’auteur du document tel qu’il est donné sur la page de titre (ce nom est le plus souvent contenu dans une mention de responsabilité) .
-- `<epigraph>` (epigraph) contient une citation, anonyme ou attribuée et qui apparaît au début d’une section ou d’un chapitre ou sur une page de titre.
+- `<epigraph>` (epigraph) contient une citation, anonyme ou attribuée, et qui apparaît au début d’une section ou d’un chapitre ou sur une page de titre.
 - `<imprimatur>` (imprimatur) contient une mention formalisée autorisant la publication d’un ouvrage, parfois exigée sur une page de titre ou à son verso.
 - `<docEdition>` (édition du document) contient une mention d’édition telle qu’elle figure sur la page de titre d’un document.
 - `<docImprint>` (mention d'impression) contient la mention d'impression de l'éditeur (lieu et date de publication, nom de l’éditeur), telle qu’elle est généralement donnée au bas de la page de titre.
@@ -76,7 +76,7 @@ type	(type) précise le rôle de cette subdivision du titre. Les valeurs suggér
 
 ### Interventions du scribe
 #### Ajouts
-`<add>` ( ajout) contient des lettres, des mots ou des phrases insérés dans le texte par un auteur, un copiste, un annotateur ou un correcteur.
+`<add>` (ajout) contient des lettres, des mots ou des phrases insérés dans le texte par un auteur, un copiste, un annotateur ou un correcteur.
 - la position de l'ajout avec l'attribut `@place`
 
 #### Suppressions
@@ -84,7 +84,7 @@ type	(type) précise le rôle de cette subdivision du titre. Les valeurs suggér
 - la mise en forme avec l'attribut `@rend`
 
 #### Combiner un ajout et une suppression sur un même segment de texte
-`<subst>` ( substitution) regroupe une ou plusieurs parties de texte supprimées et une ou plusieurs parties de texte ajoutées, lorsque cette combinaison peut être considérée comme une intervention unique sur le texte.
+`<subst>` (substitution) regroupe une ou plusieurs parties de texte supprimées et une ou plusieurs parties de texte ajoutées, lorsque cette combinaison peut être considérée comme une intervention unique sur le texte.
 
 ```
 <subst>
@@ -95,7 +95,7 @@ type	(type) précise le rôle de cette subdivision du titre. Les valeurs suggér
 
 ## Régularisation et correction
 Distinguer :
-- nature/objectif de l'intervention (correction, régularisation,...) ;
+- nature/objectif de l'intervention (correction, régularisation, etc.) ;
 - responsabilité, source, justification de cette intervention
 
 ### Choice
@@ -105,14 +105,14 @@ On le retrouve ainsi avec des éléments de correction ou de régularisation des
 #### Les couples orig et reg, et sic et corr
 Avant de se lancer dans la correction ou la régularisation d'un texte, il vaut mieux que les membres d'un même projet se mettent d'accord sur les définitions de ces deux concepts et qu'ils décident aussi ce qu'ils corrigent et régularisent par l'encodage et ce qui est fait de manière silencieuse dans le texte.
 Les éléments de correction
-- `<corr>`  (correction) contient la forme correcte d'un passage qui est considéré erroné dans la copie du texte.
-- `<sic>` (du latin, ainsi) contient du texte reproduit quoiqu'il est apparemment incorrect ou inexact.
+- `<corr>`  (correction) contient la forme correcte d'un passage qui est considéré comme erroné dans la copie du texte.
+- `<sic>` (du latin, ainsi) contient du texte reproduit bien qu'il soit apparemment incorrect ou inexact.
 Lorsqu'ils sont combinés, l'encodeur souligne que le contenu de `<sic>` lui semble erroné et y apporte une correction avec `<corr>`.
 - `<reg>` (régularisation) contient une partie qui a été régularisée ou normalisée de façon quelconque.
 - `<orig>` (forme originale) contient une partie notée comme étant fidèle à l'original et non pas normalisée ou corrigée.
 
 #### orig, reg, sic et corr peuvent-ils être utilisés seuls?
-Ces quatre éléments peuvent être utilisés de manière indépendante. Cela arrive souvent avec `<sic>`, un peu moins avec les trois autres.
+Ces quatre éléments peuvent être utilisés de manière indépendante. Cela arrive souvent avec `<sic>`, plus rarement pour les trois autres.
 
 ### Exprimer la certitude
 Pour exprimer son degré de certitude sur une intervention, l'encodeur peut utiliser l'attribut `@cert`.
@@ -142,8 +142,8 @@ Les abréviations
 
 ## Caractères spéciaux
 - `<c>` (caractère) représente un caractère.
-- `<g>` (caractère ou glyphe) représente un glyphe, ou un caractère non standard.
-L'élément `<c>` doit se comprendre principalement comme un caractère issu de l'alphabet latin, à l'inverse `<g>`, issue du module `gaiji` et signifiant glyphe offre plus de possibilités. Il peut s'associer à des attributs `@ref` pour pointer vers une explicitation du caractère, ou encore avec `@type`, s'il s'agit d'établir une typologie.
+- `<g>` (caractère ou glyphe) représente un glyphe ou un caractère non standard.
+L'élément `<c>` doit se comprendre principalement comme un caractère issu de l'alphabet latin, à l'inverse `<g>`, issu du module `gaiji` et signifiant glyphe offre plus de possibilités. Il peut s'associer à des attributs `@ref` pour pointer vers une explicitation du caractère, ou encore avec `@type`, s'il s'agit d'établir une typologie.
 
 ### Traitement des allographes
 Pour traiter les allographes présents dans la fable, plusieurs solutions sont possibles:
@@ -207,10 +207,10 @@ NB: Nous pouvons  combiner les propositions faites si dessus, soit une DDT avec 
 Si la TEI recommande de déclarer et préciser de nombreux choix d'encodage à l'aide d'éléments du `<teiHeader>`, force est de reconnaître que de nombreux projets et utilisateurs en font l'impasse. C'est pourquoi, vous retrouverez souvent l'attribut `<g>` sans aucune déclaration sous `<charDecl>` dans le `<teiHeader>`.
 * * *
 
-### Formatter un caractère ou une chaîne de caractères
-- `<hi>` (mis en évidence) distingue un mot ou une expression comme graphiquement distincte du texte environnant, sans en donner la raison.
-- `@rend` (interprétation) indique comment l'élément en question a été rendu ou présenté dans le texte source
-Il est possible d'indiquer la manière typographique utilisé pour rendre un caractère, grâce à l'attribute `@rend`. Cet attribut peut s'utiliser sur l'ensemble des éléments étant membre de la classe att.global.rendition.
+### Formater un caractère ou une chaîne de caractères
+- `<hi>` (mis en évidence) distingue un mot ou une expression comme graphiquement distinct du texte environnant, sans en donner la raison.
+- `@rend` (interprétation) indique comment l'élément en question a été rendu ou présenté dans le texte source.
+Il est possible d'indiquer la manière typographique utilisée pour rendre un caractère, grâce à l'attribut `@rend`. Cet attribut peut s'utiliser sur l'ensemble des éléments, étant membre de la classe att.global.rendition.
 ```
 <head rend="italic"><lb n="2"/>Le loup &amp; le chien.</head>
 ```
@@ -271,14 +271,14 @@ source: [TEI Guidelines](https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/re
 ## Éléments d'indexation
 ### Noms et personnes
 `<persName>` en spécifiant
-- une typologie avec l'attribut `@type` voire aussi avec `@subtype`
-- une référence pour donner une uri avec l'attribut `@ref`
+- une typologie avec l'attribut `@type`, voire aussi avec `@subtype`
+- une référence pour donner une URI avec l'attribut `@ref`
 - une normalisation du nom de l'attribut `@key`
 
 ### Lieux
 `<placeName>` en spécifiant
-- une typologie avec l'attribut `@type` voire aussi avec `@subtype`
-- une référence pour donner une uri avec l'attribut `@ref`
+- une typologie avec l'attribut `@type`, voire aussi avec `@subtype`
+- une référence pour donner une URI avec l'attribut `@ref`
 - une normalisation du nom de l'attribut `@key`
 
 `<geogName>` parfois pour des noms associés à une dimension géographique, comme une rivière ou une montagne par exemple.
