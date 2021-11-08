@@ -1,6 +1,6 @@
 # Rapide introduction de la TEI
 
-La TEI est un standard de partages de texte qui repose sur une stratégie d’encodage définie et constante, déclarée dans un schéma. Elle utilise, depuis la versio P5, l'XML, qui vient remplacer le SGML. Son principe fondateur est de facilité les échanges de textes entre les différents producteurs de sources textuelles, dans le cadre universitaire et de recherches.   
+La TEI est un standard de partage de texte qui repose sur une stratégie d’encodage définie et constante, déclarée dans un schéma. Elle utilise, depuis la version P5, l'XML, qui vient remplacer le SGML. Son principe fondateur est de faciliter les échanges de textes entre les différents producteurs de sources textuelles, dans un cadre universitaire et de recherche.   
 La TEI est une structuration des éléments sémantiques d'un texte et non une représentation typographique de celui-ci. Il permet donc de générer des fichiers dans des formats différents, mais aussi de faire plusieurs visualisations du même fichier.  
 
 - 1987, création de la *Text Encoding Initiative* par trois sociétés savantes :
@@ -12,10 +12,10 @@ Machine-Readable Texts*, sous la direction de Michael Sperberg-McQueen et Lou Bu
 - 1994, TEI P3, considérée comme la première version complète
 - 2000, naissance du **TEI Consortium**
 - 2001-2004, TEI P4 introduction du XML en parallèle du SGML
-- 2007-..., TEI P5 (v.1.0) : abandon définitif SGML. Mise à jour annuel de la documentation. Actuellement, version 4.3.0. dont la dernière mise à jour date du 31 août 2021.
+- 2007-..., TEI P5 (v.1.0) : abandon définitif du SGML. Mise à jour annuelle de la documentation. Actuellement, version 4.3.0, dont la dernière mise à jour date du 31 août 2021.
 
 ## Les principes de Poughkeepsie (1987)
-La fondation de la TEI repose sur la volonté d'établir
+La fondation de la TEI repose sur la volonté d'établir:
 - un format standard de données pour les échanges entre chercheurs de SHS.
 - établir une syntaxe commune pour représenter les textes
 
@@ -46,7 +46,7 @@ Le Consortium est une fondation à but non lucratif, dont le financement se fait
 Son rôle principal est de maintenir les *Guidelines* et de les faire évoluer selon les besoins des communautés d'utilisateurs.
 
 ## Epidoc, une modélisation de la TEI
-Epidoc est un projet collaboratif qui a vu le jour en 2000 à l'initiative de Tom Elliot et qui vise à établir des normes d'encodage en TEI pour les documents anciens. L'idée initiale était d'établir un standard afin de favoriser l'interopérabilité et la constance des encodages entre les documents anciens afin de permettre des regroupements de corpus issus de plusieurs projets.
+Epidoc est un projet collaboratif qui a vu le jour en 2000 à l'initiative de Tom Elliot et qui vise à établir des normes d'encodage en TEI pour les documents anciens. L'idée initiale était d'établir un standard afin de favoriser l'interopérabilité et la constance des encodages des documents anciens afin de permettre des regroupements de corpus issus de plusieurs projets.
 Cette personnalisation offre une documentation assez complète avec des schémas de validation et des feuilles de style pour les transformations.
 Actuellement, Epidoc migre vers la version 9.3 et l'ensemble de son contenu est accessible en open-source : (https://epidoc.stoa.org/gl/latest/index.html).
 
