@@ -268,7 +268,7 @@ source: [TEI Guidelines](https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/re
 - `<graphic>` (graphic) indique l'emplacement d'une image, d'une illustration ou d'un schéma intégrés.
   - avec l'attribut `@url` pour indiquer le chemin vers la donnée.
 
-## Éléments d'indexation
+## Entités nommées 
 ### Noms et personnes
 `<persName>` en spécifiant
 - une typologie avec l'attribut `@type`, voire aussi avec `@subtype`
