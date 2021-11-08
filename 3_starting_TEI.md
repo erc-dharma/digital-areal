@@ -7,7 +7,7 @@ Créer son premier fichier en TEI
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 ```
-La valeur de l'attribut `@href` peut être mis à jour afin d'obtenir une validation locale. Quelques schémas sont accessibles sur le repository de ce cours.
+La valeur de l'attribut `@href` peut être mise à jour afin d'obtenir une validation locale. Quelques schémas sont accessibles sur le repository de ce cours.
 
 ## Ajouter une structure de départ pour un fichier TEI
 Exemple de la structure minimale obligatoire d'un fichier TEI
@@ -50,7 +50,7 @@ Le `<body>` est la seule partie obligatoire. C'est celle qui contient votre édi
 
 ## Division logique du texte
 ### div
-L'élément `<div>` permet de diviser les textes contenu dans le `<body>`, `<front>`  et `<back>`, en sous-unité que l'on peut qualifier à l'aide de l'attribut `@type` et de l'attribut "label" `@n`.
+L'élément `<div>` permet de diviser les textes contenus dans le `<body>`, `<front>`  et `<back>`, en sous-unités que l'on peut qualifier à l'aide de l'attribut `@type` et de l'attribut "label" `@n`.
 
 ```
 <body>
@@ -97,7 +97,7 @@ L'élément `<div>` est aussi disponible dans une version numérotée de 1 à 7.
 ```
 
 ## Exception à la structure du fichier TEI
-Il existe une exception à la structure basique d'un fichier tei: le `<teiCorpus>` dans lequel vous pouvez agréger plusieurs structures TEI.  
+Il existe une exception à la structure basique d'un fichier TEI: le `<teiCorpus>` dans lequel vous pouvez agréger plusieurs structures TEI.  
 Dans ces circonstances, il faut noter que le `<teiCorpus>` a besoin de son propre `<teiHeader>` et que chacun des éléments d'édition se compose d'une balise `<TEI>` avec pour enfant la structure vue ci-dessus avec `<teiHeader>`, `<text>`.
 
 ```
@@ -125,7 +125,7 @@ Dans ces circonstances, il faut noter que le `<teiCorpus>` a besoin de son propr
 </teiCorpus>
 ```
 
-Cet élément est à employé avec précaution, car il a été question à plusieurs reprises de la supprimer des *Guidelines TEI*.
+Cet élément est à employer avec précaution, car il a été question à plusieurs reprises de le supprimer des *Guidelines TEI*.
 
 ## Memo des éléments présentés  
 |Elements name|Attributes|Description|
